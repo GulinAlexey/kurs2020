@@ -36,6 +36,16 @@ namespace kurs2020 {
 		}
 	private: System::Windows::Forms::Label^  igra_menu_text;
 	private: System::Windows::Forms::Label^  glavn_menu_text;
+	private: System::Windows::Forms::Button^  new_game_butt;
+	private: System::Windows::Forms::Button^  load_game_butt;
+	private: System::Windows::Forms::Button^  records_butt;
+	private: System::Windows::Forms::Button^  quit_butt;
+	private: System::Windows::Forms::Button^  spravk_butt;
+
+
+
+
+
 
 	protected: 
 
@@ -59,6 +69,11 @@ namespace kurs2020 {
 			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(Form1::typeid));
 			this->igra_menu_text = (gcnew System::Windows::Forms::Label());
 			this->glavn_menu_text = (gcnew System::Windows::Forms::Label());
+			this->new_game_butt = (gcnew System::Windows::Forms::Button());
+			this->load_game_butt = (gcnew System::Windows::Forms::Button());
+			this->records_butt = (gcnew System::Windows::Forms::Button());
+			this->quit_butt = (gcnew System::Windows::Forms::Button());
+			this->spravk_butt = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// igra_menu_text
@@ -68,7 +83,7 @@ namespace kurs2020 {
 				static_cast<System::Byte>(204)));
 			this->igra_menu_text->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(192)));
-			this->igra_menu_text->Location = System::Drawing::Point(1, 24);
+			this->igra_menu_text->Location = System::Drawing::Point(1, 38);
 			this->igra_menu_text->Name = L"igra_menu_text";
 			this->igra_menu_text->Size = System::Drawing::Size(343, 29);
 			this->igra_menu_text->TabIndex = 0;
@@ -82,13 +97,71 @@ namespace kurs2020 {
 			this->glavn_menu_text->Font = (gcnew System::Drawing::Font(L"Franklin Gothic Heavy", 20.25F, System::Drawing::FontStyle::Italic, 
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
 			this->glavn_menu_text->ForeColor = System::Drawing::Color::Purple;
-			this->glavn_menu_text->Location = System::Drawing::Point(0, 53);
+			this->glavn_menu_text->Location = System::Drawing::Point(0, 62);
 			this->glavn_menu_text->Name = L"glavn_menu_text";
-			this->glavn_menu_text->Size = System::Drawing::Size(343, 44);
+			this->glavn_menu_text->Size = System::Drawing::Size(344, 44);
 			this->glavn_menu_text->TabIndex = 1;
 			this->glavn_menu_text->Text = L"Главное меню";
 			this->glavn_menu_text->TextAlign = System::Drawing::ContentAlignment::TopCenter;
 			this->glavn_menu_text->Click += gcnew System::EventHandler(this, &Form1::label1_Click_1);
+			// 
+			// new_game_butt
+			// 
+			this->new_game_butt->Font = (gcnew System::Drawing::Font(L"Franklin Gothic Demi", 14.25F, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(204)));
+			this->new_game_butt->Location = System::Drawing::Point(60, 121);
+			this->new_game_butt->Name = L"new_game_butt";
+			this->new_game_butt->Size = System::Drawing::Size(220, 48);
+			this->new_game_butt->TabIndex = 2;
+			this->new_game_butt->Text = L"Новая игра";
+			this->new_game_butt->UseVisualStyleBackColor = true;
+			this->new_game_butt->Click += gcnew System::EventHandler(this, &Form1::button1_Click);
+			// 
+			// load_game_butt
+			// 
+			this->load_game_butt->Font = (gcnew System::Drawing::Font(L"Franklin Gothic Demi", 11.25F, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(204)));
+			this->load_game_butt->Location = System::Drawing::Point(60, 185);
+			this->load_game_butt->Name = L"load_game_butt";
+			this->load_game_butt->Size = System::Drawing::Size(220, 48);
+			this->load_game_butt->TabIndex = 3;
+			this->load_game_butt->Text = L"Загрузка\r\nнезаконченной игры";
+			this->load_game_butt->UseVisualStyleBackColor = true;
+			this->load_game_butt->Click += gcnew System::EventHandler(this, &Form1::button1_Click_1);
+			// 
+			// records_butt
+			// 
+			this->records_butt->Font = (gcnew System::Drawing::Font(L"Franklin Gothic Demi", 14.25F, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(204)));
+			this->records_butt->Location = System::Drawing::Point(60, 248);
+			this->records_butt->Name = L"records_butt";
+			this->records_butt->Size = System::Drawing::Size(220, 48);
+			this->records_butt->TabIndex = 4;
+			this->records_butt->Text = L"Список рекордов";
+			this->records_butt->UseVisualStyleBackColor = true;
+			this->records_butt->Click += gcnew System::EventHandler(this, &Form1::button1_Click_2);
+			// 
+			// quit_butt
+			// 
+			this->quit_butt->Font = (gcnew System::Drawing::Font(L"Franklin Gothic Demi", 14.25F, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(204)));
+			this->quit_butt->Location = System::Drawing::Point(60, 311);
+			this->quit_butt->Name = L"quit_butt";
+			this->quit_butt->Size = System::Drawing::Size(220, 48);
+			this->quit_butt->TabIndex = 5;
+			this->quit_butt->Text = L"Выход из игры";
+			this->quit_butt->UseVisualStyleBackColor = true;
+			// 
+			// spravk_butt
+			// 
+			this->spravk_butt->Font = (gcnew System::Drawing::Font(L"Franklin Gothic Demi", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(204)));
+			this->spravk_butt->Location = System::Drawing::Point(316, 3);
+			this->spravk_butt->Name = L"spravk_butt";
+			this->spravk_butt->Size = System::Drawing::Size(28, 32);
+			this->spravk_butt->TabIndex = 6;
+			this->spravk_butt->Text = L"\?";
+			this->spravk_butt->UseVisualStyleBackColor = true;
 			// 
 			// Form1
 			// 
@@ -99,13 +172,22 @@ namespace kurs2020 {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"$this.BackgroundImage")));
 			this->ClientSize = System::Drawing::Size(346, 387);
 			this->ControlBox = false;
+			this->Controls->Add(this->spravk_butt);
+			this->Controls->Add(this->quit_butt);
+			this->Controls->Add(this->records_butt);
+			this->Controls->Add(this->load_game_butt);
+			this->Controls->Add(this->new_game_butt);
 			this->Controls->Add(this->glavn_menu_text);
 			this->Controls->Add(this->igra_menu_text);
+			this->HelpButton = true;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^  >(resources->GetObject(L"$this.Icon")));
+			this->MaximizeBox = false;
 			this->MaximumSize = System::Drawing::Size(362, 426);
+			this->MinimizeBox = false;
 			this->MinimumSize = System::Drawing::Size(362, 426);
 			this->Name = L"Form1";
 			this->RightToLeftLayout = true;
+			this->ShowIcon = false;
 			this->Text = L"Главное меню";
 			this->Load += gcnew System::EventHandler(this, &Form1::Form1_Load);
 			this->ResumeLayout(false);
@@ -118,6 +200,12 @@ namespace kurs2020 {
 			 }
 	private: System::Void label1_Click_1(System::Object^  sender, System::EventArgs^  e) {
 			 }
+private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+		 }
+private: System::Void button1_Click_1(System::Object^  sender, System::EventArgs^  e) {
+		 }
+private: System::Void button1_Click_2(System::Object^  sender, System::EventArgs^  e) {
+		 }
 };
 }
 
