@@ -33,6 +33,9 @@
     <ClCompile Include="krest_and_village.cpp">
       <Filter>Файлы исходного кода</Filter>
     </ClCompile>
+    <ClCompile Include="main_game.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Form1.h">
@@ -45,6 +48,9 @@
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
     <ClInclude Include="krest_and_village.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="main_game.h">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
   </ItemGroup>

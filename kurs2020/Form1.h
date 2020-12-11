@@ -1,6 +1,7 @@
 #pragma once
 #include <cstdlib>
 #include "krest_and_village.h"
+#include "main_game.h"
 
 namespace kurs2020 {
 
@@ -204,6 +205,8 @@ namespace kurs2020 {
 	private: System::Void label1_Click_1(System::Object^  sender, System::EventArgs^  e) {
 			 }
 private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+			main_game^ main_game_p = gcnew main_game(); //указатель на форму
+			main_game_p -> ShowDialog(); //открыть форму
 		 }
 private: System::Void button1_Click_1(System::Object^  sender, System::EventArgs^  e) {
 		 }

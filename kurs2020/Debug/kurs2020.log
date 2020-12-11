@@ -1,4 +1,4 @@
-﻿Построение начато 11.12.2020 17:02:22.
+﻿Построение начато 11.12.2020 17:46:07.
      1>Проект "C:\Users\Алексей\Documents\GitHub\kurs2020\kurs2020\kurs2020.vcxproj" в узле 2 (целевые объекты build).
      1>InitializeBuildStatus:
          Обращение к "Debug\kurs2020.unsuccessfulbuild".
@@ -6,18 +6,18 @@
        Целевой объект "GenerateTargetFrameworkMonikerAttribute" пропускается, так как все выходные файлы актуальны по отношению к входным.
        ClCompile:
          Для всех выходных данных обновления не требуется.
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0" /Zi /clr:pure /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\kurs2020.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Core.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Drawing.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Windows.Forms.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Xml.dll" /analyze- /errorReport:prompt krest_and_village.cpp /clr:nostdlib 
-         krest_and_village.cpp
+         Для всех выходных данных обновления не требуется.
          Для всех выходных данных обновления не требуется.
        CoreResGen:
          Отсутствуют ресурсы, устаревшие по отношению к файлам своих источников. Пропуск формирования ресурсов.
        ResourceCompile:
          Для всех выходных данных обновления не требуется.
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Алексей\Documents\GitHub\kurs2020\Debug\kurs2020.exe" /INCREMENTAL /NOLOGO /ASSEMBLYRESOURCE:Debug\kurs2020.Form1.resources /MANIFEST /ManifestFile:"Debug\kurs2020.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Алексей\Documents\GitHub\kurs2020\Debug\kurs2020.pdb" /ASSEMBLYDEBUG /SUBSYSTEM:WINDOWS /TLBID:1 /ENTRY:"main" /DYNAMICBASE /FIXED:NO /NXCOMPAT /MACHINE:X86 Debug\app.res
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Алексей\Documents\GitHub\kurs2020\Debug\kurs2020.exe" /INCREMENTAL /NOLOGO /ASSEMBLYRESOURCE:Debug\kurs2020.Form1.resources /ASSEMBLYRESOURCE:Debug\kurs2020.main_game.resources /MANIFEST /ManifestFile:"Debug\kurs2020.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Алексей\Documents\GitHub\kurs2020\Debug\kurs2020.pdb" /ASSEMBLYDEBUG /SUBSYSTEM:WINDOWS /TLBID:1 /ENTRY:"main" /DYNAMICBASE /FIXED:NO /NXCOMPAT /MACHINE:X86 Debug\app.res
          Debug\AssemblyInfo.obj
          Debug\krest_and_village.obj
          Debug\kurs2020.obj
+         Debug\main_game.obj
          Debug\stdafx.obj
          "Debug\.NETFramework,Version=v4.0.AssemblyAttributes.obj"
          kurs2020.vcxproj -> C:\Users\Алексей\Documents\GitHub\kurs2020\Debug\kurs2020.exe
@@ -30,4 +30,4 @@
 
 Построение успешно завершено.
 
-Затраченное время: 00:00:01.77
+Затраченное время: 00:00:01.28
