@@ -1,5 +1,6 @@
 #pragma once
 #include <cstdlib>
+#include "krest_and_village.h"
 
 namespace kurs2020 {
 
