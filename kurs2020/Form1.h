@@ -1,4 +1,5 @@
 #pragma once
+#include <cstdlib>
 
 namespace kurs2020 {
 
@@ -151,6 +152,7 @@ namespace kurs2020 {
 			this->quit_butt->TabIndex = 5;
 			this->quit_butt->Text = L"Выход из игры";
 			this->quit_butt->UseVisualStyleBackColor = true;
+			this->quit_butt->Click += gcnew System::EventHandler(this, &Form1::quit_butt_Click);
 			// 
 			// spravk_butt
 			// 
@@ -205,6 +207,9 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 private: System::Void button1_Click_1(System::Object^  sender, System::EventArgs^  e) {
 		 }
 private: System::Void button1_Click_2(System::Object^  sender, System::EventArgs^  e) {
+		 }
+private: System::Void quit_butt_Click(System::Object^  sender, System::EventArgs^  e) {
+			 exit(0); //выход из программы
 		 }
 };
 }
