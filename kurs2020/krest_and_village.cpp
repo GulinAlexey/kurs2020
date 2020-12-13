@@ -3,7 +3,7 @@
 
 using namespace std;
 
-class Krest //класс крестьянина
+public class Krest //класс крестьянина
 {
 private:
 	string name; //Имя
@@ -107,7 +107,7 @@ public:
 	}
 };
 
-class Village //класс деревни
+public class Village //класс деревни
 {
 private:
 	int kolvo_krest; //Кол-во крестьян в деревне 
@@ -126,6 +126,19 @@ private:
 public:
 	Village() //конструктор без параметров
 	{
+		kolvo_krest=0;
+		hours_procv=0;
+		days_procv=0;
+		speed_life=0;
+		flag_season=0;
+		kolvo_hleb=0;
+		kolvo_skot=0;
+		budget_village=0;
+		hours_from_begin_of_season=0;
+		otschet_hours_net_krest=0;
+		price_hleb=0;
+		price_skot=0;
+		krests=0;
 	}
 
 	void Init_new_game() //инициализация при начале новой игры

@@ -1,35 +1,26 @@
-﻿Построение начато 14.12.2020 1:45:08.
-     1>Проект "C:\Users\Алексей\Documents\GitHub\kurs2020\kurs2020\kurs2020.vcxproj" в узле 2 (целевые объекты build).
-     1>InitializeBuildStatus:
+﻿Построение начато 14.12.2020 2:56:05.
+     1>Проект "C:\Users\Алексей\Documents\GitHub\kurs2020\kurs2020\kurs2020.vcxproj" в узле 2 (целевые объекты rebuild).
+     1>_PrepareForClean:
+         Файл "Debug\kurs2020.lastbuildstate" удаляется.
+       InitializeBuildStatus:
          Обращение к "Debug\kurs2020.unsuccessfulbuild".
        GenerateTargetFrameworkMonikerAttribute:
        Целевой объект "GenerateTargetFrameworkMonikerAttribute" пропускается, так как все выходные файлы актуальны по отношению к входным.
        ClCompile:
-         Для всех выходных данных обновления не требуется.
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0" /Zi /clr:pure /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\kurs2020.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Core.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Drawing.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Windows.Forms.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Xml.dll" /analyze- /errorReport:prompt krest_and_village.cpp /clr:nostdlib 
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0" /Zi /clr:pure /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"StdAfx.h" /Fp"Debug\kurs2020.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Core.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Drawing.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Windows.Forms.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Xml.dll" /analyze- /errorReport:prompt stdafx.cpp /clr:nostdlib 
+         stdafx.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0" /Zi /clr:pure /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\kurs2020.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Core.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Drawing.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Windows.Forms.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Xml.dll" /analyze- /errorReport:prompt AssemblyInfo.cpp krest_and_village.cpp kurs2020.cpp main_game.cpp tabl_krest.cpp /clr:nostdlib 
+         AssemblyInfo.cpp
          krest_and_village.cpp
-         Для всех выходных данных обновления не требуется.
-       CoreResGen:
-         Отсутствуют ресурсы, устаревшие по отношению к файлам своих источников. Пропуск формирования ресурсов.
-       ResourceCompile:
-         Для всех выходных данных обновления не требуется.
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Алексей\Documents\GitHub\kurs2020\Debug\kurs2020.exe" /INCREMENTAL /NOLOGO /ASSEMBLYRESOURCE:Debug\kurs2020.Form1.resources /ASSEMBLYRESOURCE:Debug\kurs2020.main_game.resources /ASSEMBLYRESOURCE:Debug\kurs2020.tabl_krest.resources /MANIFEST /ManifestFile:"Debug\kurs2020.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Алексей\Documents\GitHub\kurs2020\Debug\kurs2020.pdb" /ASSEMBLYDEBUG /SUBSYSTEM:WINDOWS /TLBID:1 /ENTRY:"main" /DYNAMICBASE /FIXED:NO /NXCOMPAT /MACHINE:X86 Debug\app.res
-         Debug\AssemblyInfo.obj
-         Debug\krest_and_village.obj
-         Debug\kurs2020.obj
-         Debug\main_game.obj
-         Debug\stdafx.obj
-         Debug\tabl_krest.obj
-         "Debug\.NETFramework,Version=v4.0.AssemblyAttributes.obj"
-         kurs2020.vcxproj -> C:\Users\Алексей\Documents\GitHub\kurs2020\Debug\kurs2020.exe
-       Manifest:
-         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\Users\Алексей\Documents\GitHub\kurs2020\Debug\kurs2020.exe;#1" /manifest Debug\kurs2020.exe.intermediate.manifest
-       FinalizeBuildStatus:
-         Файл "Debug\kurs2020.unsuccessfulbuild" удаляется.
-         Обращение к "Debug\kurs2020.lastbuildstate".
-     1>Построение проекта "C:\Users\Алексей\Documents\GitHub\kurs2020\kurs2020\kurs2020.vcxproj" завершено (целевые объекты build).
+         kurs2020.cpp
+     1>c:\users\алексей\documents\github\kurs2020\kurs2020\Form1.h(211): error C2027: использование неопределенного типа "Village"
+                 c:\users\алексей\documents\github\kurs2020\kurs2020\krest_and_village.h(2): см. объявление "Village"
+     1>c:\users\алексей\documents\github\kurs2020\kurs2020\Form1.h(211): error C2228: выражение слева от ".Init_new_game" должно представлять класс, структуру или объединение
+         main_game.cpp
+         tabl_krest.cpp
+         Создание кода...
+     1>Построение проекта "C:\Users\Алексей\Documents\GitHub\kurs2020\kurs2020\kurs2020.vcxproj" завершено (целевые объекты rebuild) с ошибкой.
 
-Построение успешно завершено.
+СБОЙ построения.
 
-Затраченное время: 00:00:04.62
+Затраченное время: 00:00:03.44

@@ -3,7 +3,6 @@
 #include "krest_and_village.h"
 #include "main_game.h"
 
-extern Village derevn; //объект, в котором хранится вся информация о деревне (глобальн.)
 
 namespace kurs2020 {
 
@@ -208,6 +207,7 @@ namespace kurs2020 {
 	private: System::Void label1_Click_1(System::Object^  sender, System::EventArgs^  e) {
 			 }
 private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+			derevn.Init_new_game();
 			main_game^ main_game_p = gcnew main_game(); //указатель на форму
 			main_game_p -> ShowDialog(); //открыть форму
 		 }
