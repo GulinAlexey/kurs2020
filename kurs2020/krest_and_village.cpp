@@ -15,6 +15,92 @@ private:
 	int money_trat; //Денежные расходы за один Час Процветания 
 	int naim; //Стоимость найма в рублях 
 	int otschet_hours_net_edi; //Отсчёт времени в Часах Процветания с момента, когда закончилась еда для этого крестьянина
+public:
+	Krest() //конструктор без параметров
+	{
+	}
+
+	//Получение и установление соответствующих полей
+	void set_name(string in)
+	{
+		this->name=in;
+	}
+	string get_name()
+	{
+		return name;
+	}
+	/////
+	void set_surname(string in)
+	{
+		this->surname=in;
+	}
+	string get_surname()
+	{
+		return surname;
+	}
+	/////
+	void set_proizv_hleb(int in)
+	{
+		this->proizv_hleb=in;
+	}
+	int get_proizv_hleb()
+	{
+		return proizv_hleb;
+	}
+	/////
+	void set_proizv_skot(int in)
+	{
+		this->proizv_skot=in;
+	}
+	int get_proizv_skot()
+	{
+		return proizv_skot;
+	}
+	/////
+	void set_eda_hleb(int in)
+	{
+		this->eda_hleb=in;
+	}
+	int get_eda_hleb()
+	{
+		return eda_hleb;
+	}
+	/////
+	void set_eda_skot(int in)
+	{
+		this->eda_skot=in;
+	}
+	int get_eda_skot()
+	{
+		return eda_skot;
+	}
+	/////
+	void set_money_trat(int in)
+	{
+		this->money_trat=in;
+	}
+	int get_money_trat()
+	{
+		return money_trat;
+	}
+	/////
+	void set_naim(int in)
+	{
+		this->naim=in;
+	}
+	int get_naim()
+	{
+		return naim;
+	}
+	/////
+	void set_otschet_hours_net_edi(int in)
+	{
+		this->otschet_hours_net_edi=in;
+	}
+	int get_otschet_hours_net_edi()
+	{
+		return otschet_hours_net_edi;
+	}
 };
 
 class Village //класс деревни
@@ -33,4 +119,8 @@ private:
 	int price_hleb; //Текущая цена за ед. хлеба на Торговой бирже в рублях 
 	int price_skot; //Текущая цена за одну голову домашнего скота на Торговой бирже в рублях 
 	Krest* krests; //крестьяне
+public:
+	Village() //конструктор без параметров
+	{
+	}
 };
