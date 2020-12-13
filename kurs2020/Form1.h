@@ -3,6 +3,8 @@
 #include "krest_and_village.h"
 #include "main_game.h"
 
+Village* derevn; //указатель на объект, в котором хранится вся информация о деревне (глобальн.)
+
 namespace kurs2020 {
 
 	using namespace System;
