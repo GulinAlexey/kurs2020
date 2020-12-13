@@ -1,5 +1,8 @@
 #pragma once
 #include "tabl_krest.h"
+#include "krest_and_village.h"
+
+extern Village derevn; //объект, в котором хранится вся информация о деревне (глобальн.)
 
 namespace kurs2020 {
 
