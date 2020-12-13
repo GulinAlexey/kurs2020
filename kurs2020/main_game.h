@@ -1,4 +1,5 @@
 #pragma once
+#include "tabl_krest.h"
 
 namespace kurs2020 {
 
@@ -48,6 +49,7 @@ namespace kurs2020 {
 	private: System::Windows::Forms::GroupBox^  pomoshnik_box;
 	private: System::Windows::Forms::Button^  spisok_krest_butt;
 	private: System::Windows::Forms::Button^  birzha_butt;
+	private: System::Windows::Forms::Label^  vihod_info;
 
 
 
@@ -78,6 +80,7 @@ namespace kurs2020 {
 			this->pomoshnik_box = (gcnew System::Windows::Forms::GroupBox());
 			this->spisok_krest_butt = (gcnew System::Windows::Forms::Button());
 			this->birzha_butt = (gcnew System::Windows::Forms::Button());
+			this->vihod_info = (gcnew System::Windows::Forms::Label());
 			this->lent_menu->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -219,6 +222,7 @@ namespace kurs2020 {
 			this->spisok_krest_butt->TabStop = false;
 			this->spisok_krest_butt->Text = L"Список крестьян";
 			this->spisok_krest_butt->UseVisualStyleBackColor = true;
+			this->spisok_krest_butt->Click += gcnew System::EventHandler(this, &main_game::spisok_krest_butt_Click);
 			// 
 			// birzha_butt
 			// 
@@ -233,12 +237,23 @@ namespace kurs2020 {
 			this->birzha_butt->Text = L"Товарная биржа";
 			this->birzha_butt->UseVisualStyleBackColor = true;
 			// 
+			// vihod_info
+			// 
+			this->vihod_info->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+			this->vihod_info->AutoSize = true;
+			this->vihod_info->Location = System::Drawing::Point(621, 28);
+			this->vihod_info->Name = L"vihod_info";
+			this->vihod_info->Size = System::Drawing::Size(223, 13);
+			this->vihod_info->TabIndex = 9;
+			this->vihod_info->Text = L"Не забудь сохранить игру перед выходом!";
+			// 
 			// main_game
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(844, 501);
+			this->Controls->Add(this->vihod_info);
 			this->Controls->Add(this->birzha_butt);
 			this->Controls->Add(this->spisok_krest_butt);
 			this->Controls->Add(this->pomoshnik_box);
@@ -268,5 +283,9 @@ namespace kurs2020 {
 			 }
 	private: System::Void label1_Click(System::Object^  sender, System::EventArgs^  e) {
 			 }
+private: System::Void spisok_krest_butt_Click(System::Object^  sender, System::EventArgs^  e) {
+			tabl_krest^ tabl_krest_p = gcnew tabl_krest(); //указатель на форму
+			tabl_krest_p -> ShowDialog(); //открыть форму
+		 }
 };
 }
