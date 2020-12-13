@@ -84,8 +84,7 @@ namespace kurs2020 {
 			this->igra_menu_text->BackColor = System::Drawing::Color::Transparent;
 			this->igra_menu_text->Font = (gcnew System::Drawing::Font(L"Franklin Gothic Heavy", 15.75F, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(204)));
-			this->igra_menu_text->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)), 
-				static_cast<System::Int32>(static_cast<System::Byte>(192)));
+			this->igra_menu_text->ForeColor = System::Drawing::Color::Navy;
 			this->igra_menu_text->Location = System::Drawing::Point(1, 38);
 			this->igra_menu_text->Name = L"igra_menu_text";
 			this->igra_menu_text->Size = System::Drawing::Size(343, 29);
@@ -99,7 +98,8 @@ namespace kurs2020 {
 			this->glavn_menu_text->BackColor = System::Drawing::Color::Transparent;
 			this->glavn_menu_text->Font = (gcnew System::Drawing::Font(L"Franklin Gothic Heavy", 20.25F, System::Drawing::FontStyle::Italic, 
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
-			this->glavn_menu_text->ForeColor = System::Drawing::Color::Purple;
+			this->glavn_menu_text->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(64)), 
+				static_cast<System::Int32>(static_cast<System::Byte>(64)));
 			this->glavn_menu_text->Location = System::Drawing::Point(0, 62);
 			this->glavn_menu_text->Name = L"glavn_menu_text";
 			this->glavn_menu_text->Size = System::Drawing::Size(344, 44);
@@ -192,6 +192,7 @@ namespace kurs2020 {
 			this->Name = L"Form1";
 			this->RightToLeftLayout = true;
 			this->ShowIcon = false;
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Главное меню";
 			this->Load += gcnew System::EventHandler(this, &Form1::Form1_Load);
 			this->ResumeLayout(false);

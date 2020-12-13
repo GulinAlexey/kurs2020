@@ -45,6 +45,9 @@ namespace kurs2020 {
 	private: System::Windows::Forms::Label^  budget_text;
 	private: System::Windows::Forms::Label^  hleb_text;
 	private: System::Windows::Forms::Label^  skot_text;
+	private: System::Windows::Forms::GroupBox^  pomoshnik_box;
+	private: System::Windows::Forms::Button^  spisok_krest_butt;
+	private: System::Windows::Forms::Button^  birzha_butt;
 
 
 
@@ -72,6 +75,9 @@ namespace kurs2020 {
 			this->budget_text = (gcnew System::Windows::Forms::Label());
 			this->hleb_text = (gcnew System::Windows::Forms::Label());
 			this->skot_text = (gcnew System::Windows::Forms::Label());
+			this->pomoshnik_box = (gcnew System::Windows::Forms::GroupBox());
+			this->spisok_krest_butt = (gcnew System::Windows::Forms::Button());
+			this->birzha_butt = (gcnew System::Windows::Forms::Button());
 			this->lent_menu->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -183,12 +189,59 @@ namespace kurs2020 {
 			this->skot_text->TabIndex = 6;
 			this->skot_text->Text = L"Домашний скот: ";
 			// 
+			// pomoshnik_box
+			// 
+			this->pomoshnik_box->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left) 
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->pomoshnik_box->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(255)), 
+				static_cast<System::Int32>(static_cast<System::Byte>(200)));
+			this->pomoshnik_box->BackgroundImage = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"pomoshnik_box.BackgroundImage")));
+			this->pomoshnik_box->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->pomoshnik_box->Font = (gcnew System::Drawing::Font(L"Calibri", 14.25F, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(204)));
+			this->pomoshnik_box->Location = System::Drawing::Point(12, 389);
+			this->pomoshnik_box->Name = L"pomoshnik_box";
+			this->pomoshnik_box->RightToLeft = System::Windows::Forms::RightToLeft::No;
+			this->pomoshnik_box->Size = System::Drawing::Size(820, 100);
+			this->pomoshnik_box->TabIndex = 7;
+			this->pomoshnik_box->TabStop = false;
+			this->pomoshnik_box->Text = L"Информация от Помощника";
+			// 
+			// spisok_krest_butt
+			// 
+			this->spisok_krest_butt->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+			this->spisok_krest_butt->Font = (gcnew System::Drawing::Font(L"DejaVu Serif Condensed", 14.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)), 
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
+			this->spisok_krest_butt->Location = System::Drawing::Point(612, 83);
+			this->spisok_krest_butt->Name = L"spisok_krest_butt";
+			this->spisok_krest_butt->Size = System::Drawing::Size(220, 48);
+			this->spisok_krest_butt->TabIndex = 3;
+			this->spisok_krest_butt->TabStop = false;
+			this->spisok_krest_butt->Text = L"Список крестьян";
+			this->spisok_krest_butt->UseVisualStyleBackColor = true;
+			// 
+			// birzha_butt
+			// 
+			this->birzha_butt->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+			this->birzha_butt->Font = (gcnew System::Drawing::Font(L"DejaVu Serif Condensed", 14.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)), 
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
+			this->birzha_butt->Location = System::Drawing::Point(612, 147);
+			this->birzha_butt->Name = L"birzha_butt";
+			this->birzha_butt->Size = System::Drawing::Size(220, 48);
+			this->birzha_butt->TabIndex = 8;
+			this->birzha_butt->TabStop = false;
+			this->birzha_butt->Text = L"Товарная биржа";
+			this->birzha_butt->UseVisualStyleBackColor = true;
+			// 
 			// main_game
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(844, 501);
+			this->Controls->Add(this->birzha_butt);
+			this->Controls->Add(this->spisok_krest_butt);
+			this->Controls->Add(this->pomoshnik_box);
 			this->Controls->Add(this->skot_text);
 			this->Controls->Add(this->hleb_text);
 			this->Controls->Add(this->budget_text);
