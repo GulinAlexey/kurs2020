@@ -123,4 +123,113 @@ public:
 	Village() //конструктор без параметров
 	{
 	}
+
+	//Получение и установление соответствующих полей
+	void set_kolvo_krest(int in)
+	{
+		this->kolvo_krest=in;
+	}
+	int get_kolvo_krest()
+	{
+		return kolvo_krest;
+	}
+	/////
+	void set_hours_procv(int in)
+	{
+		this->hours_procv=in;
+	}
+	int get_hours_procv()
+	{
+		return hours_procv;
+	}
+	/////
+	void set_days_procv(int in)
+	{
+		this->days_procv=in;
+	}
+	int get_days_procv()
+	{
+		return days_procv;
+	}
+	/////
+	void set_speed_life(int in)
+	{
+		this->speed_life=in;
+	}
+	int get_speed_life()
+	{
+		return speed_life;
+	}
+	/////
+	void set_flag_season(int in)
+	{
+		this->flag_season=in;
+	}
+	int get_flag_season()
+	{
+		return flag_season;
+	}
+	/////
+	void set_kolvo_hleb(int in)
+	{
+		this->kolvo_hleb=in;
+	}
+	int get_kolvo_hleb()
+	{
+		return kolvo_hleb;
+	}
+	/////
+	void set_kolvo_skot(int in)
+	{
+		this->kolvo_skot=in;
+	}
+	int get_kolvo_skot()
+	{
+		return kolvo_skot;
+	}
+	/////
+	void set_budget_village(int in)
+	{
+		this->budget_village=in;
+	}
+	int get_budget_village()
+	{
+		return budget_village;
+	}
+	/////
+	void set_hours_from_begin_of_season(int in)
+	{
+		this->hours_from_begin_of_season=in;
+	}
+	int get_hours_from_begin_of_season()
+	{
+		return hours_from_begin_of_season;
+	}
+	/////
+	void set_otschet_hours_net_krest(int in)
+	{
+		this->otschet_hours_net_krest=in;
+	}
+	int get_otschet_hours_net_krest()
+	{
+		return otschet_hours_net_krest;
+	}
+	/////
+	void set_price_hleb(int in)
+	{
+		this->price_hleb=in;
+	}
+	int get_price_hleb()
+	{
+		return price_hleb;
+	}
+	/////
+	void set_price_skot(int in)
+	{
+		this->price_skot=in;
+	}
+	int get_price_skot()
+	{
+		return price_skot;
+	}
 };
