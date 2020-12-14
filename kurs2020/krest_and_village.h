@@ -1,5 +1,6 @@
-#ifndef KREST_AND_VILLAGE_H
-#define KREST_AND_VILLAGE_H
+// препроцессорная обёртка (чтобы не возникало ошибок «переопределение типа "class"»)
+#ifndef KREST_AND_VILLAGE_H // если имя KREST_AND_VILLAGE_H ещё не определено
+#define KREST_AND_VILLAGE_H // определить имя KREST_AND_VILLAGE_H
 #include <string>
 
 using namespace std;
@@ -111,4 +112,4 @@ public:
 
 extern Village derevn; //объект, в котором хранится вся информация о деревне (глобальн.)
 
-#endif
+#endif KREST_AND_VILLAGE_H // если имя KREST_AND_VILLAGE_H уже определено, повторно не определять

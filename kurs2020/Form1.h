@@ -207,7 +207,7 @@ namespace kurs2020 {
 	private: System::Void label1_Click_1(System::Object^  sender, System::EventArgs^  e) {
 			 }
 private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
-			derevn.Init_new_game();
+			derevn.Init_new_game(); //инициализация деревни перед началом новой игры
 			main_game^ main_game_p = gcnew main_game(); //указатель на форму
 			main_game_p -> ShowDialog(); //открыть форму
 		 }
