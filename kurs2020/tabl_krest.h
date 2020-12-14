@@ -38,7 +38,7 @@ namespace kurs2020 {
 		}
 	private: System::Windows::Forms::Button^  trud_butt;
 	private: System::Windows::Forms::Button^  izgnat_butt;
-	private: System::Windows::Forms::TextBox^  num_krest_pole;
+
 	private: System::Windows::Forms::Label^  label1;
 	private: System::Windows::Forms::GroupBox^  izgnat_box;
 	private: System::Windows::Forms::DataGridView^  spisok;
@@ -50,6 +50,8 @@ namespace kurs2020 {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^  proizv_tabl;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^  prozhorl_tabl;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^  rashod_tabl;
+	private: System::Windows::Forms::MaskedTextBox^  num_krest_pole;
+
 
 
 
@@ -78,9 +80,9 @@ namespace kurs2020 {
 			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(tabl_krest::typeid));
 			this->trud_butt = (gcnew System::Windows::Forms::Button());
 			this->izgnat_butt = (gcnew System::Windows::Forms::Button());
-			this->num_krest_pole = (gcnew System::Windows::Forms::TextBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->izgnat_box = (gcnew System::Windows::Forms::GroupBox());
+			this->num_krest_pole = (gcnew System::Windows::Forms::MaskedTextBox());
 			this->spisok = (gcnew System::Windows::Forms::DataGridView());
 			this->number_tabl = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->name_tabl = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
@@ -118,15 +120,7 @@ namespace kurs2020 {
 			this->izgnat_butt->TabStop = false;
 			this->izgnat_butt->Text = L"Изгнать";
 			this->izgnat_butt->UseVisualStyleBackColor = true;
-			// 
-			// num_krest_pole
-			// 
-			this->num_krest_pole->Location = System::Drawing::Point(22, 39);
-			this->num_krest_pole->Name = L"num_krest_pole";
-			this->num_krest_pole->Size = System::Drawing::Size(283, 20);
-			this->num_krest_pole->TabIndex = 11;
-			this->num_krest_pole->TabStop = false;
-			this->num_krest_pole->TextAlign = System::Windows::Forms::HorizontalAlignment::Right;
+			this->izgnat_butt->Click += gcnew System::EventHandler(this, &tabl_krest::izgnat_butt_Click);
 			// 
 			// label1
 			// 
@@ -149,6 +143,18 @@ namespace kurs2020 {
 			this->izgnat_box->TabIndex = 13;
 			this->izgnat_box->TabStop = false;
 			// 
+			// num_krest_pole
+			// 
+			this->num_krest_pole->Location = System::Drawing::Point(22, 39);
+			this->num_krest_pole->Mask = L"000000000000000000000000000000000000000000000";
+			this->num_krest_pole->Name = L"num_krest_pole";
+			this->num_krest_pole->PromptChar = ' ';
+			this->num_krest_pole->Size = System::Drawing::Size(283, 20);
+			this->num_krest_pole->TabIndex = 16;
+			this->num_krest_pole->TabStop = false;
+			this->num_krest_pole->TextAlign = System::Windows::Forms::HorizontalAlignment::Right;
+			this->num_krest_pole->TextChanged += gcnew System::EventHandler(this, &tabl_krest::num_krest_pole1_TextChanged);
+			// 
 			// spisok
 			// 
 			this->spisok->AllowUserToAddRows = false;
@@ -167,6 +173,7 @@ namespace kurs2020 {
 			this->spisok->ReadOnly = true;
 			this->spisok->RowHeadersVisible = false;
 			this->spisok->RowHeadersWidthSizeMode = System::Windows::Forms::DataGridViewRowHeadersWidthSizeMode::AutoSizeToAllHeaders;
+			this->spisok->ScrollBars = System::Windows::Forms::ScrollBars::Vertical;
 			this->spisok->SelectionMode = System::Windows::Forms::DataGridViewSelectionMode::CellSelect;
 			this->spisok->ShowEditingIcon = false;
 			this->spisok->Size = System::Drawing::Size(850, 362);
@@ -237,6 +244,7 @@ namespace kurs2020 {
 			// 
 			// tabl_krest
 			// 
+			this->AcceptButton = this->izgnat_butt;
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"$this.BackgroundImage")));
@@ -279,5 +287,32 @@ namespace kurs2020 {
 		}
 
 		}
+private: System::Void num_krest_pole_TextChanged(System::Object^  sender, System::EventArgs^  e) {
+			int kolvo_strr=derevn.get_kolvo_krest(); //получить кол-во крестьян в списке
+			if (this->num_krest_pole->Text!=L"") //если поле с номером строки не пустое
+				if((Convert::ToDouble(this->num_krest_pole->Text) > kolvo_strr) || (Convert::ToDouble(this->num_krest_pole->Text)<1)) //если выбр. строка больше общего кол-ва строк, то отключить кнопку
+				{
+					this->izgnat_butt->Enabled = false;
+				}
+				else
+					this->izgnat_butt->Enabled = true;
+		 }
+private: System::Void num_krest_pole1_TextChanged(System::Object^  sender, System::EventArgs^  e) {
+			int kolvo_strr=derevn.get_kolvo_krest(); //получить кол-во крестьян в списке
+			if (this->num_krest_pole->Text!=L"") //если поле с номером строки не пустое
+			{
+				if((Convert::ToDouble(this->num_krest_pole->Text) > kolvo_strr) || (Convert::ToDouble(this->num_krest_pole->Text)<1)) //если выбр. строка больше общего кол-ва строк, то отключить кнопку
+				{
+					this->izgnat_butt->Enabled = false;
+				}
+				else
+					this->izgnat_butt->Enabled = true;
+			}
+			else
+				this->izgnat_butt->Enabled = false;
+		 }
+private: System::Void izgnat_butt_Click(System::Object^  sender, System::EventArgs^  e) {
+
+		 }
 };
 }
