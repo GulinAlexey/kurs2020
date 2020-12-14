@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "krest_and_village.h"
 #include <fstream>
+#include <iostream>
 
 //РЕАЛИЗАЦИИ МЕТОДОВ КЛАССОВ (В ФАЙЛЕ .h ТОЛЬКО ИХ ПРОТОТИПЫ)
 
@@ -21,13 +22,31 @@ Krest::Krest() //конструктор без параметров
 
 void Krest::Init_rand() //инициализация полей случайно (в фиксированном диапазоне) для новых крестьян
 {
-	name="name"; //ВРЕМЕННО
+	ifstream fin;
+	fin.open("names.txt", ios::in);
+	int kolvo_name=0;
+	while(!fin.eof())
+	{
+		getline(fin, name, '\n');
+		kolvo_name+=1;
+	}
+	fin.close();
+	int num_name = (1 + rand() % kolvo_name) -2;
+	fin.open("names.txt", ios::in);
+	for (int i_n=0; ; i_n++)
+	{
+		getline(fin, name, '\n');
+		if (i_n==num_name+1)
+			break;
+	}
+	fin.close();
+
 	surname="surname"; //ВРЕМЕННО
 	proizv_hleb = 1 + rand() % 10; //случайное число в интервале от 1 до 10 включительно
 	proizv_skot = (1 + rand() % 3) -1; //случайное число в интервале от 0 до 2 включительно
 	eda_hleb = 1 + rand() % 3; //случайное число в интервале от 1 до 3 включительно
 	eda_skot =(1 + rand() % 2) -1; //случайное число в интервале от 0 до 1 включительно
-	money_trat = 10 + rand() % 100; //случайное число в интервале от 10 до 100 включительно
+	money_trat = 10 + rand() % 90; //случайное число в интервале от 10 до 100 включительно
 	naim = 5 + rand() % 50; //случайное число в интервале от 5 до 50 включительно
 	otschet_hours_net_edi=0;
 }
