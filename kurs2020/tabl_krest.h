@@ -312,7 +312,8 @@ private: System::Void num_krest_pole1_TextChanged(System::Object^  sender, Syste
 				this->izgnat_butt->Enabled = false;
 		 }
 private: System::Void izgnat_butt_Click(System::Object^  sender, System::EventArgs^  e) {
-
+			 derevn.Delete_krest(Convert::ToDouble(this->num_krest_pole->Text)); //удалить крестьянина
+			 tabl_krest_Activated(sender,e); //обновить таблицу
 		 }
 };
 }
