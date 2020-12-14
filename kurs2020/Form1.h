@@ -1,5 +1,6 @@
 #pragma once
 #include <cstdlib>
+#include <ctime>
 #include "krest_and_village.h"
 #include "main_game.h"
 
@@ -201,6 +202,7 @@ namespace kurs2020 {
 		}
 #pragma endregion
 	private: System::Void Form1_Load(System::Object^  sender, System::EventArgs^  e) {
+			srand(time(NULL)); //автоматическая рандомизация генератора случайных чисел в зависимости от времени (чтобы всегда давал разный результат)
 			 }
 	private: System::Void label1_Click(System::Object^  sender, System::EventArgs^  e) {
 			 }
