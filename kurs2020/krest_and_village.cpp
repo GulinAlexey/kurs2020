@@ -22,26 +22,44 @@ Krest::Krest() //конструктор без параметров
 
 void Krest::Init_rand() //инициализаци€ полей случайно (в фиксированном диапазоне) дл€ новых кресть€н
 {
-	ifstream fin;
-	fin.open("names.txt", ios::in);
-	int kolvo_name=0;
-	while(!fin.eof())
+	ifstream fin; //создать объект класса ifstream
+	//ѕќЋ”„»“№ —Ћ”„ј…Ќќ≈ »ћя »« ‘ј…Ћј
+	fin.open("names.txt", ios::in); //открыть файл
+	int kolvo_name=0; //начальное значение кол-ва слов в файле
+	while(!fin.eof()) //пока не прочитает весь файл
 	{
-		getline(fin, name, '\n');
-		kolvo_name+=1;
+		getline(fin, name, '\n'); //получить слово из файла
+		kolvo_name+=1; //увеличить кол-во слов на 1
 	}
-	fin.close();
-	int num_name = (1 + rand() % kolvo_name) -2;
-	fin.open("names.txt", ios::in);
+	fin.close(); //закрыть файл
+	int num_name = (1 + rand() % kolvo_name) -2; //получить случайный номер слова из общего кол-ва
+	fin.open("names.txt", ios::in); //открыть файл
 	for (int i_n=0; ; i_n++)
 	{
-		getline(fin, name, '\n');
-		if (i_n==num_name+1)
+		getline(fin, name, '\n'); //получить слово из файла
+		if (i_n==num_name+1) //если это искомое слово, остановить цикл
 			break;
 	}
-	fin.close();
+	fin.close(); //закрыть файл
+	//ѕќЋ”„»“№ —Ћ”„ј…Ќ”ё ‘јћ»Ћ»ё »« ‘ј…Ћј
+	fin.open("surnames.txt", ios::in); //открыть файл
+	int kolvo_sur=0; //начальное значение кол-ва слов в файле
+	while(!fin.eof()) //пока не прочитает весь файл
+	{
+		getline(fin, surname, '\n'); //получить слово из файла
+		kolvo_sur+=1; //увеличить кол-во слов на 1
+	}
+	fin.close(); //закрыть файл
+	int num_sur = (1 + rand() % kolvo_sur) -2; //получить случайный номер слова из общего кол-ва
+	fin.open("surnames.txt", ios::in); //открыть файл
+	for (int i_nn=0; ; i_nn++)
+	{
+		getline(fin, surname, '\n'); //получить слово из файла
+		if (i_nn==num_sur+1) //если это искомое слово, остановить цикл
+			break;
+	}
+	fin.close(); //закрыть файл
 
-	surname="surname"; //¬–≈ћ≈ЌЌќ
 	proizv_hleb = 1 + rand() % 10; //случайное число в интервале от 1 до 10 включительно
 	proizv_skot = (1 + rand() % 3) -1; //случайное число в интервале от 0 до 2 включительно
 	eda_hleb = 1 + rand() % 3; //случайное число в интервале от 1 до 3 включительно
