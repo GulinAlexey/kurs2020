@@ -190,6 +190,11 @@ void Village::Init_new_game() //инициализация при начале новой игры
 	}
 }
 
+void Village::Delete_krest(int number) //удаление крестьянина с выбранным номером
+{
+
+}
+
 //Получение и установление соответствующих полей для деревни
 void Village::set_kolvo_krest(int in)
 {
