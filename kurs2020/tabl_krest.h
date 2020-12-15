@@ -1,5 +1,6 @@
 #pragma once
 #include "krest_and_village.h"
+#include "tabl_naim.h"
 #include <string>
 
 namespace kurs2020 {
@@ -106,6 +107,7 @@ namespace kurs2020 {
 			this->trud_butt->TabStop = false;
 			this->trud_butt->Text = L"открыть биржу труда";
 			this->trud_butt->UseVisualStyleBackColor = true;
+			this->trud_butt->Click += gcnew System::EventHandler(this, &tabl_krest::trud_butt_Click);
 			// 
 			// izgnat_butt
 			// 
@@ -261,6 +263,7 @@ namespace kurs2020 {
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Список крестьян";
 			this->Activated += gcnew System::EventHandler(this, &tabl_krest::tabl_krest_Activated);
+			this->Load += gcnew System::EventHandler(this, &tabl_krest::tabl_krest_Load);
 			this->izgnat_box->ResumeLayout(false);
 			this->izgnat_box->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->spisok))->EndInit();
@@ -314,6 +317,12 @@ private: System::Void num_krest_pole1_TextChanged(System::Object^  sender, Syste
 private: System::Void izgnat_butt_Click(System::Object^  sender, System::EventArgs^  e) {
 			 derevn.Delete_krest(Convert::ToDouble(this->num_krest_pole->Text)); //удалить крестьянина
 			 tabl_krest_Activated(sender,e); //обновить таблицу
+		 }
+private: System::Void tabl_krest_Load(System::Object^  sender, System::EventArgs^  e) {
+		 }
+private: System::Void trud_butt_Click(System::Object^  sender, System::EventArgs^  e) {
+			tabl_naim^ tabl_naim_p = gcnew tabl_naim(); //указатель на форму
+			tabl_naim_p -> ShowDialog(); //открыть форму
 		 }
 };
 }
