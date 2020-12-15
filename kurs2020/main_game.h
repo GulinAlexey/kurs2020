@@ -99,10 +99,10 @@ namespace kurs2020 {
 			this->lent_menu->Dock = System::Windows::Forms::DockStyle::None;
 			this->lent_menu->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {this->save_game_butt, this->spravk_lent_butt, 
 				this->go_to_main_menu_butt});
-			this->lent_menu->Location = System::Drawing::Point(380, 0);
+			this->lent_menu->Location = System::Drawing::Point(472, 0);
 			this->lent_menu->Name = L"lent_menu";
 			this->lent_menu->RightToLeft = System::Windows::Forms::RightToLeft::No;
-			this->lent_menu->Size = System::Drawing::Size(464, 24);
+			this->lent_menu->Size = System::Drawing::Size(372, 24);
 			this->lent_menu->TabIndex = 0;
 			this->lent_menu->Text = L"lent_menu";
 			// 
@@ -212,11 +212,11 @@ namespace kurs2020 {
 			this->pomoshnik_box->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->pomoshnik_box->Controls->Add(this->event_helper);
 			this->pomoshnik_box->Controls->Add(this->time_helper);
-			this->pomoshnik_box->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point, 
+			this->pomoshnik_box->Font = (gcnew System::Drawing::Font(L"Calibri", 12.75F, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(204)));
 			this->pomoshnik_box->Location = System::Drawing::Point(12, 389);
 			this->pomoshnik_box->Name = L"pomoshnik_box";
-			this->pomoshnik_box->RightToLeft = System::Windows::Forms::RightToLeft::No;
+			this->pomoshnik_box->RightToLeft = System::Windows::Forms::RightToLeft::Yes;
 			this->pomoshnik_box->Size = System::Drawing::Size(820, 100);
 			this->pomoshnik_box->TabIndex = 7;
 			this->pomoshnik_box->TabStop = false;
@@ -231,6 +231,7 @@ namespace kurs2020 {
 				static_cast<System::Byte>(0)));
 			this->event_helper->Location = System::Drawing::Point(6, 51);
 			this->event_helper->Name = L"event_helper";
+			this->event_helper->RightToLeft = System::Windows::Forms::RightToLeft::No;
 			this->event_helper->Size = System::Drawing::Size(533, 22);
 			this->event_helper->TabIndex = 1;
 			this->event_helper->Text = L"Стая волков напала на ваш скот. Вы потеряли Х голов скота.";
@@ -243,6 +244,7 @@ namespace kurs2020 {
 				static_cast<System::Byte>(0)));
 			this->time_helper->Location = System::Drawing::Point(6, 24);
 			this->time_helper->Name = L"time_helper";
+			this->time_helper->RightToLeft = System::Windows::Forms::RightToLeft::No;
 			this->time_helper->Size = System::Drawing::Size(447, 22);
 			this->time_helper->TabIndex = 0;
 			this->time_helper->Text = L"До конца этого времени года осталось Х Часов Процветания.";
