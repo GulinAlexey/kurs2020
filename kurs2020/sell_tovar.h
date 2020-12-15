@@ -109,7 +109,7 @@ namespace kurs2020 {
 				static_cast<System::Byte>(204)));
 			this->label2->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(64)));
-			this->label2->Location = System::Drawing::Point(168, 188);
+			this->label2->Location = System::Drawing::Point(41, 195);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(283, 34);
 			this->label2->TabIndex = 16;
@@ -118,7 +118,7 @@ namespace kurs2020 {
 			// 
 			// num_sell
 			// 
-			this->num_sell->Location = System::Drawing::Point(168, 235);
+			this->num_sell->Location = System::Drawing::Point(41, 242);
 			this->num_sell->Mask = L"000000000000000000000000000000000000000000000";
 			this->num_sell->Name = L"num_sell";
 			this->num_sell->PromptChar = ' ';
@@ -132,7 +132,7 @@ namespace kurs2020 {
 			this->sell_butt->Enabled = false;
 			this->sell_butt->Font = (gcnew System::Drawing::Font(L"Verdana", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(204)));
-			this->sell_butt->Location = System::Drawing::Point(251, 273);
+			this->sell_butt->Location = System::Drawing::Point(124, 280);
 			this->sell_butt->Name = L"sell_butt";
 			this->sell_butt->Size = System::Drawing::Size(119, 28);
 			this->sell_butt->TabIndex = 20;
@@ -145,7 +145,7 @@ namespace kurs2020 {
 			this->hleb_or_skot->BackgroundImage = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"hleb_or_skot.BackgroundImage")));
 			this->hleb_or_skot->Controls->Add(this->skot_radio);
 			this->hleb_or_skot->Controls->Add(this->hleb_radio);
-			this->hleb_or_skot->Location = System::Drawing::Point(467, 188);
+			this->hleb_or_skot->Location = System::Drawing::Point(366, 195);
 			this->hleb_or_skot->Name = L"hleb_or_skot";
 			this->hleb_or_skot->Size = System::Drawing::Size(165, 113);
 			this->hleb_or_skot->TabIndex = 21;
@@ -185,7 +185,7 @@ namespace kurs2020 {
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"$this.BackgroundImage")));
-			this->ClientSize = System::Drawing::Size(754, 371);
+			this->ClientSize = System::Drawing::Size(571, 371);
 			this->Controls->Add(this->hleb_or_skot);
 			this->Controls->Add(this->sell_butt);
 			this->Controls->Add(this->num_sell);
@@ -193,11 +193,12 @@ namespace kurs2020 {
 			this->Controls->Add(this->price_skot_text);
 			this->Controls->Add(this->price_hleb_text);
 			this->MaximizeBox = false;
-			this->MaximumSize = System::Drawing::Size(770, 410);
+			this->MaximumSize = System::Drawing::Size(587, 410);
 			this->MinimizeBox = false;
-			this->MinimumSize = System::Drawing::Size(770, 410);
+			this->MinimumSize = System::Drawing::Size(587, 410);
 			this->Name = L"sell_tovar";
 			this->ShowIcon = false;
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Товарная биржа";
 			this->hleb_or_skot->ResumeLayout(false);
 			this->hleb_or_skot->PerformLayout();

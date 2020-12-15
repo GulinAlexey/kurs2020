@@ -3,6 +3,7 @@
 #include <ctime>
 #include "krest_and_village.h"
 #include "main_game.h"
+#include "spravk.h"
 
 
 namespace kurs2020 {
@@ -168,6 +169,7 @@ namespace kurs2020 {
 			this->spravk_butt->TabIndex = 6;
 			this->spravk_butt->Text = L"\?";
 			this->spravk_butt->UseVisualStyleBackColor = true;
+			this->spravk_butt->Click += gcnew System::EventHandler(this, &Form1::spravk_butt_Click);
 			// 
 			// Form1
 			// 
@@ -219,6 +221,10 @@ private: System::Void button1_Click_2(System::Object^  sender, System::EventArgs
 		 }
 private: System::Void quit_butt_Click(System::Object^  sender, System::EventArgs^  e) {
 			 exit(0); //выход из программы
+		 }
+private: System::Void spravk_butt_Click(System::Object^  sender, System::EventArgs^  e) {
+			spravk^ spravk_p = gcnew spravk(); //указатель на форму
+			spravk_p -> ShowDialog(); //открыть форму
 		 }
 };
 }

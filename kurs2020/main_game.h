@@ -2,6 +2,7 @@
 #include "tabl_krest.h"
 #include "krest_and_village.h"
 #include "sell_tovar.h"
+#include "spravk.h"
 
 
 namespace kurs2020 {
@@ -83,11 +84,11 @@ namespace kurs2020 {
 			this->hleb_text = (gcnew System::Windows::Forms::Label());
 			this->skot_text = (gcnew System::Windows::Forms::Label());
 			this->pomoshnik_box = (gcnew System::Windows::Forms::GroupBox());
+			this->event_helper = (gcnew System::Windows::Forms::Label());
+			this->time_helper = (gcnew System::Windows::Forms::Label());
 			this->spisok_krest_butt = (gcnew System::Windows::Forms::Button());
 			this->birzha_butt = (gcnew System::Windows::Forms::Button());
 			this->vihod_info = (gcnew System::Windows::Forms::Label());
-			this->time_helper = (gcnew System::Windows::Forms::Label());
-			this->event_helper = (gcnew System::Windows::Forms::Label());
 			this->lent_menu->SuspendLayout();
 			this->pomoshnik_box->SuspendLayout();
 			this->SuspendLayout();
@@ -98,10 +99,10 @@ namespace kurs2020 {
 			this->lent_menu->Dock = System::Windows::Forms::DockStyle::None;
 			this->lent_menu->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {this->save_game_butt, this->spravk_lent_butt, 
 				this->go_to_main_menu_butt});
-			this->lent_menu->Location = System::Drawing::Point(472, 0);
+			this->lent_menu->Location = System::Drawing::Point(380, 0);
 			this->lent_menu->Name = L"lent_menu";
 			this->lent_menu->RightToLeft = System::Windows::Forms::RightToLeft::No;
-			this->lent_menu->Size = System::Drawing::Size(372, 24);
+			this->lent_menu->Size = System::Drawing::Size(464, 24);
 			this->lent_menu->TabIndex = 0;
 			this->lent_menu->Text = L"lent_menu";
 			// 
@@ -118,6 +119,7 @@ namespace kurs2020 {
 			this->spravk_lent_butt->Name = L"spravk_lent_butt";
 			this->spravk_lent_butt->Size = System::Drawing::Size(81, 20);
 			this->spravk_lent_butt->Text = L"Справка";
+			this->spravk_lent_butt->Click += gcnew System::EventHandler(this, &main_game::spravk_lent_butt_Click);
 			// 
 			// go_to_main_menu_butt
 			// 
@@ -220,6 +222,31 @@ namespace kurs2020 {
 			this->pomoshnik_box->TabStop = false;
 			this->pomoshnik_box->Text = L"Информация от Помощника";
 			// 
+			// event_helper
+			// 
+			this->event_helper->AutoSize = true;
+			this->event_helper->BackColor = System::Drawing::Color::Transparent;
+			this->event_helper->Cursor = System::Windows::Forms::Cursors::Default;
+			this->event_helper->Font = (gcnew System::Drawing::Font(L"Cambria", 14.25F, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->event_helper->Location = System::Drawing::Point(6, 51);
+			this->event_helper->Name = L"event_helper";
+			this->event_helper->Size = System::Drawing::Size(533, 22);
+			this->event_helper->TabIndex = 1;
+			this->event_helper->Text = L"Стая волков напала на ваш скот. Вы потеряли Х голов скота.";
+			// 
+			// time_helper
+			// 
+			this->time_helper->AutoSize = true;
+			this->time_helper->BackColor = System::Drawing::Color::Transparent;
+			this->time_helper->Font = (gcnew System::Drawing::Font(L"Californian FB", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->time_helper->Location = System::Drawing::Point(6, 24);
+			this->time_helper->Name = L"time_helper";
+			this->time_helper->Size = System::Drawing::Size(447, 22);
+			this->time_helper->TabIndex = 0;
+			this->time_helper->Text = L"До конца этого времени года осталось Х Часов Процветания.";
+			// 
 			// spisok_krest_butt
 			// 
 			this->spisok_krest_butt->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
@@ -257,31 +284,6 @@ namespace kurs2020 {
 			this->vihod_info->Size = System::Drawing::Size(223, 13);
 			this->vihod_info->TabIndex = 9;
 			this->vihod_info->Text = L"Не забудь сохранить игру перед выходом!";
-			// 
-			// time_helper
-			// 
-			this->time_helper->AutoSize = true;
-			this->time_helper->BackColor = System::Drawing::Color::Transparent;
-			this->time_helper->Font = (gcnew System::Drawing::Font(L"Californian FB", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->time_helper->Location = System::Drawing::Point(6, 24);
-			this->time_helper->Name = L"time_helper";
-			this->time_helper->Size = System::Drawing::Size(447, 22);
-			this->time_helper->TabIndex = 0;
-			this->time_helper->Text = L"До конца этого времени года осталось Х Часов Процветания.";
-			// 
-			// event_helper
-			// 
-			this->event_helper->AutoSize = true;
-			this->event_helper->BackColor = System::Drawing::Color::Transparent;
-			this->event_helper->Cursor = System::Windows::Forms::Cursors::Default;
-			this->event_helper->Font = (gcnew System::Drawing::Font(L"Cambria", 14.25F, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->event_helper->Location = System::Drawing::Point(6, 51);
-			this->event_helper->Name = L"event_helper";
-			this->event_helper->Size = System::Drawing::Size(533, 22);
-			this->event_helper->TabIndex = 1;
-			this->event_helper->Text = L"Стая волков напала на ваш скот. Вы потеряли Х голов скота.";
 			// 
 			// main_game
 			// 
@@ -328,6 +330,10 @@ private: System::Void spisok_krest_butt_Click(System::Object^  sender, System::E
 private: System::Void birzha_butt_Click(System::Object^  sender, System::EventArgs^  e) {
 			sell_tovar^ sell_tovar_p = gcnew sell_tovar(); //указатель на форму
 			sell_tovar_p -> ShowDialog(); //открыть форму
+		 }
+private: System::Void spravk_lent_butt_Click(System::Object^  sender, System::EventArgs^  e) {
+			spravk^ spravk_p = gcnew spravk(); //указатель на форму
+			spravk_p -> ShowDialog(); //открыть форму
 		 }
 };
 }

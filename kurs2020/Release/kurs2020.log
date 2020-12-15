@@ -1,33 +1,39 @@
-﻿Построение начато 16.12.2020 0:36:37.
+﻿Построение начато 16.12.2020 0:55:32.
      1>Проект "C:\Users\Алексей\Documents\GitHub\kurs2020\kurs2020\kurs2020.vcxproj" в узле 2 (целевые объекты build).
      1>InitializeBuildStatus:
-         Создание "Release\kurs2020.unsuccessfulbuild", так как было задано "AlwaysCreate".
+         Обращение к "Release\kurs2020.unsuccessfulbuild".
        GenerateTargetFrameworkMonikerAttribute:
        Целевой объект "GenerateTargetFrameworkMonikerAttribute" пропускается, так как все выходные файлы актуальны по отношению к входным.
        ClCompile:
          Для всех выходных данных обновления не требуется.
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0" /Zi /clr:pure /nologo /W3 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D _UNICODE /D UNICODE /EHa /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Release\kurs2020.pch" /Fo"Release\\" /Fd"Release\vc100.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Core.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Drawing.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Windows.Forms.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Xml.dll" /analyze- /errorReport:prompt kurs2020.cpp main_game.cpp sell_tovar.cpp /clr:nostdlib 
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0" /Zi /clr:pure /nologo /W3 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D _UNICODE /D UNICODE /EHa /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Release\kurs2020.pch" /Fo"Release\\" /Fd"Release\vc100.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Core.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Drawing.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Windows.Forms.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Xml.dll" /analyze- /errorReport:prompt kurs2020.cpp main_game.cpp spravk.cpp /clr:nostdlib 
          kurs2020.cpp
      1>c:\users\алексей\documents\github\kurs2020\kurs2020\tabl_krest.h(309): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
-     1>c:\users\алексей\documents\github\kurs2020\kurs2020\Form1.h(205): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+     1>c:\users\алексей\documents\github\kurs2020\kurs2020\Form1.h(207): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
          main_game.cpp
      1>c:\users\алексей\documents\github\kurs2020\kurs2020\tabl_krest.h(309): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
-         sell_tovar.cpp
+         spravk.cpp
          Создание кода...
-         Для всех выходных данных обновления не требуется.
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /Zi /clr:pure /nologo /W3 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D _UNICODE /D UNICODE /EHa /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc100.pdb" /TP /analyze- /errorReport:prompt "C:\Users\Алексей\AppData\Local\Temp\.NETFramework,Version=v4.0.AssemblyAttributes.cpp"
+         .NETFramework,Version=v4.0.AssemblyAttributes.cpp
        CoreResGen:
-         "C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\NETFX 4.0 Tools\resgen.exe" /useSourcePath /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Core.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Data.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Drawing.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Windows.Forms.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Xml.dll" /compile main_game.resx,Release\kurs2020.main_game.resources sell_tovar.resx,Release\kurs2020.sell_tovar.resources
+         "C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\NETFX 4.0 Tools\resgen.exe" /useSourcePath /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Core.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Data.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Drawing.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Windows.Forms.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Xml.dll" /compile Form1.resX,Release\kurs2020.Form1.resources main_game.resx,Release\kurs2020.main_game.resources sell_tovar.resx,Release\kurs2020.sell_tovar.resources spravk.resx,Release\kurs2020.spravk.resources tabl_krest.resx,Release\kurs2020.tabl_krest.resources tabl_naim.resx,Release\kurs2020.tabl_naim.resources
+         Обрабатывается файл ресурсов "Form1.resX", результирующий объект: "Release\kurs2020.Form1.resources".
          Обрабатывается файл ресурсов "main_game.resx", результирующий объект: "Release\kurs2020.main_game.resources".
          Обрабатывается файл ресурсов "sell_tovar.resx", результирующий объект: "Release\kurs2020.sell_tovar.resources".
+         Обрабатывается файл ресурсов "spravk.resx", результирующий объект: "Release\kurs2020.spravk.resources".
+         Обрабатывается файл ресурсов "tabl_krest.resx", результирующий объект: "Release\kurs2020.tabl_krest.resources".
+         Обрабатывается файл ресурсов "tabl_naim.resx", результирующий объект: "Release\kurs2020.tabl_naim.resources".
        ResourceCompile:
-         Для всех выходных данных обновления не требуется.
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /D _UNICODE /D UNICODE /l"0x0409" /nologo /fo"Release\app.res" app.rc 
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Алексей\Documents\GitHub\kurs2020\Release\kurs2020.exe" /INCREMENTAL:NO /NOLOGO /ASSEMBLYRESOURCE:Release\kurs2020.Form1.resources /ASSEMBLYRESOURCE:Release\kurs2020.main_game.resources /ASSEMBLYRESOURCE:Release\kurs2020.sell_tovar.resources /ASSEMBLYRESOURCE:Release\kurs2020.tabl_krest.resources /ASSEMBLYRESOURCE:Release\kurs2020.tabl_naim.resources /MANIFEST /ManifestFile:"Release\kurs2020.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Алексей\Documents\GitHub\kurs2020\Release\kurs2020.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /ENTRY:"main" /DYNAMICBASE /FIXED:NO /NXCOMPAT /MACHINE:X86 Release\app.res
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Алексей\Documents\GitHub\kurs2020\Release\kurs2020.exe" /INCREMENTAL:NO /NOLOGO /ASSEMBLYRESOURCE:Release\kurs2020.Form1.resources /ASSEMBLYRESOURCE:Release\kurs2020.main_game.resources /ASSEMBLYRESOURCE:Release\kurs2020.sell_tovar.resources /ASSEMBLYRESOURCE:Release\kurs2020.spravk.resources /ASSEMBLYRESOURCE:Release\kurs2020.tabl_krest.resources /ASSEMBLYRESOURCE:Release\kurs2020.tabl_naim.resources /MANIFEST /ManifestFile:"Release\kurs2020.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Алексей\Documents\GitHub\kurs2020\Release\kurs2020.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /ENTRY:"main" /DYNAMICBASE /FIXED:NO /NXCOMPAT /MACHINE:X86 Release\app.res
          Release\AssemblyInfo.obj
          Release\krest_and_village.obj
          Release\kurs2020.obj
          Release\main_game.obj
          Release\sell_tovar.obj
+         Release\spravk.obj
          Release\stdafx.obj
          Release\tabl_krest.obj
          Release\tabl_naim.obj
@@ -42,4 +48,4 @@
 
 Построение успешно завершено.
 
-Затраченное время: 00:00:06.14
+Затраченное время: 00:00:07.56
