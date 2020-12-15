@@ -95,6 +95,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="tabl_krest.cpp" />
+    <ClCompile Include="tabl_naim.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Form1.h">
@@ -107,6 +108,9 @@
     <ClInclude Include="resource.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="tabl_krest.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="tabl_naim.h">
       <FileType>CppForm</FileType>
     </ClInclude>
   </ItemGroup>
