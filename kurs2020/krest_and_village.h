@@ -113,5 +113,6 @@ public:
 
 
 extern Village derevn; //объект, в котором хранится вся информация о деревне (глобальн.)
+extern Village birzh_trud; //объект, в котором хранятся крестьяне для найма (глобальн.)
 
 #endif KREST_AND_VILLAGE_H // если имя KREST_AND_VILLAGE_H уже определено, повторно не определять

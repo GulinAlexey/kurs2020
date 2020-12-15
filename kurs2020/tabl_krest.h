@@ -290,16 +290,7 @@ namespace kurs2020 {
 		}
 
 		}
-private: System::Void num_krest_pole_TextChanged(System::Object^  sender, System::EventArgs^  e) {
-			int kolvo_strr=derevn.get_kolvo_krest(); //получить кол-во крестьян в списке
-			if (this->num_krest_pole->Text!=L"") //если поле с номером строки не пустое
-				if((Convert::ToDouble(this->num_krest_pole->Text) > kolvo_strr) || (Convert::ToDouble(this->num_krest_pole->Text)<1)) //если выбр. строка больше общего кол-ва строк, то отключить кнопку
-				{
-					this->izgnat_butt->Enabled = false;
-				}
-				else
-					this->izgnat_butt->Enabled = true;
-		 }
+
 private: System::Void num_krest_pole1_TextChanged(System::Object^  sender, System::EventArgs^  e) {
 			int kolvo_strr=derevn.get_kolvo_krest(); //получить кол-во крестьян в списке
 			if (this->num_krest_pole->Text!=L"") //если поле с номером строки не пустое

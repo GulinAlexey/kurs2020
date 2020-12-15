@@ -246,6 +246,7 @@ namespace kurs2020 {
 			// 
 			this->label2->Anchor = System::Windows::Forms::AnchorStyles::Top;
 			this->label2->AutoSize = true;
+			this->label2->BackColor = System::Drawing::Color::Transparent;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Lucida Console", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->label2->Location = System::Drawing::Point(12, 93);
@@ -274,6 +275,7 @@ namespace kurs2020 {
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Биржа труда";
 			this->Activated += gcnew System::EventHandler(this, &tabl_naim::tabl_naim_Activated);
+			this->Load += gcnew System::EventHandler(this, &tabl_naim::tabl_naim_Load);
 			this->naim_box->ResumeLayout(false);
 			this->naim_box->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->spisok))->EndInit();
@@ -287,31 +289,23 @@ namespace kurs2020 {
 		while (0 != spisok->RowCount)
 			spisok->Rows->RemoveAt(0);
 
-		int kolvo_str=derevn.get_kolvo_krest(); //получить кол-во крестьян в списке
+		int kolvo_str=birzh_trud.get_kolvo_krest(); //получить кол-во крестьян в списке
 		for(int num=0; num<kolvo_str; num++)
 		{
 			spisok->Rows->Add(); //добавить новую строку в таблицу
 			spisok->Rows[num]->Cells[0]->Value = Convert::ToString(num+1); //записать порядковый номер крестьянина
-			string str_name= derevn.krests[num].get_name() + " " + derevn.krests[num].get_surname();
+			string str_name= birzh_trud.krests[num].get_name() + " " + birzh_trud.krests[num].get_surname();
 			spisok->Rows[num]->Cells[1]->Value = gcnew System::String(str_name.c_str()); //внести в ячейку таблицы
-			spisok->Rows[num]->Cells[2]->Value = Convert::ToString(derevn.krests[num].get_proizv_hleb()) + L"/" + Convert::ToString(derevn.krests[num].get_proizv_skot());
-			spisok->Rows[num]->Cells[3]->Value = Convert::ToString(derevn.krests[num].get_eda_hleb()) + L"/" + Convert::ToString(derevn.krests[num].get_eda_skot());
-			spisok->Rows[num]->Cells[4]->Value = Convert::ToString(derevn.krests[num].get_money_trat());
+			spisok->Rows[num]->Cells[2]->Value = Convert::ToString(birzh_trud.krests[num].get_proizv_hleb()) + L"/" + Convert::ToString(birzh_trud.krests[num].get_proizv_skot());
+			spisok->Rows[num]->Cells[3]->Value = Convert::ToString(birzh_trud.krests[num].get_eda_hleb()) + L"/" + Convert::ToString(birzh_trud.krests[num].get_eda_skot());
+			spisok->Rows[num]->Cells[4]->Value = Convert::ToString(birzh_trud.krests[num].get_money_trat());
+			spisok->Rows[num]->Cells[5]->Value = Convert::ToString(birzh_trud.krests[num].get_naim());
 		}
 
 		}
-private: System::Void num_krest_pole_TextChanged(System::Object^  sender, System::EventArgs^  e) {
-			int kolvo_strr=derevn.get_kolvo_krest(); //получить кол-во крестьян в списке
-			if (this->num_krest_pole->Text!=L"") //если поле с номером строки не пустое
-				if((Convert::ToDouble(this->num_krest_pole->Text) > kolvo_strr) || (Convert::ToDouble(this->num_krest_pole->Text)<1)) //если выбр. строка больше общего кол-ва строк, то отключить кнопку
-				{
-					this->naim_butt->Enabled = false;
-				}
-				else
-					this->naim_butt->Enabled = true;
-		 }
+
 private: System::Void num_krest_pole1_TextChanged(System::Object^  sender, System::EventArgs^  e) {
-			int kolvo_strr=derevn.get_kolvo_krest(); //получить кол-во крестьян в списке
+			int kolvo_strr=birzh_trud.get_kolvo_krest(); //получить кол-во крестьян в списке
 			if (this->num_krest_pole->Text!=L"") //если поле с номером строки не пустое
 			{
 				if((Convert::ToDouble(this->num_krest_pole->Text) > kolvo_strr) || (Convert::ToDouble(this->num_krest_pole->Text)<1)) //если выбр. строка больше общего кол-ва строк, то отключить кнопку
@@ -325,8 +319,20 @@ private: System::Void num_krest_pole1_TextChanged(System::Object^  sender, Syste
 				this->naim_butt->Enabled = false;
 		 }
 private: System::Void naim_butt_Click(System::Object^  sender, System::EventArgs^  e) {
-			 derevn.Delete_krest(Convert::ToDouble(this->num_krest_pole->Text)); //удалить крестьянина
+			 //birzh_trud.Delete_krest(Convert::ToDouble(this->num_krest_pole->Text)); //удалить крестьянина
 			 tabl_naim_Activated(sender,e); //обновить таблицу
+		 }
+private: System::Void tabl_naim_Load(System::Object^  sender, System::EventArgs^  e) {
+			if(birzh_trud.krests!=0)
+			{
+				delete [] birzh_trud.krests;
+			}
+			birzh_trud.krests = new Krest[5]; //массив крестьян для найма
+			birzh_trud.set_kolvo_krest(5);
+			for(int v=0; v<5; v++)
+			{
+				birzh_trud.krests[v].Init_rand();
+			}
 		 }
 };
 }
