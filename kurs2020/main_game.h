@@ -53,6 +53,8 @@ namespace kurs2020 {
 	private: System::Windows::Forms::Button^  spisok_krest_butt;
 	private: System::Windows::Forms::Button^  birzha_butt;
 	private: System::Windows::Forms::Label^  vihod_info;
+	private: System::Windows::Forms::Label^  event_helper;
+	private: System::Windows::Forms::Label^  time_helper;
 
 
 
@@ -84,7 +86,10 @@ namespace kurs2020 {
 			this->spisok_krest_butt = (gcnew System::Windows::Forms::Button());
 			this->birzha_butt = (gcnew System::Windows::Forms::Button());
 			this->vihod_info = (gcnew System::Windows::Forms::Label());
+			this->time_helper = (gcnew System::Windows::Forms::Label());
+			this->event_helper = (gcnew System::Windows::Forms::Label());
 			this->lent_menu->SuspendLayout();
+			this->pomoshnik_box->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// lent_menu
@@ -203,7 +208,9 @@ namespace kurs2020 {
 				static_cast<System::Int32>(static_cast<System::Byte>(200)));
 			this->pomoshnik_box->BackgroundImage = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"pomoshnik_box.BackgroundImage")));
 			this->pomoshnik_box->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->pomoshnik_box->Font = (gcnew System::Drawing::Font(L"Calibri", 14.25F, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point, 
+			this->pomoshnik_box->Controls->Add(this->event_helper);
+			this->pomoshnik_box->Controls->Add(this->time_helper);
+			this->pomoshnik_box->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(204)));
 			this->pomoshnik_box->Location = System::Drawing::Point(12, 389);
 			this->pomoshnik_box->Name = L"pomoshnik_box";
@@ -251,6 +258,31 @@ namespace kurs2020 {
 			this->vihod_info->TabIndex = 9;
 			this->vihod_info->Text = L"Не забудь сохранить игру перед выходом!";
 			// 
+			// time_helper
+			// 
+			this->time_helper->AutoSize = true;
+			this->time_helper->BackColor = System::Drawing::Color::Transparent;
+			this->time_helper->Font = (gcnew System::Drawing::Font(L"Californian FB", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->time_helper->Location = System::Drawing::Point(6, 24);
+			this->time_helper->Name = L"time_helper";
+			this->time_helper->Size = System::Drawing::Size(447, 22);
+			this->time_helper->TabIndex = 0;
+			this->time_helper->Text = L"До конца этого времени года осталось Х Часов Процветания.";
+			// 
+			// event_helper
+			// 
+			this->event_helper->AutoSize = true;
+			this->event_helper->BackColor = System::Drawing::Color::Transparent;
+			this->event_helper->Cursor = System::Windows::Forms::Cursors::Default;
+			this->event_helper->Font = (gcnew System::Drawing::Font(L"Cambria", 14.25F, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->event_helper->Location = System::Drawing::Point(6, 51);
+			this->event_helper->Name = L"event_helper";
+			this->event_helper->Size = System::Drawing::Size(533, 22);
+			this->event_helper->TabIndex = 1;
+			this->event_helper->Text = L"Стая волков напала на ваш скот. Вы потеряли Х голов скота.";
+			// 
 			// main_game
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
@@ -277,6 +309,8 @@ namespace kurs2020 {
 			this->WindowState = System::Windows::Forms::FormWindowState::Maximized;
 			this->lent_menu->ResumeLayout(false);
 			this->lent_menu->PerformLayout();
+			this->pomoshnik_box->ResumeLayout(false);
+			this->pomoshnik_box->PerformLayout();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
