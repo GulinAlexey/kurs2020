@@ -1,6 +1,7 @@
 #pragma once
 #include "tabl_krest.h"
 #include "krest_and_village.h"
+#include "sell_tovar.h"
 
 
 namespace kurs2020 {
@@ -238,6 +239,7 @@ namespace kurs2020 {
 			this->birzha_butt->TabStop = false;
 			this->birzha_butt->Text = L"Товарная биржа";
 			this->birzha_butt->UseVisualStyleBackColor = true;
+			this->birzha_butt->Click += gcnew System::EventHandler(this, &main_game::birzha_butt_Click);
 			// 
 			// vihod_info
 			// 
@@ -288,6 +290,10 @@ namespace kurs2020 {
 private: System::Void spisok_krest_butt_Click(System::Object^  sender, System::EventArgs^  e) {
 			tabl_krest^ tabl_krest_p = gcnew tabl_krest(); //указатель на форму
 			tabl_krest_p -> ShowDialog(); //открыть форму
+		 }
+private: System::Void birzha_butt_Click(System::Object^  sender, System::EventArgs^  e) {
+			sell_tovar^ sell_tovar_p = gcnew sell_tovar(); //указатель на форму
+			sell_tovar_p -> ShowDialog(); //открыть форму
 		 }
 };
 }

@@ -90,6 +90,7 @@
     <ClCompile Include="krest_and_village.cpp" />
     <ClCompile Include="kurs2020.cpp" />
     <ClCompile Include="main_game.cpp" />
+    <ClCompile Include="sell_tovar.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
@@ -106,6 +107,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="resource.h" />
+    <ClInclude Include="sell_tovar.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="tabl_krest.h">
       <FileType>CppForm</FileType>
@@ -124,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="main_game.resx">
       <DependentUpon>main_game.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sell_tovar.resx">
+      <DependentUpon>sell_tovar.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="tabl_krest.resx">
       <DependentUpon>tabl_krest.h</DependentUpon>
