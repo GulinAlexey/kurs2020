@@ -49,6 +49,7 @@ namespace kurs2020 {
 	private: System::Windows::Forms::Button^  records_butt;
 	private: System::Windows::Forms::Button^  quit_butt;
 	private: System::Windows::Forms::Button^  spravk_butt;
+	private: System::Windows::Forms::Label^  info_avtor;
 
 
 
@@ -82,6 +83,7 @@ namespace kurs2020 {
 			this->records_butt = (gcnew System::Windows::Forms::Button());
 			this->quit_butt = (gcnew System::Windows::Forms::Button());
 			this->spravk_butt = (gcnew System::Windows::Forms::Button());
+			this->info_avtor = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// igra_menu_text
@@ -174,6 +176,19 @@ namespace kurs2020 {
 			this->spravk_butt->UseVisualStyleBackColor = true;
 			this->spravk_butt->Click += gcnew System::EventHandler(this, &Form1::spravk_butt_Click);
 			// 
+			// info_avtor
+			// 
+			this->info_avtor->AutoSize = true;
+			this->info_avtor->BackColor = System::Drawing::Color::Transparent;
+			this->info_avtor->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(204)));
+			this->info_avtor->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->info_avtor->Location = System::Drawing::Point(3, 3);
+			this->info_avtor->Name = L"info_avtor";
+			this->info_avtor->Size = System::Drawing::Size(224, 15);
+			this->info_avtor->TabIndex = 7;
+			this->info_avtor->Text = L"© Ãóëèí Àëåêñåé, ÏÈ-92. ÀëòÃÒÓ 2020";
+			// 
 			// Form1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -184,6 +199,7 @@ namespace kurs2020 {
 			this->CancelButton = this->quit_butt;
 			this->ClientSize = System::Drawing::Size(346, 387);
 			this->ControlBox = false;
+			this->Controls->Add(this->info_avtor);
 			this->Controls->Add(this->spravk_butt);
 			this->Controls->Add(this->quit_butt);
 			this->Controls->Add(this->records_butt);
@@ -205,6 +221,7 @@ namespace kurs2020 {
 			this->Activated += gcnew System::EventHandler(this, &Form1::Form1_Activated);
 			this->Load += gcnew System::EventHandler(this, &Form1::Form1_Load);
 			this->ResumeLayout(false);
+			this->PerformLayout();
 
 		}
 #pragma endregion
