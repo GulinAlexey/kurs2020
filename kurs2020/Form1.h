@@ -149,6 +149,7 @@ namespace kurs2020 {
 			// 
 			// quit_butt
 			// 
+			this->quit_butt->DialogResult = System::Windows::Forms::DialogResult::Cancel;
 			this->quit_butt->Font = (gcnew System::Drawing::Font(L"Franklin Gothic Demi", 14.25F, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(204)));
 			this->quit_butt->Location = System::Drawing::Point(60, 311);
@@ -178,6 +179,7 @@ namespace kurs2020 {
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(224)));
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"$this.BackgroundImage")));
+			this->CancelButton = this->quit_butt;
 			this->ClientSize = System::Drawing::Size(346, 387);
 			this->ControlBox = false;
 			this->Controls->Add(this->spravk_butt);

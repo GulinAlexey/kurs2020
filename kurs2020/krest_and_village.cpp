@@ -171,6 +171,10 @@ Village::Village() //конструктор без параметров
 
 void Village::Init_new_game() //инициализация при начале новой игры
 {
+	if(krests!=0)
+	{
+		delete [] krests;
+	}
 	kolvo_krest=3;
 	hours_procv=1;
 	days_procv=0;
