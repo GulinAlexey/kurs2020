@@ -368,30 +368,128 @@ private: System::Void main_game_Load(System::Object^  sender, System::EventArgs^
 			 */
 		 }
 private: System::Void main_timer_Tick(System::Object^  sender, System::EventArgs^  e) {
-			 derevn.set_hours_procv(derevn.get_hours_procv()+1);
-			 if(derevn.get_kolvo_krest()==0)
+			 derevn.set_hours_procv(derevn.get_hours_procv()+1); //кол-во часов процветания увеличилось на 1
+			 if((derevn.get_hours_procv()%12)==0) //если прошло 12 часов процветания
+			 {
+				 derevn.set_days_procv(derevn.get_days_procv()+1);
+			 }
+			 if(derevn.get_kolvo_krest()==0) //если нет крестьян
 			 {
 				 derevn.set_otschet_hours_net_krest(derevn.get_otschet_hours_net_krest()+1);
 			 }
-			 if(derevn.get_otschet_hours_net_krest()==2)
+			 if(derevn.get_otschet_hours_net_krest()==2) //если закончилось время отсчёта без крестьян
 			 {
 				 f_endgame=1;
 				 Close();
 			 }
-			 if(derevn.get_kolvo_krest()!=0)
+			 if(derevn.get_kolvo_krest()!=0) //если хотя бы один крестьянин нашёлся
 			 {
 				 derevn.set_otschet_hours_net_krest(0);
 			 }
-			 if(derevn.get_flag_season()==0 && derevn.get_budget_village()!=0)
+			 if(derevn.get_flag_season()==0 && derevn.get_budget_village()!=0) //если лето и бюджет не нулевой
 			 {
 				 int kolv_k=derevn.get_kolvo_krest();
 				 for(int ko=0; ko<kolv_k; ko++)
 				 {
-					 if((derevn.get_budget_village()-derevn.krests[ko].get_naim)>=0)
+					 if((derevn.get_budget_village()-(derevn.krests[ko].get_naim()*derevn.get_speed_life()))>=0)
 					 {
+						 derevn.set_kolvo_hleb(derevn.get_kolvo_hleb()+derevn.krests[ko].get_proizv_hleb());
+						 derevn.set_kolvo_skot(derevn.get_kolvo_skot()+derevn.krests[ko].get_proizv_skot());
+						 derevn.set_budget_village(derevn.get_budget_village()-(derevn.krests[ko].get_naim()*derevn.get_speed_life()));
 					 }
 					 else
 						 break;
+				 }
+			 }
+			 if(derevn.get_flag_season()==1) //если зима
+			 {
+				 int kolv_k=derevn.get_kolvo_krest();
+				 for(int ko=0; ko<kolv_k; ko++)
+				 {
+					 derevn.set_kolvo_hleb(derevn.get_kolvo_hleb()-(derevn.krests[ko].get_eda_hleb()*derevn.get_speed_life()));
+					 derevn.set_kolvo_skot(derevn.get_kolvo_skot()-(derevn.krests[ko].get_eda_skot()*derevn.get_speed_life()));
+					 if(derevn.get_kolvo_hleb()>=0 && derevn.get_kolvo_skot()>=0)
+						 derevn.krests[ko].set_otschet_hours_net_edi(0);
+					 if(derevn.get_kolvo_hleb()<0 || derevn.get_kolvo_skot()<0)
+					 {
+						if(derevn.get_kolvo_hleb()<0)
+						{
+							 derevn.set_kolvo_hleb(0);
+						}
+						if(derevn.get_kolvo_skot()<0)
+						{
+							 derevn.set_kolvo_skot(0);
+						}
+						derevn.krests[ko].set_otschet_hours_net_edi(derevn.krests[ko].get_otschet_hours_net_edi()+1);
+						if(derevn.krests[ko].get_otschet_hours_net_edi()==12)
+						{
+							derevn.Delete_krest(ko+1); //удалить крестьянина (методу передаётся нумерация от единицы, а цикл нумеруется от нуля)
+							kolv_k=kolv_k-1; //крестьян стало на 1 меньше
+							time_t now = time(0); //для вывода времени
+							tm *ltm = localtime(&now);
+							string str_name= derevn.krests[ko].get_name() + " " + derevn.krests[ko].get_surname(); //для вывода имени и фамилии
+							this->event_helper->Text = L"Последнее событие: " + Convert::ToString(ltm->tm_hour)+ L":" + Convert::ToString(ltm->tm_min)+ L":" + Convert::ToString(ltm->tm_sec) + L" " + L"Крестьянин " + gcnew System::String(str_name.c_str()) + L" ушёл из деревни из-за недостатка пищи.";
+			 
+						}
+					 }
+				 }
+			 }
+
+			 if(derevn.get_flag_season()==0 && (derevn.get_hours_procv() - derevn.get_hours_from_begin_of_season())==60) //если сейчас лето и прошло 60 часов П. от начала лета
+			 {
+				 derevn.set_flag_season(1); //теперь флаг соответствует зиме
+				 this->BackgroundImage = Image::FromFile("zima.jpg"); //изменить фон на зимний
+				 derevn.set_hours_from_begin_of_season(derevn.get_hours_procv());
+			 }
+
+			 if(derevn.get_flag_season()==1 && (derevn.get_hours_procv() - derevn.get_hours_from_begin_of_season())==24) //если сейчас зима и прошло 24 часа П. от начала зимы
+			 {
+				 derevn.set_flag_season(0); //теперь флаг соответствует лету
+				 this->BackgroundImage = Image::FromFile("leto.jpg"); //изменить фон на летний
+				 derevn.set_hours_from_begin_of_season(derevn.get_hours_procv());
+				 derevn.set_speed_life( derevn.get_speed_life()+1); //множитель Скорость жизни увеличился на 1
+				 int f_izmen_price; //флаг изменения цены на товар (0, если уменьшить; 1, если увеличить)
+				 double proc_izm; //процент от начального значения цены, на которое она изменится
+				 //ДЛЯ ЦЕНЫ НА ХЛЕБ
+				 f_izmen_price =(1 + rand() % 2) -1; //случайное число в интервале от 0 до 1 включительно
+				 proc_izm = 5 + rand() % 25; //случайное число в интервале от 5 до 30 включительно
+				 proc_izm = proc_izm / 100; //перевод процентного значения в десятичное
+				 if(f_izmen_price==0)
+				 {
+					 derevn.set_price_hleb(derevn.get_price_hleb() - derevn.get_price_hleb() * proc_izm);
+				 }
+				 if(f_izmen_price==1)
+				 {
+					 derevn.set_price_hleb(derevn.get_price_hleb() + derevn.get_price_hleb() * proc_izm);
+				 }
+				 //ДЛЯ ЦЕНЫ НА СКОТ
+				 f_izmen_price =(1 + rand() % 2) -1; //случайное число в интервале от 0 до 1 включительно
+				 proc_izm = 5 + rand() % 25; //случайное число в интервале от 5 до 30 включительно
+				 proc_izm = proc_izm / 100; //перевод процентного значения в десятичное
+				 if(f_izmen_price==0)
+				 {
+					 derevn.set_price_skot(derevn.get_price_skot() - derevn.get_price_skot() * proc_izm);
+				 }
+				 if(f_izmen_price==1)
+				 {
+					 derevn.set_price_skot(derevn.get_price_skot() + derevn.get_price_skot() * proc_izm);
+				 }
+			 }
+
+			 if(derevn.get_flag_season()==1 && (derevn.get_hours_procv() - derevn.get_hours_from_begin_of_season())==24) //если сейчас зима и прошло 12 часов П. от начала зимы (середина зимы)
+			 {
+				 int f_event; //флаг случайного события (0 - приход нового крестьянина, 1 - нападение волков на скот)
+				 f_event =(1 + rand() % 2) -1; //случайное число в интервале от 0 до 1 включительно
+				 if(f_event==1) //нападение волков
+				 {
+					 double proc_izm; //процент от начального значения кол-ва скота, на которое оно изменится
+					 proc_izm = 5 + rand() % 25; //случайное число в интервале от 5 до 30 включительно
+					 proc_izm = proc_izm / 100; //перевод процентного значения в десятичное
+					 int poteri = derevn.get_kolvo_skot() * proc_izm; //отдельная переменная для кол-ва потерянного скота
+					 derevn.set_kolvo_skot(derevn.get_kolvo_skot() - poteri);
+					 time_t now = time(0); //для вывода времени
+					 tm *ltm = localtime(&now);
+					 this->event_helper->Text = L"Последнее событие: " + Convert::ToString(ltm->tm_hour)+ L":" + Convert::ToString(ltm->tm_min)+ L":" + Convert::ToString(ltm->tm_sec) + L" " + L"Стая волков из леса напала на ваш скот. Потеряно " + Convert::ToString(poteri) + L" голов скота.";
 				 }
 			 }
 		 }
