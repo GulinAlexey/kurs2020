@@ -56,6 +56,8 @@ namespace kurs2020 {
 	private: System::Windows::Forms::Label^  vihod_info;
 	private: System::Windows::Forms::Label^  event_helper;
 	private: System::Windows::Forms::Label^  time_helper;
+	private: System::Windows::Forms::Timer^  main_timer;
+	private: System::ComponentModel::IContainer^  components;
 
 
 
@@ -63,7 +65,7 @@ namespace kurs2020 {
 		/// <summary>
 		/// Требуется переменная конструктора.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -72,6 +74,7 @@ namespace kurs2020 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			this->components = (gcnew System::ComponentModel::Container());
 			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(main_game::typeid));
 			this->lent_menu = (gcnew System::Windows::Forms::MenuStrip());
 			this->save_game_butt = (gcnew System::Windows::Forms::ToolStripMenuItem());
@@ -89,6 +92,7 @@ namespace kurs2020 {
 			this->spisok_krest_butt = (gcnew System::Windows::Forms::Button());
 			this->birzha_butt = (gcnew System::Windows::Forms::Button());
 			this->vihod_info = (gcnew System::Windows::Forms::Label());
+			this->main_timer = (gcnew System::Windows::Forms::Timer(this->components));
 			this->lent_menu->SuspendLayout();
 			this->pomoshnik_box->SuspendLayout();
 			this->SuspendLayout();
@@ -232,7 +236,7 @@ namespace kurs2020 {
 			this->event_helper->Location = System::Drawing::Point(6, 51);
 			this->event_helper->Name = L"event_helper";
 			this->event_helper->RightToLeft = System::Windows::Forms::RightToLeft::No;
-			this->event_helper->Size = System::Drawing::Size(0, 22);
+			this->event_helper->Size = System::Drawing::Size(14, 22);
 			this->event_helper->TabIndex = 1;
 			this->event_helper->Text = L" ";
 			// 
@@ -286,6 +290,11 @@ namespace kurs2020 {
 			this->vihod_info->Size = System::Drawing::Size(223, 13);
 			this->vihod_info->TabIndex = 9;
 			this->vihod_info->Text = L"Не забудь сохранить игру перед выходом!";
+			// 
+			// main_timer
+			// 
+			this->main_timer->Interval = 5000;
+			this->main_timer->Tick += gcnew System::EventHandler(this, &main_game::main_timer_Tick);
 			// 
 			// main_game
 			// 
@@ -349,6 +358,9 @@ private: System::Void main_game_Load(System::Object^  sender, System::EventArgs^
 				this->time_helper->Text = L"До конца лета осталось " + Convert::ToString(60 -(derevn.get_hours_procv() - derevn.get_hours_from_begin_of_season())) + L" Часов Процветания.";
 			 if(derevn.get_flag_season()==1)
 				this->time_helper->Text = L"До конца зимы осталось " + Convert::ToString(24 -(derevn.get_hours_procv() - derevn.get_hours_from_begin_of_season())) + L" Часов Процветания.";
+		 }
+private: System::Void main_timer_Tick(System::Object^  sender, System::EventArgs^  e) {
+
 		 }
 };
 }
