@@ -356,7 +356,7 @@ private: System::Void main_game_Load(System::Object^  sender, System::EventArgs^
 			 this->den_procv_text->Text = L"Дни процветания: " + Convert::ToString(derevn.get_days_procv());
 			 this->budget_text->Text = L"Бюджет: " + Convert::ToString(derevn.get_budget_village()) + L" руб.";
 			 this->hleb_text->Text = L"Хлеб: " + Convert::ToString(derevn.get_kolvo_hleb()) + L" ед.";
-			 this->skot_text->Text = L"Домашний скот: " + Convert::ToString(derevn.get_kolvo_skot()) + L" голов";
+			 this->skot_text->Text = L"Домашний скот: " + Convert::ToString(derevn.get_kolvo_skot()) + L" ед.";
 			 if(derevn.get_flag_season()==0)
 				this->time_helper->Text = L"До конца лета осталось " + Convert::ToString(60 -(derevn.get_hours_procv() - derevn.get_hours_from_begin_of_season())) + L" Часов Процветания.";
 			 if(derevn.get_flag_season()==1)
@@ -476,7 +476,7 @@ private: System::Void main_timer_Tick(System::Object^  sender, System::EventArgs
 				 }
 			 }
 
-			 if(derevn.get_flag_season()==1 && (derevn.get_hours_procv() - derevn.get_hours_from_begin_of_season())==24) //если сейчас зима и прошло 12 часов П. от начала зимы (середина зимы)
+			 if(derevn.get_flag_season()==1 && (derevn.get_hours_procv() - derevn.get_hours_from_begin_of_season())==12) //если сейчас зима и прошло 12 часов П. от начала зимы (середина зимы)
 			 {
 				 int f_event; //флаг случайного события (0 - приход нового крестьянина, 1 - нападение волков на скот)
 				 f_event =(1 + rand() % 2) -1; //случайное число в интервале от 0 до 1 включительно
@@ -489,7 +489,7 @@ private: System::Void main_timer_Tick(System::Object^  sender, System::EventArgs
 					 derevn.set_kolvo_skot(derevn.get_kolvo_skot() - poteri);
 					 time_t now = time(0); //для вывода времени
 					 tm *ltm = localtime(&now);
-					 this->event_helper->Text = L"Последнее событие: " + Convert::ToString(ltm->tm_hour)+ L":" + Convert::ToString(ltm->tm_min)+ L":" + Convert::ToString(ltm->tm_sec) + L" " + L"Стая волков из леса напала на ваш скот. Потеряно " + Convert::ToString(poteri) + L" голов скота.";
+					 this->event_helper->Text = L"Последнее событие: " + Convert::ToString(ltm->tm_hour)+ L":" + Convert::ToString(ltm->tm_min)+ L":" + Convert::ToString(ltm->tm_sec) + L" " + L"Стая волков из леса напала на ваш скот. Потеряно " + Convert::ToString(poteri) + L" ед. скота.";
 				 }
 				 if(f_event==0) //приход крестьянина
 				 {
@@ -508,7 +508,7 @@ private: System::Void main_timer_Tick(System::Object^  sender, System::EventArgs
 			 this->den_procv_text->Text = L"Дни процветания: " + Convert::ToString(derevn.get_days_procv());
 			 this->budget_text->Text = L"Бюджет: " + Convert::ToString(derevn.get_budget_village()) + L" руб.";
 			 this->hleb_text->Text = L"Хлеб: " + Convert::ToString(derevn.get_kolvo_hleb()) + L" ед.";
-			 this->skot_text->Text = L"Домашний скот: " + Convert::ToString(derevn.get_kolvo_skot()) + L" голов";
+			 this->skot_text->Text = L"Домашний скот: " + Convert::ToString(derevn.get_kolvo_skot()) + L" ед.";
 			 if(derevn.get_flag_season()==0)
 				this->time_helper->Text = L"До конца лета осталось " + Convert::ToString(60 -(derevn.get_hours_procv() - derevn.get_hours_from_begin_of_season())) + L" Часов Процветания.";
 			 if(derevn.get_flag_season()==1)
