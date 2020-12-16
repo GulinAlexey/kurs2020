@@ -232,22 +232,22 @@ namespace kurs2020 {
 			this->event_helper->Location = System::Drawing::Point(6, 51);
 			this->event_helper->Name = L"event_helper";
 			this->event_helper->RightToLeft = System::Windows::Forms::RightToLeft::No;
-			this->event_helper->Size = System::Drawing::Size(533, 22);
+			this->event_helper->Size = System::Drawing::Size(0, 22);
 			this->event_helper->TabIndex = 1;
-			this->event_helper->Text = L"Стая волков напала на ваш скот. Вы потеряли Х голов скота.";
+			this->event_helper->Text = L" ";
 			// 
 			// time_helper
 			// 
 			this->time_helper->AutoSize = true;
 			this->time_helper->BackColor = System::Drawing::Color::Transparent;
-			this->time_helper->Font = (gcnew System::Drawing::Font(L"Californian FB", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			this->time_helper->Font = (gcnew System::Drawing::Font(L"Cambria", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->time_helper->Location = System::Drawing::Point(6, 24);
 			this->time_helper->Name = L"time_helper";
 			this->time_helper->RightToLeft = System::Windows::Forms::RightToLeft::No;
-			this->time_helper->Size = System::Drawing::Size(447, 22);
+			this->time_helper->Size = System::Drawing::Size(540, 22);
 			this->time_helper->TabIndex = 0;
-			this->time_helper->Text = L"До конца этого времени года осталось Х Часов Процветания.";
+			this->time_helper->Text = L"До конца этого времени года осталось 11 Часов Процветания.";
 			// 
 			// spisok_krest_butt
 			// 
@@ -311,6 +311,7 @@ namespace kurs2020 {
 			this->Name = L"main_game";
 			this->Text = L"Игра \"Управление деревней\"";
 			this->WindowState = System::Windows::Forms::FormWindowState::Maximized;
+			this->Load += gcnew System::EventHandler(this, &main_game::main_game_Load);
 			this->lent_menu->ResumeLayout(false);
 			this->lent_menu->PerformLayout();
 			this->pomoshnik_box->ResumeLayout(false);
@@ -336,6 +337,18 @@ private: System::Void birzha_butt_Click(System::Object^  sender, System::EventAr
 private: System::Void spravk_lent_butt_Click(System::Object^  sender, System::EventArgs^  e) {
 			spravk^ spravk_p = gcnew spravk(); //указатель на форму
 			spravk_p -> ShowDialog(); //открыть форму
+		 }
+private: System::Void main_game_Load(System::Object^  sender, System::EventArgs^  e) {
+			 this->kolvo_krest_text->Text = L"Крестьяне: " + Convert::ToString(derevn.get_kolvo_krest())+ L" чел.";;
+			 this->skorost_zhiz_text->Text = L"Скорость жизни: " + Convert::ToString(derevn.get_speed_life());
+			 this->den_procv_text->Text = L"Дни процветания: " + Convert::ToString(derevn.get_days_procv());
+			 this->budget_text->Text = L"Бюджет: " + Convert::ToString(derevn.get_budget_village()) + L" руб.";
+			 this->hleb_text->Text = L"Хлеб: " + Convert::ToString(derevn.get_kolvo_hleb()) + L" ед.";
+			 this->skot_text->Text = L"Домашний скот: " + Convert::ToString(derevn.get_kolvo_skot()) + L" голов";
+			 if(derevn.get_flag_season()==0)
+				this->time_helper->Text = L"До конца лета осталось " + Convert::ToString(60 -(derevn.get_hours_procv() - derevn.get_hours_from_begin_of_season())) + L" Часов Процветания.";
+			 if(derevn.get_flag_season()==1)
+				this->time_helper->Text = L"До конца зимы осталось " + Convert::ToString(24 -(derevn.get_hours_procv() - derevn.get_hours_from_begin_of_season())) + L" Часов Процветания.";
 		 }
 };
 }
