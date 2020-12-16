@@ -197,17 +197,31 @@ void Village::Init_new_game() //инициализация при начале новой игры
 void Village::Delete_krest(int number) //удаление крестьянина с выбранным номером (нумерация от единицы!)
 {
 	Krest* kre_change = new Krest[kolvo_krest-1]; //временный массив крестьян
-	for(int j=0, k=0; j<kolvo_krest; j++) //перебрать весь массив крестьян в деревне
+	for(int j=0, k1=0; j<kolvo_krest; j++) //перебрать весь массив крестьян в деревне
 	{
 		if(j!=(number-1)) //если номер крестьянина не равен искомому, то скопировать его в новый массив
 		{
-			kre_change[k]=krests[j];
-			k++;
+			kre_change[k1]=krests[j];
+			k1++;
 		}
 	}
 	delete krests; //удалить старый массив
 	krests = kre_change; //теперь указатель указывает на новый массив
 	kolvo_krest=kolvo_krest-1; //теперь на 1 крестьянина меньше
+}
+
+void Village::Add_rand_krest() //добавление случайного крестьянина к имеющимся (особое событие, возможное зимой)
+{
+	Krest* kre_change = new Krest[kolvo_krest+1]; //временный массив крестьян
+	int j;
+	for(j=0; j<kolvo_krest; j++) //перебрать весь массив крестьян в деревне
+	{
+		kre_change[j]=krests[j];
+	}
+	kre_change[j].Init_rand(); //новый крестьянин генерируется случайно
+	delete krests; //удалить старый массив
+	krests = kre_change; //теперь указатель указывает на новый массив
+	kolvo_krest=kolvo_krest+1; //теперь на 1 крестьянина больше
 }
 
 //Получение и установление соответствующих полей для деревни

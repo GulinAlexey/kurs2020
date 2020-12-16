@@ -491,7 +491,28 @@ private: System::Void main_timer_Tick(System::Object^  sender, System::EventArgs
 					 tm *ltm = localtime(&now);
 					 this->event_helper->Text = L"Последнее событие: " + Convert::ToString(ltm->tm_hour)+ L":" + Convert::ToString(ltm->tm_min)+ L":" + Convert::ToString(ltm->tm_sec) + L" " + L"Стая волков из леса напала на ваш скот. Потеряно " + Convert::ToString(poteri) + L" голов скота.";
 				 }
+				 if(f_event==0) //приход крестьянина
+				 {
+					derevn.Add_rand_krest(); //добавление нового случайного крестьянина
+					time_t now = time(0); //для вывода времени
+					tm *ltm = localtime(&now);
+					int koo =  derevn.get_kolvo_krest() - 1; //получить номер последнего крестьянина
+					string str_name= derevn.krests[koo].get_name() + " " + derevn.krests[koo].get_surname(); //для вывода имени и фамилии
+					this->event_helper->Text = L"Последнее событие: " + Convert::ToString(ltm->tm_hour)+ L":" + Convert::ToString(ltm->tm_min)+ L":" + Convert::ToString(ltm->tm_sec) + L" " + L"Крестьянин " + gcnew System::String(str_name.c_str()) + L" вышел из лесу и присоединился к вам.";
+				 }
 			 }
+
+			 //ВЫВОД ИНФОРМАЦИИ О ДЕРЕВНЕ
+			 this->kolvo_krest_text->Text = L"Крестьяне: " + Convert::ToString(derevn.get_kolvo_krest())+ L" чел.";;
+			 this->skorost_zhiz_text->Text = L"Скорость жизни: " + Convert::ToString(derevn.get_speed_life());
+			 this->den_procv_text->Text = L"Дни процветания: " + Convert::ToString(derevn.get_days_procv());
+			 this->budget_text->Text = L"Бюджет: " + Convert::ToString(derevn.get_budget_village()) + L" руб.";
+			 this->hleb_text->Text = L"Хлеб: " + Convert::ToString(derevn.get_kolvo_hleb()) + L" ед.";
+			 this->skot_text->Text = L"Домашний скот: " + Convert::ToString(derevn.get_kolvo_skot()) + L" голов";
+			 if(derevn.get_flag_season()==0)
+				this->time_helper->Text = L"До конца лета осталось " + Convert::ToString(60 -(derevn.get_hours_procv() - derevn.get_hours_from_begin_of_season())) + L" Часов Процветания.";
+			 if(derevn.get_flag_season()==1)
+				this->time_helper->Text = L"До конца зимы осталось " + Convert::ToString(24 -(derevn.get_hours_procv() - derevn.get_hours_from_begin_of_season())) + L" Часов Процветания.";
 		 }
 };
 }

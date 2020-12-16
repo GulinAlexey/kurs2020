@@ -1,4 +1,4 @@
-﻿Построение начато 16.12.2020 23:05:42.
+﻿Построение начато 16.12.2020 23:21:12.
      1>Проект "C:\Users\Алексей\Documents\GitHub\kurs2020\kurs2020\kurs2020.vcxproj" в узле 2 (целевые объекты build).
      1>InitializeBuildStatus:
          Создание "Release\kurs2020.unsuccessfulbuild", так как было задано "AlwaysCreate".
@@ -18,6 +18,8 @@
      1>c:\users\алексей\documents\github\kurs2020\kurs2020\main_game.h(488): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
      1>c:\users\алексей\documents\github\kurs2020\kurs2020\main_game.h(491): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\time.inl(112): см. объявление "localtime"
+     1>c:\users\алексей\documents\github\kurs2020\kurs2020\main_game.h(498): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\time.inl(112): см. объявление "localtime"
      1>c:\users\алексей\documents\github\kurs2020\kurs2020\Form1.h(210): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
          main_game.cpp
      1>c:\users\алексей\documents\github\kurs2020\kurs2020\tabl_krest.h(309): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
@@ -29,6 +31,8 @@
      1>c:\users\алексей\documents\github\kurs2020\kurs2020\main_game.h(475): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
      1>c:\users\алексей\documents\github\kurs2020\kurs2020\main_game.h(488): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
      1>c:\users\алексей\documents\github\kurs2020\kurs2020\main_game.h(491): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\time.inl(112): см. объявление "localtime"
+     1>c:\users\алексей\documents\github\kurs2020\kurs2020\main_game.h(498): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\time.inl(112): см. объявление "localtime"
          Создание кода...
          Для всех выходных данных обновления не требуется.
@@ -58,4 +62,4 @@
 
 Построение успешно завершено.
 
-Затраченное время: 00:00:05.69
+Затраченное время: 00:00:05.43
