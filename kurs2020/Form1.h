@@ -4,8 +4,9 @@
 #include "krest_and_village.h"
 #include "main_game.h"
 #include "spravk.h"
+#include "itog_game.h"
 
-int f_endgame; //флаг о том, что игра окончена (игрок проиграл) (глобальн.)
+int f_endgame=0; //флаг о том, что игра окончена (игрок проиграл) (глобальн.)
 
 namespace kurs2020 {
 
@@ -201,6 +202,7 @@ namespace kurs2020 {
 			this->ShowIcon = false;
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Главное меню";
+			this->Activated += gcnew System::EventHandler(this, &Form1::Form1_Activated);
 			this->Load += gcnew System::EventHandler(this, &Form1::Form1_Load);
 			this->ResumeLayout(false);
 
@@ -229,6 +231,14 @@ private: System::Void quit_butt_Click(System::Object^  sender, System::EventArgs
 private: System::Void spravk_butt_Click(System::Object^  sender, System::EventArgs^  e) {
 			spravk^ spravk_p = gcnew spravk(); //указатель на форму
 			spravk_p -> ShowDialog(); //открыть форму
+		 }
+private: System::Void Form1_Activated(System::Object^  sender, System::EventArgs^  e) {
+			 if(f_endgame==1)
+			 {
+				f_endgame=0;
+				itog_game^ itog_game_p = gcnew itog_game(); //указатель на форму
+				itog_game_p -> Show(); //открыть форму
+			 }
 		 }
 };
 }
