@@ -5,6 +5,7 @@
 #include "sell_tovar.h"
 #include "spravk.h"
 
+extern int f_endgame; //флаг о том, что игра окончена (игрок проиграл) (глобальн.)
 
 namespace kurs2020 {
 
@@ -368,8 +369,31 @@ private: System::Void main_game_Load(System::Object^  sender, System::EventArgs^
 		 }
 private: System::Void main_timer_Tick(System::Object^  sender, System::EventArgs^  e) {
 			 derevn.set_hours_procv(derevn.get_hours_procv()+1);
-			 
-
+			 if(derevn.get_kolvo_krest()==0)
+			 {
+				 derevn.set_otschet_hours_net_krest(derevn.get_otschet_hours_net_krest()+1);
+			 }
+			 if(derevn.get_otschet_hours_net_krest()==2)
+			 {
+				 f_endgame=1;
+				 Close();
+			 }
+			 if(derevn.get_kolvo_krest()!=0)
+			 {
+				 derevn.set_otschet_hours_net_krest(0);
+			 }
+			 if(derevn.get_flag_season()==0 && derevn.get_budget_village()!=0)
+			 {
+				 int kolv_k=derevn.get_kolvo_krest();
+				 for(int ko=0; ko<kolv_k; ko++)
+				 {
+					 if((derevn.get_budget_village()-derevn.krests[ko].get_naim)>=0)
+					 {
+					 }
+					 else
+						 break;
+				 }
+			 }
 		 }
 };
 }
