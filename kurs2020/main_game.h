@@ -1,4 +1,5 @@
 #pragma once
+#include <ctime>
 #include "tabl_krest.h"
 #include "krest_and_village.h"
 #include "sell_tovar.h"
@@ -293,6 +294,7 @@ namespace kurs2020 {
 			// 
 			// main_timer
 			// 
+			this->main_timer->Enabled = true;
 			this->main_timer->Interval = 5000;
 			this->main_timer->Tick += gcnew System::EventHandler(this, &main_game::main_timer_Tick);
 			// 
@@ -358,8 +360,15 @@ private: System::Void main_game_Load(System::Object^  sender, System::EventArgs^
 				this->time_helper->Text = L"До конца лета осталось " + Convert::ToString(60 -(derevn.get_hours_procv() - derevn.get_hours_from_begin_of_season())) + L" Часов Процветания.";
 			 if(derevn.get_flag_season()==1)
 				this->time_helper->Text = L"До конца зимы осталось " + Convert::ToString(24 -(derevn.get_hours_procv() - derevn.get_hours_from_begin_of_season())) + L" Часов Процветания.";
+			 /* //вывод текущего времени в строку события (час:мин:сек). Понадобится в другой части кода
+			 time_t now = time(0);
+			 tm *ltm = localtime(&now);
+			 this->event_helper->Text = L"Последнее событие: " + Convert::ToString(ltm->tm_hour)+ L":" + Convert::ToString(ltm->tm_min)+ L":" + Convert::ToString(ltm->tm_sec) + L" ";
+			 */
 		 }
 private: System::Void main_timer_Tick(System::Object^  sender, System::EventArgs^  e) {
+			 derevn.set_hours_procv(derevn.get_hours_procv()+1);
+			 
 
 		 }
 };
