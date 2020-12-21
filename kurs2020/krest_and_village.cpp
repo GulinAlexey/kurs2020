@@ -224,6 +224,10 @@ void Village::Add_rand_krest() //добавление случайного крестьянина к имеющимся (
 	kolvo_krest=kolvo_krest+1; //теперь на 1 крестьянина больше
 }
 
+void Village::Naim_krest(Village vil_naim, int numk) //найм крестьянина с выбранным номером из биржи труда (нумерация от единицы!)
+{
+}
+
 //Получение и установление соответствующих полей для деревни
 void Village::set_kolvo_krest(int in)
 {
