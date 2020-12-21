@@ -309,8 +309,8 @@ namespace kurs2020 {
 			string str_name= birzh_trud.krests[num].get_name() + " " + birzh_trud.krests[num].get_surname();
 			spisok->Rows[num]->Cells[1]->Value = gcnew System::String(str_name.c_str()); //внести в €чейку таблицы
 			spisok->Rows[num]->Cells[2]->Value = Convert::ToString(birzh_trud.krests[num].get_proizv_hleb()) + L"/" + Convert::ToString(birzh_trud.krests[num].get_proizv_skot());
-			spisok->Rows[num]->Cells[3]->Value = Convert::ToString(birzh_trud.krests[num].get_eda_hleb()) + L"/" + Convert::ToString(birzh_trud.krests[num].get_eda_skot());
-			spisok->Rows[num]->Cells[4]->Value = Convert::ToString(birzh_trud.krests[num].get_money_trat());
+			spisok->Rows[num]->Cells[3]->Value = Convert::ToString(birzh_trud.krests[num].get_eda_hleb()*derevn.get_speed_life()) + L"/" + Convert::ToString(birzh_trud.krests[num].get_eda_skot()*derevn.get_speed_life());
+			spisok->Rows[num]->Cells[4]->Value = Convert::ToString(birzh_trud.krests[num].get_money_trat()*derevn.get_speed_life());
 			spisok->Rows[num]->Cells[5]->Value = Convert::ToString(birzh_trud.krests[num].get_naim());
 		}
 
