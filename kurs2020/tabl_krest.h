@@ -52,6 +52,7 @@ namespace kurs2020 {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^  prozhorl_tabl;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^  rashod_tabl;
 	private: System::Windows::Forms::MaskedTextBox^  num_krest_pole;
+	private: System::Windows::Forms::Label^  label3;
 
 
 
@@ -91,6 +92,7 @@ namespace kurs2020 {
 			this->prozhorl_tabl = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->rashod_tabl = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->izgnat_box->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->spisok))->BeginInit();
 			this->SuspendLayout();
@@ -244,6 +246,15 @@ namespace kurs2020 {
 			this->label2->TabIndex = 15;
 			this->label2->Text = L"Ваши крестьяне:";
 			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->Location = System::Drawing::Point(2, 2);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(377, 13);
+			this->label3->TabIndex = 17;
+			this->label3->Text = L"Примечание: информация выводится с учётом текущей Скорости жизни";
+			// 
 			// tabl_krest
 			// 
 			this->AcceptButton = this->izgnat_butt;
@@ -251,6 +262,7 @@ namespace kurs2020 {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"$this.BackgroundImage")));
 			this->ClientSize = System::Drawing::Size(874, 491);
+			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->spisok);
 			this->Controls->Add(this->izgnat_box);

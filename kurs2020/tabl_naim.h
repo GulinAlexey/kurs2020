@@ -60,6 +60,7 @@ namespace kurs2020 {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^  prozhorl_tabl;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^  rashod_tabl;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^  naim_money_tabl;
+	private: System::Windows::Forms::Label^  label3;
 
 
 
@@ -105,6 +106,7 @@ namespace kurs2020 {
 			this->rashod_tabl = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->naim_money_tabl = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->naim_box->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->spisok))->BeginInit();
 			this->SuspendLayout();
@@ -255,6 +257,15 @@ namespace kurs2020 {
 			this->label2->TabIndex = 15;
 			this->label2->Text = L"Доступные для найма крестьяне:";
 			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->Location = System::Drawing::Point(2, 2);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(377, 13);
+			this->label3->TabIndex = 18;
+			this->label3->Text = L"Примечание: информация выводится с учётом текущей Скорости жизни";
+			// 
 			// tabl_naim
 			// 
 			this->AcceptButton = this->naim_butt;
@@ -262,6 +273,7 @@ namespace kurs2020 {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"$this.BackgroundImage")));
 			this->ClientSize = System::Drawing::Size(874, 371);
+			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->spisok);
 			this->Controls->Add(this->naim_box);
