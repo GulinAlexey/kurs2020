@@ -1,4 +1,4 @@
-﻿Построение начато 22.12.2020 22:21:54.
+﻿Построение начато 22.12.2020 22:32:09.
      1>Проект "C:\Users\Алексей\Documents\GitHub\kurs2020\kurs2020\kurs2020.vcxproj" в узле 2 (целевые объекты build).
      1>InitializeBuildStatus:
          Создание "Release\kurs2020.unsuccessfulbuild", так как было задано "AlwaysCreate".
@@ -6,11 +6,11 @@
        Целевой объект "GenerateTargetFrameworkMonikerAttribute" пропускается, так как все выходные файлы актуальны по отношению к входным.
        ClCompile:
          Для всех выходных данных обновления не требуется.
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0" /Zi /clr:pure /nologo /W3 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D _UNICODE /D UNICODE /EHa /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Release\kurs2020.pch" /Fo"Release\\" /Fd"Release\vc100.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Core.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Drawing.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Windows.Forms.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Xml.dll" /analyze- /errorReport:prompt kurs2020.cpp main_game.cpp /clr:nostdlib 
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0" /Zi /clr:pure /nologo /W3 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D _UNICODE /D UNICODE /EHa /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Release\kurs2020.pch" /Fo"Release\\" /Fd"Release\vc100.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Core.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Drawing.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Windows.Forms.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Xml.dll" /analyze- /errorReport:prompt kurs2020.cpp main_game.cpp tabl_krest.cpp /clr:nostdlib 
          kurs2020.cpp
      1>c:\users\алексей\documents\github\kurs2020\kurs2020\tabl_naim.h(336): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
      1>c:\users\алексей\documents\github\kurs2020\kurs2020\tabl_naim.h(355): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
-     1>c:\users\алексей\documents\github\kurs2020\kurs2020\tabl_krest.h(342): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+     1>c:\users\алексей\documents\github\kurs2020\kurs2020\tabl_krest.h(347): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
      1>c:\users\алексей\documents\github\kurs2020\kurs2020\main_game.h(431): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\time.inl(112): см. объявление "localtime"
      1>c:\users\алексей\documents\github\kurs2020\kurs2020\main_game.h(461): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
@@ -26,7 +26,7 @@
          main_game.cpp
      1>c:\users\алексей\documents\github\kurs2020\kurs2020\tabl_naim.h(336): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
      1>c:\users\алексей\documents\github\kurs2020\kurs2020\tabl_naim.h(355): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
-     1>c:\users\алексей\documents\github\kurs2020\kurs2020\tabl_krest.h(342): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+     1>c:\users\алексей\documents\github\kurs2020\kurs2020\tabl_krest.h(347): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
      1>c:\users\алексей\documents\github\kurs2020\kurs2020\main_game.h(431): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\time.inl(112): см. объявление "localtime"
      1>c:\users\алексей\documents\github\kurs2020\kurs2020\main_game.h(461): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
@@ -38,6 +38,10 @@
                  C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\time.inl(112): см. объявление "localtime"
      1>c:\users\алексей\documents\github\kurs2020\kurs2020\main_game.h(500): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\time.inl(112): см. объявление "localtime"
+         tabl_krest.cpp
+     1>c:\users\алексей\documents\github\kurs2020\kurs2020\tabl_naim.h(336): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+     1>c:\users\алексей\documents\github\kurs2020\kurs2020\tabl_naim.h(355): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+     1>c:\users\алексей\documents\github\kurs2020\kurs2020\tabl_krest.h(347): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
          Создание кода...
          Для всех выходных данных обновления не требуется.
        CoreResGen:
@@ -67,4 +71,4 @@
 
 Построение успешно завершено.
 
-Затраченное время: 00:00:05.92
+Затраченное время: 00:00:07.49
