@@ -437,7 +437,7 @@ private: System::Void main_timer_Tick(System::Object^  sender, System::EventArgs
 							 derevn.set_kolvo_skot(0);
 						}
 						derevn.krests[ko].set_otschet_hours_net_edi(derevn.krests[ko].get_otschet_hours_net_edi()+1);
-						if(derevn.krests[ko].get_otschet_hours_net_edi()==12)
+						if(derevn.krests[ko].get_otschet_hours_net_edi()>=12)
 						{
 							derevn.Delete_krest(ko+1); //удалить крестьянина (методу передаётся нумерация от единицы, а цикл нумеруется от нуля)
 							kolv_k=kolv_k-1; //крестьян стало на 1 меньше
