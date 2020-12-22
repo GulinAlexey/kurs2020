@@ -310,21 +310,27 @@ namespace kurs2020 {
 		}
 #pragma endregion
 	private: System::Void tabl_naim_Activated(System::Object^  sender, System::EventArgs^  e) {
-		//очистить все строки перед выводом
-		while (0 != spisok->RowCount)
-			spisok->Rows->RemoveAt(0);
-
-		int kolvo_str=birzh_trud.get_kolvo_krest(); //получить кол-во крестьян в списке
-		for(int num=0; num<kolvo_str; num++)
+		if(f_endgame==1) //игра закончилась, закрыть все формы
+				 Close();
+		else
 		{
-			spisok->Rows->Add(); //добавить новую строку в таблицу
-			spisok->Rows[num]->Cells[0]->Value = Convert::ToString(num+1); //записать порядковый номер крестьянина
-			string str_name= birzh_trud.krests[num].get_name() + " " + birzh_trud.krests[num].get_surname();
-			spisok->Rows[num]->Cells[1]->Value = gcnew System::String(str_name.c_str()); //внести в ячейку таблицы
-			spisok->Rows[num]->Cells[2]->Value = Convert::ToString(birzh_trud.krests[num].get_proizv_hleb()) + L"/" + Convert::ToString(birzh_trud.krests[num].get_proizv_skot());
-			spisok->Rows[num]->Cells[3]->Value = Convert::ToString(birzh_trud.krests[num].get_eda_hleb()*derevn.get_speed_life()) + L"/" + Convert::ToString(birzh_trud.krests[num].get_eda_skot()*derevn.get_speed_life());
-			spisok->Rows[num]->Cells[4]->Value = Convert::ToString(birzh_trud.krests[num].get_money_trat()*derevn.get_speed_life());
-			spisok->Rows[num]->Cells[5]->Value = Convert::ToString(birzh_trud.krests[num].get_naim());
+			//очистить все строки перед выводом
+			while (0 != spisok->RowCount)
+				spisok->Rows->RemoveAt(0);
+
+			int kolvo_str=birzh_trud.get_kolvo_krest(); //получить кол-во крестьян в списке
+			for(int num=0; num<kolvo_str; num++)
+			{
+				spisok->Rows->Add(); //добавить новую строку в таблицу
+				spisok->Rows[num]->Cells[0]->Value = Convert::ToString(num+1); //записать порядковый номер крестьянина
+				string str_name= birzh_trud.krests[num].get_name() + " " + birzh_trud.krests[num].get_surname();
+				spisok->Rows[num]->Cells[1]->Value = gcnew System::String(str_name.c_str()); //внести в ячейку таблицы
+				spisok->Rows[num]->Cells[2]->Value = Convert::ToString(birzh_trud.krests[num].get_proizv_hleb()) + L"/" + Convert::ToString(birzh_trud.krests[num].get_proizv_skot());
+				spisok->Rows[num]->Cells[3]->Value = Convert::ToString(birzh_trud.krests[num].get_eda_hleb()*derevn.get_speed_life()) + L"/" + Convert::ToString(birzh_trud.krests[num].get_eda_skot()*derevn.get_speed_life());
+				spisok->Rows[num]->Cells[4]->Value = Convert::ToString(birzh_trud.krests[num].get_money_trat()*derevn.get_speed_life());
+				spisok->Rows[num]->Cells[5]->Value = Convert::ToString(birzh_trud.krests[num].get_naim());
+			}
+
 		}
 
 		}
