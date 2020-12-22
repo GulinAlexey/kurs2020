@@ -1,4 +1,7 @@
 #pragma once
+#include "krest_and_village.h"
+
+extern int f_endgame; //флаг о том, что игра окончена (игрок проиграл) (глобальн.)
 
 namespace kurs2020 {
 
@@ -215,8 +218,8 @@ private: System::Void num_sell_TextChanged(System::Object^  sender, System::Even
 
 		 }
 private: System::Void sell_tovar_Activated(System::Object^  sender, System::EventArgs^  e) {
-			 this->price_hleb_text->Text = L"Текущая цена за ед. хлеба:";
-			 this->price_skot_text->Text = L"Текущая цена за голову скота:";
+			 this->price_hleb_text->Text = L"Текущая цена за ед. хлеба: " + Convert::ToString(derevn.get_price_hleb()) + L" руб.";
+			 this->price_skot_text->Text = L"Текущая цена за голову скота: " + Convert::ToString(derevn.get_price_skot()) + L" руб.";
 
 		 }
 };

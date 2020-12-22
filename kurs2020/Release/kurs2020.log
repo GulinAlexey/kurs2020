@@ -1,7 +1,7 @@
-﻿Построение начато 22.12.2020 23:22:38.
+﻿Построение начато 22.12.2020 23:35:32.
      1>Проект "C:\Users\Алексей\Documents\GitHub\kurs2020\kurs2020\kurs2020.vcxproj" в узле 2 (целевые объекты build).
      1>InitializeBuildStatus:
-         Обращение к "Release\kurs2020.unsuccessfulbuild".
+         Создание "Release\kurs2020.unsuccessfulbuild", так как было задано "AlwaysCreate".
        GenerateTargetFrameworkMonikerAttribute:
        Целевой объект "GenerateTargetFrameworkMonikerAttribute" пропускается, так как все выходные файлы актуальны по отношению к входным.
        ClCompile:
@@ -42,9 +42,7 @@
          Создание кода...
          Для всех выходных данных обновления не требуется.
        CoreResGen:
-         "C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\NETFX 4.0 Tools\resgen.exe" /useSourcePath /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Core.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Data.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Drawing.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Windows.Forms.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Xml.dll" /compile main_game.resx,Release\kurs2020.main_game.resources sell_tovar.resx,Release\kurs2020.sell_tovar.resources
-         Обрабатывается файл ресурсов "main_game.resx", результирующий объект: "Release\kurs2020.main_game.resources".
-         Обрабатывается файл ресурсов "sell_tovar.resx", результирующий объект: "Release\kurs2020.sell_tovar.resources".
+         Отсутствуют ресурсы, устаревшие по отношению к файлам своих источников. Пропуск формирования ресурсов.
        ResourceCompile:
          Для всех выходных данных обновления не требуется.
        Link:
@@ -70,4 +68,4 @@
 
 Построение успешно завершено.
 
-Затраченное время: 00:00:06.71
+Затраченное время: 00:00:07.27
