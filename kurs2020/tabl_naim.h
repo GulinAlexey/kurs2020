@@ -332,6 +332,8 @@ private: System::Void num_krest_pole1_TextChanged(System::Object^  sender, Syste
 		 }
 private: System::Void naim_butt_Click(System::Object^  sender, System::EventArgs^  e) {
 			 //birzh_trud.Delete_krest(Convert::ToDouble(this->num_krest_pole->Text)); //удалить крестьянина
+			 derevn.Naim_krest(birzh_trud, Convert::ToDouble(this->num_krest_pole->Text));
+			 birzh_trud.Delete_krest(Convert::ToDouble(this->num_krest_pole->Text)); //крестьянин перешёл из одного массива в другой. Из начального массива он удаляется
 			 tabl_naim_Activated(sender,e); //обновить таблицу
 		 }
 private: System::Void tabl_naim_Load(System::Object^  sender, System::EventArgs^  e) {
