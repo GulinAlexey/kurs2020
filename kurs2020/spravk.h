@@ -1,5 +1,7 @@
 #pragma once
 
+extern int f_endgame; //флаг о том, что игра окончена (игрок проиграл) (глобальн.)
+
 namespace kurs2020 {
 
 	using namespace System;
@@ -37,12 +39,14 @@ namespace kurs2020 {
 	private: System::Windows::Forms::TextBox^  spravka_info;
 	protected: 
 	private: System::Windows::Forms::Button^  cloz;
+	private: System::Windows::Forms::Timer^  timer_endgame;
+	private: System::ComponentModel::IContainer^  components;
 
 	private:
 		/// <summary>
 		/// “ребуетс€ переменна€ конструктора.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -51,9 +55,11 @@ namespace kurs2020 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			this->components = (gcnew System::ComponentModel::Container());
 			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(spravk::typeid));
 			this->spravka_info = (gcnew System::Windows::Forms::TextBox());
 			this->cloz = (gcnew System::Windows::Forms::Button());
+			this->timer_endgame = (gcnew System::Windows::Forms::Timer(this->components));
 			this->SuspendLayout();
 			// 
 			// spravka_info
@@ -80,6 +86,12 @@ namespace kurs2020 {
 			this->cloz->Text = L"«акрыть";
 			this->cloz->UseVisualStyleBackColor = true;
 			this->cloz->Click += gcnew System::EventHandler(this, &spravk::cloz_Click);
+			// 
+			// timer_endgame
+			// 
+			this->timer_endgame->Enabled = true;
+			this->timer_endgame->Interval = 2000;
+			this->timer_endgame->Tick += gcnew System::EventHandler(this, &spravk::timer_endgame_Tick);
 			// 
 			// spravk
 			// 
@@ -109,5 +121,9 @@ namespace kurs2020 {
 			 }
 	private: System::Void spravka_info_TextChanged(System::Object^  sender, System::EventArgs^  e) {
 			 }
-	};
+	private: System::Void timer_endgame_Tick(System::Object^  sender, System::EventArgs^  e) {
+			 if(f_endgame==1) //игра закончилась, закрыть все формы
+				 Close();
+			 }
+};
 }
