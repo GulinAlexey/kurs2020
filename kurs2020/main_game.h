@@ -445,6 +445,9 @@ private: System::Void main_timer_Tick(System::Object^  sender, System::EventArgs
 							tm *ltm = localtime(&now);
 							string str_name= derevn.krests[ko].get_name() + " " + derevn.krests[ko].get_surname(); //для вывода имени и фамилии
 							this->event_helper->Text = L"Последнее событие: " + Convert::ToString(ltm->tm_hour)+ L":" + Convert::ToString(ltm->tm_min)+ L":" + Convert::ToString(ltm->tm_sec) + L" " + L"Крестьянин " + gcnew System::String(str_name.c_str()) + L" ушёл из деревни из-за недостатка пищи.";
+							
+							if(kolv_k==ko)
+								break;
 			 
 						}
 					 }
