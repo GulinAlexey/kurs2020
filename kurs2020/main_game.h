@@ -482,18 +482,20 @@ private: System::Void main_timer_Tick(System::Object^  sender, System::EventArgs
 			 {
 				 int f_event; //флаг случайного события (0 - приход нового крестьянина, 1 - нападение волков на скот)
 				 f_event =(1 + rand() % 2) -1; //случайное число в интервале от 0 до 1 включительно
-				 if(f_event==1) //нападение волков
+
+				 double proc_izm; //процент от начального значения кол-ва скота, на которое оно изменится
+				 proc_izm = 5 + rand() % 25; //случайное число в интервале от 5 до 30 включительно
+				 proc_izm = proc_izm / 100; //перевод процентного значения в десятичное
+				 int poteri = derevn.get_kolvo_skot() * proc_izm; //отдельная переменная для кол-ва потерянного скота
+
+				 if(f_event==1 && ((derevn.get_kolvo_skot() - poteri)>=0) && (derevn.get_kolvo_skot()>0)) //нападение волков
 				 {
-					 double proc_izm; //процент от начального значения кол-ва скота, на которое оно изменится
-					 proc_izm = 5 + rand() % 25; //случайное число в интервале от 5 до 30 включительно
-					 proc_izm = proc_izm / 100; //перевод процентного значения в десятичное
-					 int poteri = derevn.get_kolvo_skot() * proc_izm; //отдельная переменная для кол-ва потерянного скота
 					 derevn.set_kolvo_skot(derevn.get_kolvo_skot() - poteri);
 					 time_t now = time(0); //для вывода времени
 					 tm *ltm = localtime(&now);
 					 this->event_helper->Text = L"Последнее событие: " + Convert::ToString(ltm->tm_hour)+ L":" + Convert::ToString(ltm->tm_min)+ L":" + Convert::ToString(ltm->tm_sec) + L" " + L"Стая волков из леса напала на ваш скот. Потеряно " + Convert::ToString(poteri) + L" ед. скота.";
 				 }
-				 if(f_event==0) //приход крестьянина
+				 else //приход крестьянина
 				 {
 					derevn.Add_rand_krest(); //добавление нового случайного крестьянина
 					time_t now = time(0); //для вывода времени
