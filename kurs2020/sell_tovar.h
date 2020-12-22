@@ -70,8 +70,8 @@ namespace kurs2020 {
 			this->num_sell = (gcnew System::Windows::Forms::MaskedTextBox());
 			this->sell_butt = (gcnew System::Windows::Forms::Button());
 			this->hleb_or_skot = (gcnew System::Windows::Forms::GroupBox());
-			this->hleb_radio = (gcnew System::Windows::Forms::RadioButton());
 			this->skot_radio = (gcnew System::Windows::Forms::RadioButton());
+			this->hleb_radio = (gcnew System::Windows::Forms::RadioButton());
 			this->hleb_or_skot->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -126,6 +126,7 @@ namespace kurs2020 {
 			this->num_sell->TabIndex = 18;
 			this->num_sell->TabStop = false;
 			this->num_sell->TextAlign = System::Windows::Forms::HorizontalAlignment::Right;
+			this->num_sell->TextChanged += gcnew System::EventHandler(this, &sell_tovar::num_sell_TextChanged);
 			// 
 			// sell_butt
 			// 
@@ -151,6 +152,19 @@ namespace kurs2020 {
 			this->hleb_or_skot->TabIndex = 21;
 			this->hleb_or_skot->TabStop = false;
 			// 
+			// skot_radio
+			// 
+			this->skot_radio->AutoSize = true;
+			this->skot_radio->BackColor = System::Drawing::Color::Transparent;
+			this->skot_radio->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(204)));
+			this->skot_radio->Location = System::Drawing::Point(16, 66);
+			this->skot_radio->Name = L"skot_radio";
+			this->skot_radio->Size = System::Drawing::Size(137, 22);
+			this->skot_radio->TabIndex = 1;
+			this->skot_radio->Text = L"Домашний скот";
+			this->skot_radio->UseVisualStyleBackColor = false;
+			// 
 			// hleb_radio
 			// 
 			this->hleb_radio->AutoSize = true;
@@ -165,19 +179,6 @@ namespace kurs2020 {
 			this->hleb_radio->TabStop = true;
 			this->hleb_radio->Text = L"Хлеб";
 			this->hleb_radio->UseVisualStyleBackColor = false;
-			// 
-			// skot_radio
-			// 
-			this->skot_radio->AutoSize = true;
-			this->skot_radio->BackColor = System::Drawing::Color::Transparent;
-			this->skot_radio->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(204)));
-			this->skot_radio->Location = System::Drawing::Point(16, 66);
-			this->skot_radio->Name = L"skot_radio";
-			this->skot_radio->Size = System::Drawing::Size(137, 22);
-			this->skot_radio->TabIndex = 1;
-			this->skot_radio->Text = L"Домашний скот";
-			this->skot_radio->UseVisualStyleBackColor = false;
 			// 
 			// sell_tovar
 			// 
@@ -209,5 +210,8 @@ namespace kurs2020 {
 #pragma endregion
 
 
+private: System::Void num_sell_TextChanged(System::Object^  sender, System::EventArgs^  e) {
+
+		 }
 };
 }

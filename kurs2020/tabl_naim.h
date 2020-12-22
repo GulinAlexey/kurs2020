@@ -387,7 +387,10 @@ private: System::Void timer_proverk_krest_Tick(System::Object^  sender, System::
 			 else
 			 {
 				num_krest_pole1_TextChanged(sender,e); //повторная проверка
-				tabl_naim_Activated(sender,e); //обновить таблицу
+				if(derevn.get_flag_season()==0) //таблицу обновлять только летом
+				{
+					tabl_naim_Activated(sender,e); //обновить таблицу
+				}
 			 }
 		 }
 };

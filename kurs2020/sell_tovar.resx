@@ -120,10 +120,9 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="hleb_or_skot.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAAoAAAAFCAIAAADzBuo/AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAABpSURBVBhXLY1LDoAgDES5/+0o4BpUQD5GwQs4Y0y6aF87r2p295zLbI7Vl+TlLhZwNHKVVzMq
-        O1D0ZdUpSNsFp1xjGJXnyF2HAUWubKZn+6WDJqWZjqvwxV/NKXggiB42rnP4f/Uo0csLcp2FWM4B8yEA
-        AAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAAAoAAAAFCAIAAADzBuo/AAAABGdBTUEAALGPC/xhBQAAAGlJREFUGFct
+        jUsOgCAMRLn/7SjgGlRAPkbBCzhjTLpoXzuvanb3nMtsjtWX5OUuFnA0cpVXMyo7UPRl1SlI2wWnXGMY
+        lefIXYcBRa5spmf7pYMmpZmOq/DFX80peCCIHjauc/h/9SjRywtynYVYzgHzIQAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="$this.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
