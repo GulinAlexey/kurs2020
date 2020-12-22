@@ -305,7 +305,8 @@ namespace kurs2020 {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->BackColor = System::Drawing::SystemColors::ScrollBar;
+			this->label1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(210)), static_cast<System::Int32>(static_cast<System::Byte>(210)), 
+				static_cast<System::Int32>(static_cast<System::Byte>(210)));
 			this->label1->Location = System::Drawing::Point(2, 2);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(221, 26);
