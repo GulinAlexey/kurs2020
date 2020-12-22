@@ -230,7 +230,8 @@ namespace kurs2020 {
 			// 
 			// event_helper
 			// 
-			this->event_helper->AutoSize = true;
+			this->event_helper->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left) 
+				| System::Windows::Forms::AnchorStyles::Right));
 			this->event_helper->BackColor = System::Drawing::Color::Transparent;
 			this->event_helper->Cursor = System::Windows::Forms::Cursors::Default;
 			this->event_helper->Font = (gcnew System::Drawing::Font(L"Cambria", 14.25F, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point, 
@@ -238,7 +239,7 @@ namespace kurs2020 {
 			this->event_helper->Location = System::Drawing::Point(6, 51);
 			this->event_helper->Name = L"event_helper";
 			this->event_helper->RightToLeft = System::Windows::Forms::RightToLeft::No;
-			this->event_helper->Size = System::Drawing::Size(14, 22);
+			this->event_helper->Size = System::Drawing::Size(808, 46);
 			this->event_helper->TabIndex = 1;
 			this->event_helper->Text = L" ";
 			// 

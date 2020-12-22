@@ -201,6 +201,7 @@ namespace kurs2020 {
 			this->ShowIcon = false;
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Товарная биржа";
+			this->Activated += gcnew System::EventHandler(this, &sell_tovar::sell_tovar_Activated);
 			this->hleb_or_skot->ResumeLayout(false);
 			this->hleb_or_skot->PerformLayout();
 			this->ResumeLayout(false);
@@ -211,6 +212,11 @@ namespace kurs2020 {
 
 
 private: System::Void num_sell_TextChanged(System::Object^  sender, System::EventArgs^  e) {
+
+		 }
+private: System::Void sell_tovar_Activated(System::Object^  sender, System::EventArgs^  e) {
+			 this->price_hleb_text->Text = L"Текущая цена за ед. хлеба:";
+			 this->price_skot_text->Text = L"Текущая цена за голову скота:";
 
 		 }
 };
