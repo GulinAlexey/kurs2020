@@ -60,6 +60,7 @@ namespace kurs2020 {
 	private: System::Windows::Forms::Label^  time_helper;
 	private: System::Windows::Forms::Timer^  main_timer;
 	private: System::Windows::Forms::Label^  label1;
+	private: System::Windows::Forms::Timer^  timer_refresh;
 	private: System::ComponentModel::IContainer^  components;
 
 
@@ -97,6 +98,7 @@ namespace kurs2020 {
 			this->vihod_info = (gcnew System::Windows::Forms::Label());
 			this->main_timer = (gcnew System::Windows::Forms::Timer(this->components));
 			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->timer_refresh = (gcnew System::Windows::Forms::Timer(this->components));
 			this->lent_menu->SuspendLayout();
 			this->pomoshnik_box->SuspendLayout();
 			this->SuspendLayout();
@@ -313,6 +315,12 @@ namespace kurs2020 {
 			this->label1->TabIndex = 10;
 			this->label1->Text = L"1 Час Процветания = 5 реальных секунд\r\n1 День Процветания = 1 реальная минута";
 			// 
+			// timer_refresh
+			// 
+			this->timer_refresh->Enabled = true;
+			this->timer_refresh->Interval = 512;
+			this->timer_refresh->Tick += gcnew System::EventHandler(this, &main_game::timer_refresh_Tick);
+			// 
 			// main_game
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
@@ -524,6 +532,19 @@ private: System::Void main_timer_Tick(System::Object^  sender, System::EventArgs
 				 }
 			 }
 
+			 //ВЫВОД ИНФОРМАЦИИ О ДЕРЕВНЕ
+			 this->kolvo_krest_text->Text = L"Крестьяне: " + Convert::ToString(derevn.get_kolvo_krest())+ L" чел.";;
+			 this->skorost_zhiz_text->Text = L"Скорость жизни: " + Convert::ToString(derevn.get_speed_life());
+			 this->den_procv_text->Text = L"Дни процветания: " + Convert::ToString(derevn.get_days_procv());
+			 this->budget_text->Text = L"Бюджет: " + Convert::ToString(derevn.get_budget_village()) + L" руб.";
+			 this->hleb_text->Text = L"Хлеб: " + Convert::ToString(derevn.get_kolvo_hleb()) + L" ед.";
+			 this->skot_text->Text = L"Домашний скот: " + Convert::ToString(derevn.get_kolvo_skot()) + L" ед.";
+			 if(derevn.get_flag_season()==0)
+				this->time_helper->Text = L"До конца лета осталось " + Convert::ToString(60 -(derevn.get_hours_procv() - derevn.get_hours_from_begin_of_season())) + L" Часов Процветания.";
+			 if(derevn.get_flag_season()==1)
+				this->time_helper->Text = L"До конца зимы осталось " + Convert::ToString(24 -(derevn.get_hours_procv() - derevn.get_hours_from_begin_of_season())) + L" Часов Процветания.";
+		 }
+private: System::Void timer_refresh_Tick(System::Object^  sender, System::EventArgs^  e) {
 			 //ВЫВОД ИНФОРМАЦИИ О ДЕРЕВНЕ
 			 this->kolvo_krest_text->Text = L"Крестьяне: " + Convert::ToString(derevn.get_kolvo_krest())+ L" чел.";;
 			 this->skorost_zhiz_text->Text = L"Скорость жизни: " + Convert::ToString(derevn.get_speed_life());
