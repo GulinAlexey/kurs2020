@@ -3,6 +3,8 @@
 #include "tabl_naim.h"
 #include <string>
 
+extern int f_endgame; //флаг о том, что игра окончена (игрок проиграл) (глобальн.)
+
 namespace kurs2020 {
 
 	using namespace System;
@@ -53,6 +55,8 @@ namespace kurs2020 {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^  rashod_tabl;
 	private: System::Windows::Forms::MaskedTextBox^  num_krest_pole;
 	private: System::Windows::Forms::Label^  label3;
+	private: System::Windows::Forms::Timer^  timer_proverk_krest;
+	private: System::ComponentModel::IContainer^  components;
 
 
 
@@ -70,7 +74,7 @@ namespace kurs2020 {
 		/// <summary>
 		/// Требуется переменная конструктора.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -79,6 +83,7 @@ namespace kurs2020 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			this->components = (gcnew System::ComponentModel::Container());
 			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(tabl_krest::typeid));
 			this->trud_butt = (gcnew System::Windows::Forms::Button());
 			this->izgnat_butt = (gcnew System::Windows::Forms::Button());
@@ -93,6 +98,7 @@ namespace kurs2020 {
 			this->rashod_tabl = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->timer_proverk_krest = (gcnew System::Windows::Forms::Timer(this->components));
 			this->izgnat_box->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->spisok))->BeginInit();
 			this->SuspendLayout();
@@ -255,6 +261,12 @@ namespace kurs2020 {
 			this->label3->TabIndex = 17;
 			this->label3->Text = L"Примечание: информация выводится с учётом текущей Скорости жизни";
 			// 
+			// timer_proverk_krest
+			// 
+			this->timer_proverk_krest->Enabled = true;
+			this->timer_proverk_krest->Interval = 2000;
+			this->timer_proverk_krest->Tick += gcnew System::EventHandler(this, &tabl_krest::timer_proverk_krest_Tick);
+			// 
 			// tabl_krest
 			// 
 			this->AcceptButton = this->izgnat_butt;
@@ -316,16 +328,36 @@ private: System::Void num_krest_pole1_TextChanged(System::Object^  sender, Syste
 			}
 			else
 				this->izgnat_butt->Enabled = false;
+			if(derevn.get_flag_season()==1) //если зима, кнопка Изгнать недоступна в любом случае
+			{
+				this->izgnat_butt->Enabled = false;
+				this->trud_butt->Enabled = false;
+			}
+			if(derevn.get_flag_season()==0) //если лето, включить кнопку открытия Биржи труда
+			{
+				this->trud_butt->Enabled = true;
+			}
 		 }
 private: System::Void izgnat_butt_Click(System::Object^  sender, System::EventArgs^  e) {
 			 derevn.Delete_krest(Convert::ToDouble(this->num_krest_pole->Text)); //удалить крестьянина
+			 num_krest_pole1_TextChanged(sender,e); //повторная проверка
 			 tabl_krest_Activated(sender,e); //обновить таблицу
 		 }
 private: System::Void tabl_krest_Load(System::Object^  sender, System::EventArgs^  e) {
+			 num_krest_pole1_TextChanged(sender,e); //проверка
 		 }
 private: System::Void trud_butt_Click(System::Object^  sender, System::EventArgs^  e) {
 			tabl_naim^ tabl_naim_p = gcnew tabl_naim(); //указатель на форму
 			tabl_naim_p -> ShowDialog(); //открыть форму
+		 }
+private: System::Void timer_proverk_krest_Tick(System::Object^  sender, System::EventArgs^  e) {
+			 if(f_endgame==1) //игра закончилась, закрыть все формы
+				 Close();
+			 else
+			 {
+				num_krest_pole1_TextChanged(sender,e); //повторная проверка
+				tabl_krest_Activated(sender,e); //обновить таблицу
+			 }
 		 }
 };
 }

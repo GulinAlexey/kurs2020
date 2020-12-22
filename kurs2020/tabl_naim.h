@@ -2,6 +2,8 @@
 #include "krest_and_village.h"
 #include <string>
 
+extern int f_endgame; //флаг о том, что игра окончена (игрок проиграл) (глобальн.)
+
 namespace kurs2020 {
 
 	using namespace System;
@@ -61,6 +63,9 @@ namespace kurs2020 {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^  rashod_tabl;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^  naim_money_tabl;
 	private: System::Windows::Forms::Label^  label3;
+	private: System::Windows::Forms::Timer^  timer_proverk_krest;
+
+	private: System::ComponentModel::IContainer^  components;
 
 
 
@@ -84,7 +89,7 @@ namespace kurs2020 {
 		/// <summary>
 		/// Требуется переменная конструктора.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -93,6 +98,7 @@ namespace kurs2020 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			this->components = (gcnew System::ComponentModel::Container());
 			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(tabl_naim::typeid));
 			this->naim_butt = (gcnew System::Windows::Forms::Button());
 			this->label1 = (gcnew System::Windows::Forms::Label());
@@ -107,6 +113,7 @@ namespace kurs2020 {
 			this->naim_money_tabl = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->timer_proverk_krest = (gcnew System::Windows::Forms::Timer(this->components));
 			this->naim_box->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->spisok))->BeginInit();
 			this->SuspendLayout();
@@ -266,6 +273,12 @@ namespace kurs2020 {
 			this->label3->TabIndex = 18;
 			this->label3->Text = L"Примечание: информация выводится с учётом текущей Скорости жизни";
 			// 
+			// timer_proverk_krest
+			// 
+			this->timer_proverk_krest->Enabled = true;
+			this->timer_proverk_krest->Interval = 2000;
+			this->timer_proverk_krest->Tick += gcnew System::EventHandler(this, &tabl_naim::timer_proverk_krest_Tick);
+			// 
 			// tabl_naim
 			// 
 			this->AcceptButton = this->naim_butt;
@@ -320,23 +333,37 @@ private: System::Void num_krest_pole1_TextChanged(System::Object^  sender, Syste
 			int kolvo_strr=birzh_trud.get_kolvo_krest(); //получить кол-во крестьян в списке
 			if (this->num_krest_pole->Text!=L"") //если поле с номером строки не пустое
 			{
-				if((Convert::ToDouble(this->num_krest_pole->Text) > kolvo_strr) || (Convert::ToDouble(this->num_krest_pole->Text)<1)) //если выбр. строка больше общего кол-ва строк, то отключить кнопку
+				int nummk = Convert::ToDouble(this->num_krest_pole->Text); //номер выбранного крестьянина
+				if((nummk > kolvo_strr) || (nummk<1)) //если выбр. строка больше общего кол-ва строк, то отключить кнопку
 				{
 					this->naim_butt->Enabled = false;
 				}
 				else
 					this->naim_butt->Enabled = true;
+
+				if((derevn.get_budget_village()-birzh_trud.krests[nummk-1].get_naim())<0)
+					this->naim_butt->Enabled = false;
 			}
 			else
 				this->naim_butt->Enabled = false;
+			if(derevn.get_flag_season()==1) //если зима, закрыть форму
+			{
+				Close();
+			}
 		 }
 private: System::Void naim_butt_Click(System::Object^  sender, System::EventArgs^  e) {
-			 //birzh_trud.Delete_krest(Convert::ToDouble(this->num_krest_pole->Text)); //удалить крестьянина
-			 derevn.Naim_krest(birzh_trud, Convert::ToDouble(this->num_krest_pole->Text));
-			 birzh_trud.Delete_krest(Convert::ToDouble(this->num_krest_pole->Text)); //крестьянин перешёл из одного массива в другой. Из начального массива он удаляется
+			 int nummk = Convert::ToDouble(this->num_krest_pole->Text); //номер выбранного крестьянина
+			 derevn.set_budget_village(derevn.get_budget_village()-birzh_trud.krests[nummk-1].get_naim());
+			 derevn.Naim_krest(birzh_trud, nummk);
+			 birzh_trud.Delete_krest(nummk); //крестьянин перешёл из одного массива в другой. Из начального массива он удаляется
+			 num_krest_pole1_TextChanged(sender,e); //повторная проверка
 			 tabl_naim_Activated(sender,e); //обновить таблицу
 		 }
 private: System::Void tabl_naim_Load(System::Object^  sender, System::EventArgs^  e) {
+			if(derevn.get_flag_season()==1) //если зима, закрыть форму
+			{
+				Close();
+			}
 			if(birzh_trud.krests!=0)
 			{
 				delete [] birzh_trud.krests;
@@ -347,6 +374,15 @@ private: System::Void tabl_naim_Load(System::Object^  sender, System::EventArgs^
 			{
 				birzh_trud.krests[v].Init_rand();
 			}
+		 }
+private: System::Void timer_proverk_krest_Tick(System::Object^  sender, System::EventArgs^  e) {
+			 if(f_endgame==1) //игра закончилась, закрыть все формы
+				 Close();
+			 else
+			 {
+				num_krest_pole1_TextChanged(sender,e); //повторная проверка
+				tabl_naim_Activated(sender,e); //обновить таблицу
+			 }
 		 }
 };
 }

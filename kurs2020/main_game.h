@@ -368,6 +368,8 @@ private: System::Void main_game_Load(System::Object^  sender, System::EventArgs^
 			 */
 		 }
 private: System::Void main_timer_Tick(System::Object^  sender, System::EventArgs^  e) {
+			 if(f_endgame==1) //игра закончилась, закрыть все формы
+				 Close();
 			 derevn.set_hours_procv(derevn.get_hours_procv()+1); //кол-во часов процветания увеличилось на 1
 			 if((derevn.get_hours_procv()%12)==0) //если прошло 12 часов процветания
 			 {
@@ -391,11 +393,11 @@ private: System::Void main_timer_Tick(System::Object^  sender, System::EventArgs
 				 int kolv_k=derevn.get_kolvo_krest();
 				 for(int ko=0; ko<kolv_k; ko++)
 				 {
-					 if((derevn.get_budget_village()-(derevn.krests[ko].get_naim()*derevn.get_speed_life()))>=0)
+					 if((derevn.get_budget_village()-(derevn.krests[ko].get_money_trat()*derevn.get_speed_life()))>=0)
 					 {
 						 derevn.set_kolvo_hleb(derevn.get_kolvo_hleb()+derevn.krests[ko].get_proizv_hleb());
 						 derevn.set_kolvo_skot(derevn.get_kolvo_skot()+derevn.krests[ko].get_proizv_skot());
-						 derevn.set_budget_village(derevn.get_budget_village()-(derevn.krests[ko].get_naim()*derevn.get_speed_life()));
+						 derevn.set_budget_village(derevn.get_budget_village()-(derevn.krests[ko].get_money_trat()*derevn.get_speed_life()));
 					 }
 					 else
 						 break;
