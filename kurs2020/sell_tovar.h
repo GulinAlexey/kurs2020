@@ -215,7 +215,19 @@ namespace kurs2020 {
 
 
 private: System::Void num_sell_TextChanged(System::Object^  sender, System::EventArgs^  e) {
-
+			 int zapas_hleb=derevn.get_kolvo_hleb(); //получить кол-во хлеба в деревне
+			 int zapas_skot=derevn.get_kolvo_skot(); //получить кол-во скота в деревне
+			 if (this->num_sell->Text!=L"") //если поле с номером строки не пустое
+			 {
+				 if(this->hleb_radio->Checked == true) //если выбран хлеб дл€ продажи
+				 {
+				 }
+				 if(this->skot_radio->Checked == true) //если выбран скот дл€ продажи
+				 {
+				 }
+			 }
+			 else
+				 this->sell_butt->Enabled = false;
 		 }
 private: System::Void sell_tovar_Activated(System::Object^  sender, System::EventArgs^  e) {
 			 this->price_hleb_text->Text = L"“екуща€ цена за ед. хлеба: " + Convert::ToString(derevn.get_price_hleb()) + L" руб.";
