@@ -59,6 +59,7 @@ namespace kurs2020 {
 	private: System::Windows::Forms::Label^  event_helper;
 	private: System::Windows::Forms::Label^  time_helper;
 	private: System::Windows::Forms::Timer^  main_timer;
+	private: System::Windows::Forms::Label^  label1;
 	private: System::ComponentModel::IContainer^  components;
 
 
@@ -95,6 +96,7 @@ namespace kurs2020 {
 			this->birzha_butt = (gcnew System::Windows::Forms::Button());
 			this->vihod_info = (gcnew System::Windows::Forms::Label());
 			this->main_timer = (gcnew System::Windows::Forms::Timer(this->components));
+			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->lent_menu->SuspendLayout();
 			this->pomoshnik_box->SuspendLayout();
 			this->SuspendLayout();
@@ -300,12 +302,23 @@ namespace kurs2020 {
 			this->main_timer->Interval = 5000;
 			this->main_timer->Tick += gcnew System::EventHandler(this, &main_game::main_timer_Tick);
 			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->BackColor = System::Drawing::SystemColors::ScrollBar;
+			this->label1->Location = System::Drawing::Point(2, 2);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(221, 26);
+			this->label1->TabIndex = 10;
+			this->label1->Text = L"1 Час Процветания = 5 реальных секунд\r\n1 День Процветания = 1 реальная минута";
+			// 
 			// main_game
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(844, 501);
+			this->Controls->Add(this->label1);
 			this->Controls->Add(this->vihod_info);
 			this->Controls->Add(this->birzha_butt);
 			this->Controls->Add(this->spisok_krest_butt);
