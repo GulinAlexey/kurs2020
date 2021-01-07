@@ -116,7 +116,7 @@ namespace kurs2020 {
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(283, 34);
 			this->label2->TabIndex = 16;
-			this->label2->Text = L"Продажа ресурсов";
+			this->label2->Text = L"Продажа ресурсов, шт.";
 			this->label2->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// num_sell
@@ -167,6 +167,7 @@ namespace kurs2020 {
 			this->skot_radio->TabIndex = 1;
 			this->skot_radio->Text = L"Домашний скот";
 			this->skot_radio->UseVisualStyleBackColor = false;
+			this->skot_radio->CheckedChanged += gcnew System::EventHandler(this, &sell_tovar::skot_radio_CheckedChanged);
 			// 
 			// hleb_radio
 			// 
@@ -221,9 +222,25 @@ private: System::Void num_sell_TextChanged(System::Object^  sender, System::Even
 			 {
 				 if(this->hleb_radio->Checked == true) //если выбран хлеб для продажи
 				 {
+					 if((Convert::ToDouble(this->num_sell->Text) > derevn.get_kolvo_hleb()) || (Convert::ToDouble(this->num_sell->Text) <= 0))
+					 {
+						 this->sell_butt->Enabled = false;
+					 }
+					 else
+					 {
+						 this->sell_butt->Enabled = true;
+					 }
 				 }
 				 if(this->skot_radio->Checked == true) //если выбран скот для продажи
 				 {
+					 if((Convert::ToDouble(this->num_sell->Text) > derevn.get_kolvo_skot()) || (Convert::ToDouble(this->num_sell->Text) <= 0))
+					 {
+						 this->sell_butt->Enabled = false;
+					 }
+					 else
+					 {
+						 this->sell_butt->Enabled = true;
+					 }
 				 }
 			 }
 			 else
@@ -233,6 +250,9 @@ private: System::Void sell_tovar_Activated(System::Object^  sender, System::Even
 			 this->price_hleb_text->Text = L"Текущая цена за ед. хлеба: " + Convert::ToString(derevn.get_price_hleb()) + L" руб.";
 			 this->price_skot_text->Text = L"Текущая цена за голову скота: " + Convert::ToString(derevn.get_price_skot()) + L" руб.";
 
+		 }
+private: System::Void skot_radio_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
+			 num_sell_TextChanged(sender, e);
 		 }
 };
 }
