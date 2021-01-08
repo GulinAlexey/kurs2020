@@ -559,6 +559,7 @@ private: System::Void timer_refresh_Tick(System::Object^  sender, System::EventA
 				this->time_helper->Text = L"До конца зимы осталось " + Convert::ToString(24 -(derevn.get_hours_procv() - derevn.get_hours_from_begin_of_season())) + L" Часов Процветания.";
 		 }
 private: System::Void save_game_butt_Click(System::Object^  sender, System::EventArgs^  e) {
+			 derevn.Save_game(); //сохранить игру в файл
 		 }
 };
 }
