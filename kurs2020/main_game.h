@@ -109,10 +109,10 @@ namespace kurs2020 {
 			this->lent_menu->Dock = System::Windows::Forms::DockStyle::None;
 			this->lent_menu->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {this->save_game_butt, this->spravk_lent_butt, 
 				this->go_to_main_menu_butt});
-			this->lent_menu->Location = System::Drawing::Point(380, 0);
+			this->lent_menu->Location = System::Drawing::Point(472, 0);
 			this->lent_menu->Name = L"lent_menu";
 			this->lent_menu->RightToLeft = System::Windows::Forms::RightToLeft::No;
-			this->lent_menu->Size = System::Drawing::Size(464, 24);
+			this->lent_menu->Size = System::Drawing::Size(372, 24);
 			this->lent_menu->TabIndex = 0;
 			this->lent_menu->Text = L"lent_menu";
 			// 
