@@ -194,6 +194,10 @@ void Village::Init_new_game() //инициализация при начале новой игры
 	}
 }
 
+void Village::Save_game() //сохранение игры (запись информации о деревне в файл)
+{
+}
+
 void Village::Delete_krest(int number) //удаление крестьянина с выбранным номером (нумерация от единицы!)
 {
 	Krest* kre_change = new Krest[kolvo_krest-1]; //временный массив крестьян
