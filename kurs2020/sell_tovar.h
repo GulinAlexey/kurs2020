@@ -48,6 +48,8 @@ namespace kurs2020 {
 	private: System::Windows::Forms::GroupBox^  hleb_or_skot;
 	private: System::Windows::Forms::RadioButton^  skot_radio;
 	private: System::Windows::Forms::RadioButton^  hleb_radio;
+	private: System::Windows::Forms::Timer^  timer_proverka;
+	private: System::ComponentModel::IContainer^  components;
 
 
 
@@ -57,7 +59,7 @@ namespace kurs2020 {
 		/// <summary>
 		/// “ребуетс€ переменна€ конструктора.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -66,6 +68,7 @@ namespace kurs2020 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			this->components = (gcnew System::ComponentModel::Container());
 			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(sell_tovar::typeid));
 			this->price_hleb_text = (gcnew System::Windows::Forms::Label());
 			this->price_skot_text = (gcnew System::Windows::Forms::Label());
@@ -75,6 +78,7 @@ namespace kurs2020 {
 			this->hleb_or_skot = (gcnew System::Windows::Forms::GroupBox());
 			this->skot_radio = (gcnew System::Windows::Forms::RadioButton());
 			this->hleb_radio = (gcnew System::Windows::Forms::RadioButton());
+			this->timer_proverka = (gcnew System::Windows::Forms::Timer(this->components));
 			this->hleb_or_skot->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -143,6 +147,7 @@ namespace kurs2020 {
 			this->sell_butt->TabStop = false;
 			this->sell_butt->Text = L"ѕродать";
 			this->sell_butt->UseVisualStyleBackColor = true;
+			this->sell_butt->Click += gcnew System::EventHandler(this, &sell_tovar::sell_butt_Click);
 			// 
 			// hleb_or_skot
 			// 
@@ -183,6 +188,12 @@ namespace kurs2020 {
 			this->hleb_radio->TabStop = true;
 			this->hleb_radio->Text = L"’леб";
 			this->hleb_radio->UseVisualStyleBackColor = false;
+			// 
+			// timer_proverka
+			// 
+			this->timer_proverka->Enabled = true;
+			this->timer_proverka->Interval = 2000;
+			this->timer_proverka->Tick += gcnew System::EventHandler(this, &sell_tovar::timer_proverka_Tick);
 			// 
 			// sell_tovar
 			// 
@@ -253,6 +264,29 @@ private: System::Void sell_tovar_Activated(System::Object^  sender, System::Even
 		 }
 private: System::Void skot_radio_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
 			 num_sell_TextChanged(sender, e);
+		 }
+private: System::Void sell_butt_Click(System::Object^  sender, System::EventArgs^  e) {
+			 if(this->hleb_radio->Checked == true) //если выбран хлеб дл€ продажи
+			 {
+				 derevn.set_kolvo_hleb(derevn.get_kolvo_hleb()-Convert::ToDouble(this->num_sell->Text)); //вычесть выбранное кол-ва хлеба из ресурсов деревни
+				 derevn.set_budget_village(derevn.get_budget_village()+Convert::ToDouble(this->num_sell->Text)*derevn.get_price_hleb()); //начислить деньги за продажу
+
+			 }
+			 if(this->skot_radio->Checked == true) //если выбран скот дл€ продажи
+			 {
+				 derevn.set_kolvo_skot(derevn.get_kolvo_skot()-Convert::ToDouble(this->num_sell->Text)); //вычесть выбранное кол-ва скота из ресурсов деревни
+				 derevn.set_budget_village(derevn.get_budget_village()+Convert::ToDouble(this->num_sell->Text)*derevn.get_price_skot()); //начислить деньги за продажу
+			 }
+			 num_sell_TextChanged(sender, e);
+		 }
+private: System::Void timer_proverka_Tick(System::Object^  sender, System::EventArgs^  e) {
+			 if(f_endgame==1) //игра закончилась, закрыть все формы
+				 Close();
+			 else
+			 {
+				num_sell_TextChanged(sender, e); //повторна€ проверка
+				sell_tovar_Activated(sender,e); //обновить таблицу
+			 }
 		 }
 };
 }
