@@ -109,10 +109,10 @@ namespace kurs2020 {
 			this->lent_menu->Dock = System::Windows::Forms::DockStyle::None;
 			this->lent_menu->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {this->save_game_butt, this->spravk_lent_butt, 
 				this->go_to_main_menu_butt});
-			this->lent_menu->Location = System::Drawing::Point(472, 0);
+			this->lent_menu->Location = System::Drawing::Point(380, 0);
 			this->lent_menu->Name = L"lent_menu";
 			this->lent_menu->RightToLeft = System::Windows::Forms::RightToLeft::No;
-			this->lent_menu->Size = System::Drawing::Size(372, 24);
+			this->lent_menu->Size = System::Drawing::Size(464, 24);
 			this->lent_menu->TabIndex = 0;
 			this->lent_menu->Text = L"lent_menu";
 			// 
@@ -122,6 +122,7 @@ namespace kurs2020 {
 			this->save_game_butt->Name = L"save_game_butt";
 			this->save_game_butt->Size = System::Drawing::Size(122, 20);
 			this->save_game_butt->Text = L"Сохранить игру";
+			this->save_game_butt->Click += gcnew System::EventHandler(this, &main_game::save_game_butt_Click);
 			// 
 			// spravk_lent_butt
 			// 
@@ -556,6 +557,8 @@ private: System::Void timer_refresh_Tick(System::Object^  sender, System::EventA
 				this->time_helper->Text = L"До конца лета осталось " + Convert::ToString(60 -(derevn.get_hours_procv() - derevn.get_hours_from_begin_of_season())) + L" Часов Процветания.";
 			 if(derevn.get_flag_season()==1)
 				this->time_helper->Text = L"До конца зимы осталось " + Convert::ToString(24 -(derevn.get_hours_procv() - derevn.get_hours_from_begin_of_season())) + L" Часов Процветания.";
+		 }
+private: System::Void save_game_butt_Click(System::Object^  sender, System::EventArgs^  e) {
 		 }
 };
 }
