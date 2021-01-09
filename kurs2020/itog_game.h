@@ -128,6 +128,7 @@ namespace kurs2020 {
 			this->name_player->TabIndex = 1;
 			this->name_player->Text = L"player";
 			this->name_player->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			this->name_player->TextChanged += gcnew System::EventHandler(this, &itog_game::name_player_TextChanged);
 			// 
 			// label5
 			// 
@@ -148,6 +149,7 @@ namespace kurs2020 {
 			this->ok_record->TabIndex = 2;
 			this->ok_record->Text = L"записать и закрыть";
 			this->ok_record->UseVisualStyleBackColor = true;
+			this->ok_record->Click += gcnew System::EventHandler(this, &itog_game::ok_record_Click);
 			// 
 			// close
 			// 
@@ -197,6 +199,19 @@ namespace kurs2020 {
 			 }
 private: System::Void itog_game_Load(System::Object^  sender, System::EventArgs^  e) {
 			 this->your_scores->Text = Convert::ToString(derevn.get_days_procv());
+		 }
+private: System::Void ok_record_Click(System::Object^  sender, System::EventArgs^  e) {
+		 }
+private: System::Void name_player_TextChanged(System::Object^  sender, System::EventArgs^  e) {
+			 if(this->name_player->Text==L"") //если поле с именем игрока пустое
+			 {
+				 this->ok_record->Enabled=false;
+			 }
+			 else
+			 {
+				 this->ok_record->Enabled=true;
+			 }
+
 		 }
 };
 }
