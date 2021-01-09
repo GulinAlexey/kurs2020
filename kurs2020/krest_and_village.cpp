@@ -249,6 +249,22 @@ void Village::Save_game() //сохранение игры (запись информации о деревне в файл)
 	
 }
 
+void Village::Init_load_game() //инициализация при загрузке сохранённой игры
+{
+	if(krests!=0)
+	{
+		delete [] krests;
+	}
+	ifstream fin; //создать объект класса ifstream (для чтения информации о деревне из файла) (крестьяне отдельно)
+	fin.open("village.txt", ios::in); //открыть файл
+	string strread; //строка для чтения из файла
+	getline(fin, strread, ';'); //прочитать из файла
+	kolvo_krest=atoi(strread.c_str()); //записать в нужное поле
+	getline(fin, strread, ';'); //прочитать из файла
+	hours_procv=atoi(strread.c_str()); //записать в нужное поле
+
+}
+
 void Village::Delete_krest(int number) //удаление крестьянина с выбранным номером (нумерация от единицы!)
 {
 	Krest* kre_change = new Krest[kolvo_krest-1]; //временный массив крестьян

@@ -577,7 +577,7 @@ private: System::Void timer_refresh_Tick(System::Object^  sender, System::EventA
 		 }
 private: System::Void save_game_butt_Click(System::Object^  sender, System::EventArgs^  e) {
 			 derevn.Save_game(); //сохранить игру в файл
-			 this->save_complete->Visible = true;
+			 this->save_complete->Visible = true; //показать надпись об успешном сохранении
 		 }
 };
 }
