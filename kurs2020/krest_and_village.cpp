@@ -246,7 +246,7 @@ void Village::Save_game() //сохранение игры (запись информации о деревне в файл)
 		fof << krests[m].get_otschet_hours_net_edi(); //записать в файл
 		fof << '\n';
 	}
-	
+	fof.close(); //закрыть файл
 }
 
 void Village::Init_load_game() //инициализация при загрузке сохранённой игры
@@ -256,13 +256,80 @@ void Village::Init_load_game() //инициализация при загрузке сохранённой игры
 		delete [] krests;
 	}
 	ifstream fin; //создать объект класса ifstream (для чтения информации о деревне из файла) (крестьяне отдельно)
-	fin.open("village.txt", ios::in); //открыть файл
 	string strread; //строка для чтения из файла
-	getline(fin, strread, ';'); //прочитать из файла
+
+	fin.open("village.txt", ios::in); //открыть файл
+
+	getline(fin, strread, '\n'); //прочитать из файла
 	kolvo_krest=atoi(strread.c_str()); //записать в нужное поле
-	getline(fin, strread, ';'); //прочитать из файла
+
+	getline(fin, strread, '\n'); //прочитать из файла
 	hours_procv=atoi(strread.c_str()); //записать в нужное поле
 
+	getline(fin, strread, '\n'); //прочитать из файла
+	days_procv=atoi(strread.c_str()); //записать в нужное поле
+
+	getline(fin, strread, '\n'); //прочитать из файла
+	speed_life=atoi(strread.c_str()); //записать в нужное поле
+
+	getline(fin, strread, '\n'); //прочитать из файла
+	flag_season=atoi(strread.c_str()); //записать в нужное поле
+
+	getline(fin, strread, '\n'); //прочитать из файла
+	kolvo_hleb=atoi(strread.c_str()); //записать в нужное поле
+
+	getline(fin, strread, '\n'); //прочитать из файла
+	kolvo_skot=atoi(strread.c_str()); //записать в нужное поле
+
+	getline(fin, strread, '\n'); //прочитать из файла
+	budget_village=atoi(strread.c_str()); //записать в нужное поле
+
+	getline(fin, strread, '\n'); //прочитать из файла
+	hours_from_begin_of_season=atoi(strread.c_str()); //записать в нужное поле
+
+	getline(fin, strread, '\n'); //прочитать из файла
+	otschet_hours_net_krest=atoi(strread.c_str()); //записать в нужное поле
+
+	getline(fin, strread, '\n'); //прочитать из файла
+	price_hleb=atoi(strread.c_str()); //записать в нужное поле
+
+	getline(fin, strread, '\n'); //прочитать из файла
+	price_skot=atoi(strread.c_str()); //записать в нужное поле
+
+	fin.close(); //закрыть файл
+
+	krests = new Krest [kolvo_krest];
+	fin.open("krests.txt", ios::in); //открыть файл
+	for(int m=0; m<kolvo_krest; m++)
+	{
+		getline(fin, strread, ';'); //прочитать из файла
+		krests[m].set_name(strread);
+
+		getline(fin, strread, ';'); //прочитать из файла
+		krests[m].set_surname(strread);
+
+		getline(fin, strread, ';'); //прочитать из файла
+		krests[m].set_proizv_hleb(atoi(strread.c_str())); //записать в нужное поле
+
+		getline(fin, strread, ';'); //прочитать из файла
+		krests[m].set_proizv_skot(atoi(strread.c_str())); //записать в нужное поле
+
+		getline(fin, strread, ';'); //прочитать из файла
+		krests[m].set_eda_hleb(atoi(strread.c_str())); //записать в нужное поле
+
+		getline(fin, strread, ';'); //прочитать из файла
+		krests[m].set_eda_skot(atoi(strread.c_str())); //записать в нужное поле
+
+		getline(fin, strread, ';'); //прочитать из файла
+		krests[m].set_money_trat(atoi(strread.c_str())); //записать в нужное поле
+
+		getline(fin, strread, ';'); //прочитать из файла
+		krests[m].set_naim(atoi(strread.c_str())); //записать в нужное поле
+
+		getline(fin, strread, '\n'); //прочитать из файла
+		krests[m].set_otschet_hours_net_edi(atoi(strread.c_str())); //записать в нужное поле
+	}
+	fin.close(); //закрыть файл
 }
 
 void Village::Delete_krest(int number) //удаление крестьянина с выбранным номером (нумерация от единицы!)

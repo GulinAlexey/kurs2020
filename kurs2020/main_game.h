@@ -400,7 +400,10 @@ private: System::Void main_game_Load(System::Object^  sender, System::EventArgs^
 			 if(derevn.get_flag_season()==0)
 				this->time_helper->Text = L"До конца лета осталось " + Convert::ToString(60 -(derevn.get_hours_procv() - derevn.get_hours_from_begin_of_season())) + L" Часов Процветания.";
 			 if(derevn.get_flag_season()==1)
+			 {
 				this->time_helper->Text = L"До конца зимы осталось " + Convert::ToString(24 -(derevn.get_hours_procv() - derevn.get_hours_from_begin_of_season())) + L" Часов Процветания.";
+				this->BackgroundImage = Image::FromFile("zima.jpg"); //изменить фон на зимний
+			 }
 			 /* //вывод текущего времени в строку события (час:мин:сек). Понадобится в другой части кода
 			 time_t now = time(0);
 			 tm *ltm = localtime(&now);

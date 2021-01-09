@@ -1,6 +1,7 @@
 #pragma once
 #include <cstdlib>
 #include <ctime>
+#include <fstream>
 #include "krest_and_village.h"
 #include "main_game.h"
 #include "spravk.h"
@@ -137,7 +138,7 @@ namespace kurs2020 {
 			this->load_game_butt->TabIndex = 3;
 			this->load_game_butt->Text = L"Загрузка\r\nнезаконченной игры";
 			this->load_game_butt->UseVisualStyleBackColor = true;
-			this->load_game_butt->Click += gcnew System::EventHandler(this, &Form1::button1_Click_1);
+			this->load_game_butt->Click += gcnew System::EventHandler(this, &Form1::load_Click);
 			// 
 			// records_butt
 			// 
@@ -238,7 +239,11 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 			main_game^ main_game_p = gcnew main_game(); //указатель на форму
 			main_game_p -> ShowDialog(); //открыть форму
 		 }
-private: System::Void button1_Click_1(System::Object^  sender, System::EventArgs^  e) {
+private: System::Void load_Click(System::Object^  sender, System::EventArgs^  e) {
+			f_endgame=0; //флаг конца игры (будет равен 1, когда игрок проиграет)
+			derevn.Init_load_game(); //инициализация деревни из файла перед продолжением сохранённой игры
+			main_game^ main_game_p = gcnew main_game(); //указатель на форму
+			main_game_p -> ShowDialog(); //открыть форму
 		 }
 private: System::Void button1_Click_2(System::Object^  sender, System::EventArgs^  e) {
 		 }
@@ -256,6 +261,18 @@ private: System::Void Form1_Activated(System::Object^  sender, System::EventArgs
 				itog_game^ itog_game_p = gcnew itog_game(); //указатель на форму
 				itog_game_p -> Show(); //открыть форму
 			 }
+			 ifstream iff("village.txt");
+			 ifstream iff2("krests.txt");
+			 if(!iff.is_open() || !iff2.is_open())
+			 {
+				 this->load_game_butt->Enabled=false;
+			 }
+			 else
+			 {
+				 this->load_game_butt->Enabled=true;
+			 }
+			 iff.close();
+			 iff2.close();
 		 }
 };
 }
