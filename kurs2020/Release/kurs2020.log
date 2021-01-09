@@ -1,4 +1,4 @@
-﻿Построение начато 08.01.2021 23:33:35.
+﻿Построение начато 09.01.2021 17:51:57.
      1>Проект "C:\Users\Алексей\Documents\GitHub\kurs2020\kurs2020\kurs2020.vcxproj" в узле 2 (целевые объекты build).
      1>InitializeBuildStatus:
          Создание "Release\kurs2020.unsuccessfulbuild", так как было задано "AlwaysCreate".
@@ -6,8 +6,47 @@
        Целевой объект "GenerateTargetFrameworkMonikerAttribute" пропускается, так как все выходные файлы актуальны по отношению к входным.
        ClCompile:
          Для всех выходных данных обновления не требуется.
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0" /Zi /clr:pure /nologo /W3 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D _UNICODE /D UNICODE /EHa /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Release\kurs2020.pch" /Fo"Release\\" /Fd"Release\vc100.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Core.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Drawing.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Windows.Forms.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Xml.dll" /analyze- /errorReport:prompt krest_and_village.cpp /clr:nostdlib 
-         krest_and_village.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0" /Zi /clr:pure /nologo /W3 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D _UNICODE /D UNICODE /EHa /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Release\kurs2020.pch" /Fo"Release\\" /Fd"Release\vc100.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Core.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Drawing.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Windows.Forms.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Xml.dll" /analyze- /errorReport:prompt kurs2020.cpp main_game.cpp /clr:nostdlib 
+         kurs2020.cpp
+     1>c:\users\алексей\documents\github\kurs2020\kurs2020\tabl_naim.h(342): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+     1>c:\users\алексей\documents\github\kurs2020\kurs2020\tabl_naim.h(361): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+     1>c:\users\алексей\documents\github\kurs2020\kurs2020\tabl_krest.h(347): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+     1>c:\users\алексей\documents\github\kurs2020\kurs2020\sell_tovar.h(271): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+     1>c:\users\алексей\documents\github\kurs2020\kurs2020\sell_tovar.h(272): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+     1>c:\users\алексей\documents\github\kurs2020\kurs2020\sell_tovar.h(277): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+     1>c:\users\алексей\documents\github\kurs2020\kurs2020\sell_tovar.h(278): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+     1>c:\users\алексей\documents\github\kurs2020\kurs2020\main_game.h(472): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\time.inl(112): см. объявление "localtime"
+     1>c:\users\алексей\documents\github\kurs2020\kurs2020\main_game.h(505): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+     1>c:\users\алексей\documents\github\kurs2020\kurs2020\main_game.h(509): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+     1>c:\users\алексей\documents\github\kurs2020\kurs2020\main_game.h(517): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+     1>c:\users\алексей\documents\github\kurs2020\kurs2020\main_game.h(521): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+     1>c:\users\алексей\documents\github\kurs2020\kurs2020\main_game.h(533): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+     1>c:\users\алексей\documents\github\kurs2020\kurs2020\main_game.h(539): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\time.inl(112): см. объявление "localtime"
+     1>c:\users\алексей\documents\github\kurs2020\kurs2020\main_game.h(546): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\time.inl(112): см. объявление "localtime"
+     1>c:\users\алексей\documents\github\kurs2020\kurs2020\Form1.h(229): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+         main_game.cpp
+     1>c:\users\алексей\documents\github\kurs2020\kurs2020\tabl_naim.h(342): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+     1>c:\users\алексей\documents\github\kurs2020\kurs2020\tabl_naim.h(361): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+     1>c:\users\алексей\documents\github\kurs2020\kurs2020\tabl_krest.h(347): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+     1>c:\users\алексей\documents\github\kurs2020\kurs2020\sell_tovar.h(271): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+     1>c:\users\алексей\documents\github\kurs2020\kurs2020\sell_tovar.h(272): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+     1>c:\users\алексей\documents\github\kurs2020\kurs2020\sell_tovar.h(277): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+     1>c:\users\алексей\documents\github\kurs2020\kurs2020\sell_tovar.h(278): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+     1>c:\users\алексей\documents\github\kurs2020\kurs2020\main_game.h(472): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\time.inl(112): см. объявление "localtime"
+     1>c:\users\алексей\documents\github\kurs2020\kurs2020\main_game.h(505): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+     1>c:\users\алексей\documents\github\kurs2020\kurs2020\main_game.h(509): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+     1>c:\users\алексей\documents\github\kurs2020\kurs2020\main_game.h(517): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+     1>c:\users\алексей\documents\github\kurs2020\kurs2020\main_game.h(521): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+     1>c:\users\алексей\documents\github\kurs2020\kurs2020\main_game.h(533): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+     1>c:\users\алексей\documents\github\kurs2020\kurs2020\main_game.h(539): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\time.inl(112): см. объявление "localtime"
+     1>c:\users\алексей\documents\github\kurs2020\kurs2020\main_game.h(546): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\time.inl(112): см. объявление "localtime"
+         Создание кода...
          Для всех выходных данных обновления не требуется.
        CoreResGen:
          Отсутствуют ресурсы, устаревшие по отношению к файлам своих источников. Пропуск формирования ресурсов.
@@ -36,4 +75,4 @@
 
 Построение успешно завершено.
 
-Затраченное время: 00:00:03.71
+Затраченное время: 00:00:06.38

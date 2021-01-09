@@ -200,6 +200,53 @@ void Village::Save_game() //сохранение игры (запись информации о деревне в файл)
 	fof.open("village.txt", ios::out); //открыть файл для записи
 	fof << kolvo_krest; //записать в файл
 	fof << '\n';
+	fof << hours_procv; //записать в файл
+	fof << '\n';
+	fof << days_procv; //записать в файл
+	fof << '\n';
+	fof << speed_life; //записать в файл
+	fof << '\n';
+	fof << flag_season; //записать в файл
+	fof << '\n';
+	fof << kolvo_hleb; //записать в файл
+	fof << '\n';
+	fof << kolvo_skot; //записать в файл
+	fof << '\n';
+	fof << budget_village; //записать в файл
+	fof << '\n';
+	fof << hours_from_begin_of_season; //записать в файл
+	fof << '\n';
+	fof << otschet_hours_net_krest; //записать в файл
+	fof << '\n';
+	fof << price_hleb; //записать в файл
+	fof << '\n';
+	fof << price_skot; //записать в файл
+	fof << '\n';
+	fof.close(); //закрыть файл
+
+	fof.open("krests.txt", ios::out); //открыть файл для записи
+	for(int m=0; m<kolvo_krest; m++)
+	{
+		fof << krests[m].get_name(); //записать в файл
+		fof << ';';
+		fof << krests[m].get_surname(); //записать в файл
+		fof << ';';
+		fof << krests[m].get_proizv_hleb(); //записать в файл
+		fof << ';';
+		fof << krests[m].get_proizv_skot(); //записать в файл
+		fof << ';';
+		fof << krests[m].get_eda_hleb(); //записать в файл
+		fof << ';';
+		fof << krests[m].get_eda_skot(); //записать в файл
+		fof << ';';
+		fof << krests[m].get_money_trat(); //записать в файл
+		fof << ';';
+		fof << krests[m].get_naim(); //записать в файл
+		fof << ';';
+		fof << krests[m].get_otschet_hours_net_edi(); //записать в файл
+		fof << '\n';
+	}
+	
 }
 
 void Village::Delete_krest(int number) //удаление крестьянина с выбранным номером (нумерация от единицы!)

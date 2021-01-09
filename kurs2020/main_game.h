@@ -61,6 +61,7 @@ namespace kurs2020 {
 	private: System::Windows::Forms::Timer^  main_timer;
 	private: System::Windows::Forms::Label^  label1;
 	private: System::Windows::Forms::Timer^  timer_refresh;
+	private: System::Windows::Forms::Label^  save_complete;
 	private: System::ComponentModel::IContainer^  components;
 
 
@@ -99,6 +100,7 @@ namespace kurs2020 {
 			this->main_timer = (gcnew System::Windows::Forms::Timer(this->components));
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->timer_refresh = (gcnew System::Windows::Forms::Timer(this->components));
+			this->save_complete = (gcnew System::Windows::Forms::Label());
 			this->lent_menu->SuspendLayout();
 			this->pomoshnik_box->SuspendLayout();
 			this->SuspendLayout();
@@ -322,12 +324,26 @@ namespace kurs2020 {
 			this->timer_refresh->Interval = 512;
 			this->timer_refresh->Tick += gcnew System::EventHandler(this, &main_game::timer_refresh_Tick);
 			// 
+			// save_complete
+			// 
+			this->save_complete->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+			this->save_complete->AutoSize = true;
+			this->save_complete->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)), 
+				static_cast<System::Int32>(static_cast<System::Byte>(192)));
+			this->save_complete->Location = System::Drawing::Point(474, 28);
+			this->save_complete->Name = L"save_complete";
+			this->save_complete->Size = System::Drawing::Size(137, 13);
+			this->save_complete->TabIndex = 11;
+			this->save_complete->Text = L"Игра успешно сохранена!";
+			this->save_complete->Visible = false;
+			// 
 			// main_game
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(844, 501);
+			this->Controls->Add(this->save_complete);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->vihod_info);
 			this->Controls->Add(this->birzha_butt);
@@ -392,6 +408,7 @@ private: System::Void main_game_Load(System::Object^  sender, System::EventArgs^
 			 */
 		 }
 private: System::Void main_timer_Tick(System::Object^  sender, System::EventArgs^  e) {
+			 this->save_complete->Visible = false;
 			 if(f_endgame==1) //игра закончилась, закрыть все формы
 				 Close();
 			 derevn.set_hours_procv(derevn.get_hours_procv()+1); //кол-во часов процветания увеличилось на 1
@@ -560,6 +577,7 @@ private: System::Void timer_refresh_Tick(System::Object^  sender, System::EventA
 		 }
 private: System::Void save_game_butt_Click(System::Object^  sender, System::EventArgs^  e) {
 			 derevn.Save_game(); //сохранить игру в файл
+			 this->save_complete->Visible = true;
 		 }
 };
 }
