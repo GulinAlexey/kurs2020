@@ -1,5 +1,6 @@
 #pragma once
 #include "krest_and_village.h"
+#include <fstream>
 
 namespace kurs2020 {
 
@@ -201,6 +202,30 @@ private: System::Void itog_game_Load(System::Object^  sender, System::EventArgs^
 			 this->your_scores->Text = Convert::ToString(derevn.get_days_procv());
 		 }
 private: System::Void ok_record_Click(System::Object^  sender, System::EventArgs^  e) {
+			 ifstream iff("records.txt");
+			 ofstream fof; //создать объект класса ofstream (для записи в файл информации о деревне) (крестьяне отдельно)
+			 if(!iff.is_open())
+			 {
+				 fof.open("records.txt", ios::out); //открыть файл для новой записи
+			 }
+			 else
+			 {
+				 fof.open("records.txt", ios::app); //открыть файл для добавления записи
+			 }
+			 iff.close();
+
+			 using namespace System::Runtime::InteropServices;
+			 IntPtr ptr = Marshal::StringToHGlobalAnsi(this->name_player->Text); //преобразовать информацию из TextBox в массив char
+			 char* char_str = (char*)ptr.ToPointer();
+
+			 fof << char_str; //записать в файл
+			 fof << ';';
+			 fof << derevn.get_days_procv();
+			 fof << '\n';
+
+			 fof.close();
+			 Close();
+
 		 }
 private: System::Void name_player_TextChanged(System::Object^  sender, System::EventArgs^  e) {
 			 if(this->name_player->Text==L"") //если поле с именем игрока пустое
