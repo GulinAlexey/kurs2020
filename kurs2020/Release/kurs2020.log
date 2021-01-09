@@ -1,4 +1,4 @@
-﻿Построение начато 09.01.2021 22:57:53.
+﻿Построение начато 09.01.2021 23:16:15.
      1>Проект "C:\Users\Алексей\Documents\GitHub\kurs2020\kurs2020\kurs2020.vcxproj" в узле 2 (целевые объекты build).
      1>InitializeBuildStatus:
          Создание "Release\kurs2020.unsuccessfulbuild", так как было задано "AlwaysCreate".
@@ -33,8 +33,7 @@
          Создание кода...
          Для всех выходных данных обновления не требуется.
        CoreResGen:
-         "C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\NETFX 4.0 Tools\resgen.exe" /useSourcePath /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Core.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Data.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Drawing.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Windows.Forms.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Xml.dll" /compile record_tabl.resx,Release\kurs2020.record_tabl.resources
-         Обрабатывается файл ресурсов "record_tabl.resx", результирующий объект: "Release\kurs2020.record_tabl.resources".
+         Отсутствуют ресурсы, устаревшие по отношению к файлам своих источников. Пропуск формирования ресурсов.
        ResourceCompile:
          Для всех выходных данных обновления не требуется.
        Link:
@@ -61,4 +60,4 @@
 
 Построение успешно завершено.
 
-Затраченное время: 00:00:06.02
+Затраченное время: 00:00:06.25

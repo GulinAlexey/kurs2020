@@ -2,6 +2,7 @@
 #include "krest_and_village.h"
 #include "tabl_naim.h"
 #include <string>
+#include <fstream>
 
 extern int f_endgame; //флаг о том, что игра окончена (игрок проиграл) (глобальн.)
 
@@ -171,13 +172,23 @@ private: System::Void record_tabl_Load(System::Object^  sender, System::EventArg
 			 if(fin.is_open()) //если файл возможно открыть
 			 {
 				int kolvo_rec=0; //начальное значение кол-ва рекордов в файле
+				string strread; //строка дл€ чтени€ из файла
 				while(!fin.eof()) //пока не прочитает весь файл
 				{
-					getline(fin, name, '\n'); //получить рекорд из файла
-					kolvo_name+=1; //увеличить кол-во рекордов на 1
+					getline(fin, strread, '\n'); //получить рекорд из файла
+					kolvo_rec+=1; //увеличить кол-во рекордов на 1
 				}
+				kolvo_rec=kolvo_rec-1; //перенос строки после последнего рекорда засчитываетс€, поэтому нужно вычесть
 				fin.close(); //закрыть файл
-
+				fin.open("records.txt", ios::in); //открыть файл
+				for(int g=0; g<kolvo_rec; g++)
+				{
+					spisok->Rows->Add(); //добавить новую строку в таблицу
+					getline(fin, strread, ';'); //получить им€ игрока из файла
+					spisok->Rows[g]->Cells[0]->Value = gcnew System::String(strread.c_str()); //внести в €чейку таблицы
+					getline(fin, strread, '\n'); //получить значение рекорда игрока из файла
+					spisok->Rows[g]->Cells[1]->Value = gcnew System::String(strread.c_str()); //внести в €чейку таблицы
+				}
 			 }
 			 fin.close(); //закрыть файл
 		 }
