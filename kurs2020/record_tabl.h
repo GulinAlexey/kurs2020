@@ -47,7 +47,7 @@ namespace kurs2020 {
 	private: System::Windows::Forms::DataGridView^  spisok;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^  name_tabl;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^  proizv_tabl;
-	private: System::Windows::Forms::Button^  cloz;
+
 
 
 
@@ -92,7 +92,6 @@ namespace kurs2020 {
 			this->spisok = (gcnew System::Windows::Forms::DataGridView());
 			this->name_tabl = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->proizv_tabl = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->cloz = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->spisok))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -108,7 +107,7 @@ namespace kurs2020 {
 			this->spisok->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->spisok->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(2) {this->name_tabl, this->proizv_tabl});
 			this->spisok->EditMode = System::Windows::Forms::DataGridViewEditMode::EditProgrammatically;
-			this->spisok->Location = System::Drawing::Point(78, 12);
+			this->spisok->Location = System::Drawing::Point(12, 12);
 			this->spisok->MultiSelect = false;
 			this->spisok->Name = L"spisok";
 			this->spisok->ReadOnly = true;
@@ -143,29 +142,12 @@ namespace kurs2020 {
 			this->proizv_tabl->SortMode = System::Windows::Forms::DataGridViewColumnSortMode::Programmatic;
 			this->proizv_tabl->Width = 330;
 			// 
-			// cloz
-			// 
-			this->cloz->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
-			this->cloz->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->cloz->DialogResult = System::Windows::Forms::DialogResult::Cancel;
-			this->cloz->Location = System::Drawing::Point(587, 12);
-			this->cloz->Name = L"cloz";
-			this->cloz->Size = System::Drawing::Size(68, 38);
-			this->cloz->TabIndex = 16;
-			this->cloz->TabStop = false;
-			this->cloz->Text = L"Закрыть";
-			this->cloz->UseVisualStyleBackColor = true;
-			this->cloz->Click += gcnew System::EventHandler(this, &record_tabl::cloz_Click);
-			// 
 			// record_tabl
 			// 
-			this->AcceptButton = this->cloz;
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"$this.BackgroundImage")));
-			this->CancelButton = this->cloz;
-			this->ClientSize = System::Drawing::Size(658, 491);
-			this->Controls->Add(this->cloz);
+			this->ClientSize = System::Drawing::Size(527, 491);
 			this->Controls->Add(this->spisok);
 			this->DoubleBuffered = true;
 			this->MinimizeBox = false;
@@ -174,7 +156,6 @@ namespace kurs2020 {
 			this->ShowIcon = false;
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Список рекордов";
-			this->Activated += gcnew System::EventHandler(this, &record_tabl::record_tabl_Activated);
 			this->Load += gcnew System::EventHandler(this, &record_tabl::record_tabl_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->spisok))->EndInit();
 			this->ResumeLayout(false);
@@ -184,16 +165,21 @@ namespace kurs2020 {
 	private: System::Void record_tabl_Activated(System::Object^  sender, System::EventArgs^  e) {
 
 		}
-
-private: System::Void num_krest_pole1_TextChanged(System::Object^  sender, System::EventArgs^  e) {
-		 }
-private: System::Void izgnat_butt_Click(System::Object^  sender, System::EventArgs^  e) {
-		 }
 private: System::Void record_tabl_Load(System::Object^  sender, System::EventArgs^  e) {
-		 }
-private: System::Void trud_butt_Click(System::Object^  sender, System::EventArgs^  e) {
-		 }
-private: System::Void timer_proverk_krest_Tick(System::Object^  sender, System::EventArgs^  e) {
+			 ifstream fin; //создать объект класса ifstream
+			 fin.open("records.txt", ios::in); //открыть файл
+			 if(fin.is_open()) //если файл возможно открыть
+			 {
+				int kolvo_rec=0; //начальное значение кол-ва рекордов в файле
+				while(!fin.eof()) //пока не прочитает весь файл
+				{
+					getline(fin, name, '\n'); //получить рекорд из файла
+					kolvo_name+=1; //увеличить кол-во рекордов на 1
+				}
+				fin.close(); //закрыть файл
+
+			 }
+			 fin.close(); //закрыть файл
 		 }
 private: System::Void cloz_Click(System::Object^  sender, System::EventArgs^  e) {
 			 Close();
