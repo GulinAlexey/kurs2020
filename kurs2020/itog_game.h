@@ -209,9 +209,18 @@ private: System::Void name_player_TextChanged(System::Object^  sender, System::E
 			 }
 			 else
 			 {
-				 this->ok_record->Enabled=true;
+				 using namespace System::Runtime::InteropServices;
+				 IntPtr ptr = Marshal::StringToHGlobalAnsi(this->name_player->Text); //преобразовать информацию из TextBox в массив char
+				 char* char_str = (char*)ptr.ToPointer();
+				 if(strchr( char_str, ';')!=NULL) //проверить, есть ли в поле с именем игрока запрещённый символ ';'
+				 {
+					this->ok_record->Enabled=false;
+				 }
+				 else
+				 {
+					this->ok_record->Enabled=true;
+				 }
 			 }
-
 		 }
 };
 }
