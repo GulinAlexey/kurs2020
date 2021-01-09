@@ -6,6 +6,7 @@
 #include "main_game.h"
 #include "spravk.h"
 #include "itog_game.h"
+#include "record_tabl.h"
 
 int f_endgame=0; //флаг о том, что игра окончена (игрок проиграл) (глобальн.)
 
@@ -150,7 +151,7 @@ namespace kurs2020 {
 			this->records_butt->TabIndex = 4;
 			this->records_butt->Text = L"Список рекордов";
 			this->records_butt->UseVisualStyleBackColor = true;
-			this->records_butt->Click += gcnew System::EventHandler(this, &Form1::button1_Click_2);
+			this->records_butt->Click += gcnew System::EventHandler(this, &Form1::record_Click);
 			// 
 			// quit_butt
 			// 
@@ -247,7 +248,10 @@ private: System::Void load_Click(System::Object^  sender, System::EventArgs^  e)
 			main_game_p -> ShowDialog(); //открыть форму
 			delete(main_game_p);
 		 }
-private: System::Void button1_Click_2(System::Object^  sender, System::EventArgs^  e) {
+private: System::Void record_Click(System::Object^  sender, System::EventArgs^  e) {
+			record_tabl^ record_tabl_p = gcnew record_tabl(); //указатель на форму
+			record_tabl_p -> ShowDialog(); //открыть форму
+			delete(record_tabl_p);
 		 }
 private: System::Void quit_butt_Click(System::Object^  sender, System::EventArgs^  e) {
 			 exit(0); //выход из программы

@@ -91,6 +91,7 @@
     <ClCompile Include="krest_and_village.cpp" />
     <ClCompile Include="kurs2020.cpp" />
     <ClCompile Include="main_game.cpp" />
+    <ClCompile Include="record_tabl.cpp" />
     <ClCompile Include="sell_tovar.cpp" />
     <ClCompile Include="spravk.cpp" />
     <ClCompile Include="stdafx.cpp">
@@ -109,6 +110,9 @@
     </ClInclude>
     <ClInclude Include="krest_and_village.h" />
     <ClInclude Include="main_game.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="record_tabl.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="resource.h" />
@@ -139,6 +143,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="main_game.resx">
       <DependentUpon>main_game.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="record_tabl.resx">
+      <DependentUpon>record_tabl.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="sell_tovar.resx">
       <DependentUpon>sell_tovar.h</DependentUpon>
