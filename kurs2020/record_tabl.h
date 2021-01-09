@@ -47,7 +47,19 @@ namespace kurs2020 {
 
 	private: System::Windows::Forms::DataGridView^  spisok;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^  name_tabl;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^  proizv_tabl;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  rec_tabl;
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -92,7 +104,7 @@ namespace kurs2020 {
 			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(record_tabl::typeid));
 			this->spisok = (gcnew System::Windows::Forms::DataGridView());
 			this->name_tabl = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->proizv_tabl = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->rec_tabl = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->spisok))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -106,7 +118,7 @@ namespace kurs2020 {
 			this->spisok->BackgroundColor = System::Drawing::Color::Maroon;
 			this->spisok->ClipboardCopyMode = System::Windows::Forms::DataGridViewClipboardCopyMode::Disable;
 			this->spisok->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->spisok->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(2) {this->name_tabl, this->proizv_tabl});
+			this->spisok->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(2) {this->name_tabl, this->rec_tabl});
 			this->spisok->EditMode = System::Windows::Forms::DataGridViewEditMode::EditProgrammatically;
 			this->spisok->Location = System::Drawing::Point(12, 12);
 			this->spisok->MultiSelect = false;
@@ -115,7 +127,7 @@ namespace kurs2020 {
 			this->spisok->RowHeadersVisible = false;
 			this->spisok->RowHeadersWidthSizeMode = System::Windows::Forms::DataGridViewRowHeadersWidthSizeMode::AutoSizeToAllHeaders;
 			this->spisok->ScrollBars = System::Windows::Forms::ScrollBars::Vertical;
-			this->spisok->SelectionMode = System::Windows::Forms::DataGridViewSelectionMode::CellSelect;
+			this->spisok->SelectionMode = System::Windows::Forms::DataGridViewSelectionMode::FullRowSelect;
 			this->spisok->ShowEditingIcon = false;
 			this->spisok->Size = System::Drawing::Size(503, 467);
 			this->spisok->TabIndex = 14;
@@ -132,16 +144,16 @@ namespace kurs2020 {
 			this->name_tabl->SortMode = System::Windows::Forms::DataGridViewColumnSortMode::Programmatic;
 			this->name_tabl->Width = 170;
 			// 
-			// proizv_tabl
+			// rec_tabl
 			// 
-			this->proizv_tabl->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::None;
-			this->proizv_tabl->Frozen = true;
-			this->proizv_tabl->HeaderText = L"Значение рекорда (кол-во набранных Дней Процветания)";
-			this->proizv_tabl->MaxInputLength = 200;
-			this->proizv_tabl->Name = L"proizv_tabl";
-			this->proizv_tabl->ReadOnly = true;
-			this->proizv_tabl->SortMode = System::Windows::Forms::DataGridViewColumnSortMode::Programmatic;
-			this->proizv_tabl->Width = 330;
+			this->rec_tabl->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::None;
+			this->rec_tabl->Frozen = true;
+			this->rec_tabl->HeaderText = L"Значение рекорда (кол-во набранных Дней Процветания)";
+			this->rec_tabl->MaxInputLength = 200;
+			this->rec_tabl->Name = L"rec_tabl";
+			this->rec_tabl->ReadOnly = true;
+			this->rec_tabl->SortMode = System::Windows::Forms::DataGridViewColumnSortMode::Programmatic;
+			this->rec_tabl->Width = 330;
 			// 
 			// record_tabl
 			// 
@@ -180,6 +192,8 @@ private: System::Void record_tabl_Load(System::Object^  sender, System::EventArg
 				}
 				kolvo_rec=kolvo_rec-1; //перенос строки после последнего рекорда засчитывается, поэтому нужно вычесть
 				fin.close(); //закрыть файл
+
+
 				fin.open("records.txt", ios::in); //открыть файл
 				for(int g=0; g<kolvo_rec; g++)
 				{
@@ -189,8 +203,26 @@ private: System::Void record_tabl_Load(System::Object^  sender, System::EventArg
 					getline(fin, strread, '\n'); //получить значение рекорда игрока из файла
 					spisok->Rows[g]->Cells[1]->Value = gcnew System::String(strread.c_str()); //внести в ячейку таблицы
 				}
+				fin.close(); //закрыть файл
+				//сортировка игроков по убыванию рекордов (метод пузырька)
+				for(int v=1; v<kolvo_rec; v++)
+				{
+					for(int b=0; b<kolvo_rec-v; b++)
+						if(Convert::ToDouble(spisok->Rows[b]->Cells[1]->Value) < Convert::ToDouble(spisok->Rows[b+1]->Cells[1]->Value))
+						{
+							Object^ vsp0 = spisok->Rows[b+1]->Cells[0]->Value;
+							Object^ vsp1 = spisok->Rows[b+1]->Cells[1]->Value;
+
+							spisok->Rows[b+1]->Cells[0]->Value = spisok->Rows[b]->Cells[0]->Value;
+							spisok->Rows[b+1]->Cells[1]->Value = spisok->Rows[b]->Cells[1]->Value;
+
+							spisok->Rows[b]->Cells[0]->Value = vsp0;
+							spisok->Rows[b]->Cells[1]->Value = vsp1;
+						}
+				}
 			 }
-			 fin.close(); //закрыть файл
+			 else
+				 fin.close(); //закрыть файл
 		 }
 private: System::Void cloz_Click(System::Object^  sender, System::EventArgs^  e) {
 			 Close();
