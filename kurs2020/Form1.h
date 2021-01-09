@@ -238,12 +238,14 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 			derevn.Init_new_game(); //инициализация деревни перед началом новой игры
 			main_game^ main_game_p = gcnew main_game(); //указатель на форму
 			main_game_p -> ShowDialog(); //открыть форму
+			delete(main_game_p);
 		 }
 private: System::Void load_Click(System::Object^  sender, System::EventArgs^  e) {
 			f_endgame=0; //флаг конца игры (будет равен 1, когда игрок проиграет)
 			derevn.Init_load_game(); //инициализация деревни из файла перед продолжением сохранённой игры
 			main_game^ main_game_p = gcnew main_game(); //указатель на форму
 			main_game_p -> ShowDialog(); //открыть форму
+			delete(main_game_p);
 		 }
 private: System::Void button1_Click_2(System::Object^  sender, System::EventArgs^  e) {
 		 }
@@ -253,6 +255,7 @@ private: System::Void quit_butt_Click(System::Object^  sender, System::EventArgs
 private: System::Void spravk_butt_Click(System::Object^  sender, System::EventArgs^  e) {
 			spravk^ spravk_p = gcnew spravk(); //указатель на форму
 			spravk_p -> ShowDialog(); //открыть форму
+			delete(spravk_p);
 		 }
 private: System::Void Form1_Activated(System::Object^  sender, System::EventArgs^  e) {
 			 if(f_endgame==1)
@@ -263,7 +266,7 @@ private: System::Void Form1_Activated(System::Object^  sender, System::EventArgs
 			 }
 			 ifstream iff("village.txt");
 			 ifstream iff2("krests.txt");
-			 if(!iff.is_open() || !iff2.is_open())
+			 if(!iff.is_open() || !iff2.is_open()) //проверка, есть ли файлы сохранения. Если хотя бы одного нет, то кнопка загрузки игры отключается
 			 {
 				 this->load_game_butt->Enabled=false;
 			 }

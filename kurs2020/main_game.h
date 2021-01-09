@@ -58,10 +58,11 @@ namespace kurs2020 {
 	private: System::Windows::Forms::Label^  vihod_info;
 	private: System::Windows::Forms::Label^  event_helper;
 	private: System::Windows::Forms::Label^  time_helper;
-	private: System::Windows::Forms::Timer^  main_timer;
+
 	private: System::Windows::Forms::Label^  label1;
 	private: System::Windows::Forms::Timer^  timer_refresh;
 	private: System::Windows::Forms::Label^  save_complete;
+	private: System::Windows::Forms::Timer^  main_timer;
 	private: System::ComponentModel::IContainer^  components;
 
 
