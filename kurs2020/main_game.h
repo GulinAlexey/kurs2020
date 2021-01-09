@@ -382,14 +382,17 @@ namespace kurs2020 {
 private: System::Void spisok_krest_butt_Click(System::Object^  sender, System::EventArgs^  e) {
 			tabl_krest^ tabl_krest_p = gcnew tabl_krest(); //указатель на форму
 			tabl_krest_p -> ShowDialog(); //открыть форму
+			delete(tabl_krest_p);
 		 }
 private: System::Void birzha_butt_Click(System::Object^  sender, System::EventArgs^  e) {
 			sell_tovar^ sell_tovar_p = gcnew sell_tovar(); //указатель на форму
 			sell_tovar_p -> ShowDialog(); //открыть форму
+			delete(sell_tovar_p);
 		 }
 private: System::Void spravk_lent_butt_Click(System::Object^  sender, System::EventArgs^  e) {
 			spravk^ spravk_p = gcnew spravk(); //указатель на форму
 			spravk_p -> ShowDialog(); //открыть форму
+			delete(spravk_p);
 		 }
 private: System::Void main_game_Load(System::Object^  sender, System::EventArgs^  e) {
 			 this->kolvo_krest_text->Text = L"Крестьяне: " + Convert::ToString(derevn.get_kolvo_krest())+ L" чел.";;
@@ -536,7 +539,7 @@ private: System::Void main_timer_Tick(System::Object^  sender, System::EventArgs
 				 proc_izm = proc_izm / 100; //перевод процентного значения в десятичное
 				 int poteri = derevn.get_kolvo_skot() * proc_izm; //отдельная переменная для кол-ва потерянного скота
 
-				 if(f_event==1 && ((derevn.get_kolvo_skot() - poteri)>=0) && (derevn.get_kolvo_skot()>0)) //нападение волков
+				 if(f_event==1 && poteri>0) //нападение волков
 				 {
 					 derevn.set_kolvo_skot(derevn.get_kolvo_skot() - poteri);
 					 time_t now = time(0); //для вывода времени

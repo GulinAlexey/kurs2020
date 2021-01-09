@@ -354,6 +354,7 @@ private: System::Void tabl_krest_Load(System::Object^  sender, System::EventArgs
 private: System::Void trud_butt_Click(System::Object^  sender, System::EventArgs^  e) {
 			tabl_naim^ tabl_naim_p = gcnew tabl_naim(); //указатель на форму
 			tabl_naim_p -> ShowDialog(); //открыть форму
+			delete(tabl_naim_p);
 		 }
 private: System::Void timer_proverk_krest_Tick(System::Object^  sender, System::EventArgs^  e) {
 			 if(f_endgame==1) //игра закончилась, закрыть все формы
