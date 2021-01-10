@@ -165,7 +165,7 @@ namespace kurs2020 {
 			this->den_procv_text->Name = L"den_procv_text";
 			this->den_procv_text->Size = System::Drawing::Size(227, 31);
 			this->den_procv_text->TabIndex = 2;
-			this->den_procv_text->Text = L"Дни процветания: ";
+			this->den_procv_text->Text = L"Дни Процветания: ";
 			// 
 			// kolvo_krest_text
 			// 
@@ -305,7 +305,7 @@ namespace kurs2020 {
 			// main_timer
 			// 
 			this->main_timer->Enabled = true;
-			this->main_timer->Interval = 5000;
+			this->main_timer->Interval = 3000;
 			this->main_timer->Tick += gcnew System::EventHandler(this, &main_game::main_timer_Tick);
 			// 
 			// label1
@@ -315,9 +315,9 @@ namespace kurs2020 {
 				static_cast<System::Int32>(static_cast<System::Byte>(210)));
 			this->label1->Location = System::Drawing::Point(2, 2);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(221, 26);
+			this->label1->Size = System::Drawing::Size(227, 26);
 			this->label1->TabIndex = 10;
-			this->label1->Text = L"1 Час Процветания = 5 реальных секунд\r\n1 День Процветания = 1 реальная минута";
+			this->label1->Text = L"1 Час Процветания = 3 реальные секунды\r\n1 День Процветания = 30 реальных секунд";
 			// 
 			// timer_refresh
 			// 
@@ -397,15 +397,15 @@ private: System::Void spravk_lent_butt_Click(System::Object^  sender, System::Ev
 private: System::Void main_game_Load(System::Object^  sender, System::EventArgs^  e) {
 			 this->kolvo_krest_text->Text = L"Крестьяне: " + Convert::ToString(derevn.get_kolvo_krest())+ L" чел.";;
 			 this->skorost_zhiz_text->Text = L"Скорость жизни: " + Convert::ToString(derevn.get_speed_life());
-			 this->den_procv_text->Text = L"Дни процветания: " + Convert::ToString(derevn.get_days_procv());
+			 this->den_procv_text->Text = L"Дни Процветания: " + Convert::ToString(derevn.get_days_procv());
 			 this->budget_text->Text = L"Бюджет: " + Convert::ToString(derevn.get_budget_village()) + L" руб.";
 			 this->hleb_text->Text = L"Хлеб: " + Convert::ToString(derevn.get_kolvo_hleb()) + L" ед.";
 			 this->skot_text->Text = L"Домашний скот: " + Convert::ToString(derevn.get_kolvo_skot()) + L" ед.";
 			 if(derevn.get_flag_season()==0)
-				this->time_helper->Text = L"До конца лета осталось " + Convert::ToString(60 -(derevn.get_hours_procv() - derevn.get_hours_from_begin_of_season())) + L" Часов Процветания.";
+				this->time_helper->Text = L"До конца лета осталось " + Convert::ToString(40 -(derevn.get_hours_procv() - derevn.get_hours_from_begin_of_season())) + L" Часов Процветания.";
 			 if(derevn.get_flag_season()==1)
 			 {
-				this->time_helper->Text = L"До конца зимы осталось " + Convert::ToString(24 -(derevn.get_hours_procv() - derevn.get_hours_from_begin_of_season())) + L" Часов Процветания.";
+				this->time_helper->Text = L"До конца зимы осталось " + Convert::ToString(20 -(derevn.get_hours_procv() - derevn.get_hours_from_begin_of_season())) + L" Часов Процветания.";
 				this->BackgroundImage = Image::FromFile("zima.jpg"); //изменить фон на зимний
 			 }
 			 /* //вывод текущего времени в строку события (час:мин:сек). Понадобится в другой части кода
@@ -419,7 +419,7 @@ private: System::Void main_timer_Tick(System::Object^  sender, System::EventArgs
 			 if(f_endgame==1) //игра закончилась, закрыть все формы
 				 Close();
 			 derevn.set_hours_procv(derevn.get_hours_procv()+1); //кол-во часов процветания увеличилось на 1
-			 if((derevn.get_hours_procv()%12)==0) //если прошло 12 часов процветания
+			 if((derevn.get_hours_procv()%10)==0) //если прошло 10 часов процветания
 			 {
 				 derevn.set_days_procv(derevn.get_days_procv()+1);
 			 }
@@ -471,15 +471,16 @@ private: System::Void main_timer_Tick(System::Object^  sender, System::EventArgs
 							 derevn.set_kolvo_skot(0);
 						}
 						derevn.krests[ko].set_otschet_hours_net_edi(derevn.krests[ko].get_otschet_hours_net_edi()+1);
-						if(derevn.krests[ko].get_otschet_hours_net_edi()>=12)
+						if(derevn.krests[ko].get_otschet_hours_net_edi()>=5)
 						{
-							derevn.Delete_krest(ko+1); //удалить крестьянина (методу передаётся нумерация от единицы, а цикл нумеруется от нуля)
-							kolv_k=kolv_k-1; //крестьян стало на 1 меньше
 							time_t now = time(0); //для вывода времени
 							tm *ltm = localtime(&now);
 							string str_name= derevn.krests[ko].get_name() + " " + derevn.krests[ko].get_surname(); //для вывода имени и фамилии
 							this->event_helper->Text = L"Последнее событие: " + Convert::ToString(ltm->tm_hour)+ L":" + Convert::ToString(ltm->tm_min)+ L":" + Convert::ToString(ltm->tm_sec) + L" " + L"Крестьянин " + gcnew System::String(str_name.c_str()) + L" ушёл из деревни из-за недостатка пищи.";
 							
+							derevn.Delete_krest(ko+1); //удалить крестьянина (методу передаётся нумерация от единицы, а цикл нумеруется от нуля)
+							kolv_k=kolv_k-1; //крестьян стало на 1 меньше
+
 							if(kolv_k==ko)
 								break;
 			 
@@ -488,14 +489,14 @@ private: System::Void main_timer_Tick(System::Object^  sender, System::EventArgs
 				 }
 			 }
 
-			 if(derevn.get_flag_season()==0 && (derevn.get_hours_procv() - derevn.get_hours_from_begin_of_season())==60) //если сейчас лето и прошло 60 часов П. от начала лета
+			 if(derevn.get_flag_season()==0 && (derevn.get_hours_procv() - derevn.get_hours_from_begin_of_season())==40) //если сейчас лето и прошло 40 часов П. от начала лета (4 дня П. или 2 минуты)
 			 {
 				 derevn.set_flag_season(1); //теперь флаг соответствует зиме
 				 this->BackgroundImage = Image::FromFile("zima.jpg"); //изменить фон на зимний
 				 derevn.set_hours_from_begin_of_season(derevn.get_hours_procv());
 			 }
 
-			 if(derevn.get_flag_season()==1 && (derevn.get_hours_procv() - derevn.get_hours_from_begin_of_season())==24) //если сейчас зима и прошло 24 часа П. от начала зимы
+			 if(derevn.get_flag_season()==1 && (derevn.get_hours_procv() - derevn.get_hours_from_begin_of_season())==20) //если сейчас зима и прошло 20 часов П. от начала зимы (2 дня П. или 1 минута)
 			 {
 				 derevn.set_flag_season(0); //теперь флаг соответствует лету
 				 this->BackgroundImage = Image::FromFile("leto.jpg"); //изменить фон на летний
@@ -529,7 +530,7 @@ private: System::Void main_timer_Tick(System::Object^  sender, System::EventArgs
 				 }
 			 }
 
-			 if(derevn.get_flag_season()==1 && (derevn.get_hours_procv() - derevn.get_hours_from_begin_of_season())==12) //если сейчас зима и прошло 12 часов П. от начала зимы (середина зимы)
+			 if(derevn.get_flag_season()==1 && (derevn.get_hours_procv() - derevn.get_hours_from_begin_of_season())==10) //если сейчас зима и прошло 10 часов П. от начала зимы (середина зимы) (1 день П. или 0,5 минуты)
 			 {
 				 int f_event; //флаг случайного события (0 - приход нового крестьянина, 1 - нападение волков на скот)
 				 f_event =(1 + rand() % 2) -1; //случайное число в интервале от 0 до 1 включительно
@@ -560,27 +561,27 @@ private: System::Void main_timer_Tick(System::Object^  sender, System::EventArgs
 			 //ВЫВОД ИНФОРМАЦИИ О ДЕРЕВНЕ
 			 this->kolvo_krest_text->Text = L"Крестьяне: " + Convert::ToString(derevn.get_kolvo_krest())+ L" чел.";;
 			 this->skorost_zhiz_text->Text = L"Скорость жизни: " + Convert::ToString(derevn.get_speed_life());
-			 this->den_procv_text->Text = L"Дни процветания: " + Convert::ToString(derevn.get_days_procv());
+			 this->den_procv_text->Text = L"Дни Процветания: " + Convert::ToString(derevn.get_days_procv());
 			 this->budget_text->Text = L"Бюджет: " + Convert::ToString(derevn.get_budget_village()) + L" руб.";
 			 this->hleb_text->Text = L"Хлеб: " + Convert::ToString(derevn.get_kolvo_hleb()) + L" ед.";
 			 this->skot_text->Text = L"Домашний скот: " + Convert::ToString(derevn.get_kolvo_skot()) + L" ед.";
 			 if(derevn.get_flag_season()==0)
-				this->time_helper->Text = L"До конца лета осталось " + Convert::ToString(60 -(derevn.get_hours_procv() - derevn.get_hours_from_begin_of_season())) + L" Часов Процветания.";
+				this->time_helper->Text = L"До конца лета осталось " + Convert::ToString(40 -(derevn.get_hours_procv() - derevn.get_hours_from_begin_of_season())) + L" Часов Процветания.";
 			 if(derevn.get_flag_season()==1)
-				this->time_helper->Text = L"До конца зимы осталось " + Convert::ToString(24 -(derevn.get_hours_procv() - derevn.get_hours_from_begin_of_season())) + L" Часов Процветания.";
+				this->time_helper->Text = L"До конца зимы осталось " + Convert::ToString(20 -(derevn.get_hours_procv() - derevn.get_hours_from_begin_of_season())) + L" Часов Процветания.";
 		 }
 private: System::Void timer_refresh_Tick(System::Object^  sender, System::EventArgs^  e) {
 			 //ВЫВОД ИНФОРМАЦИИ О ДЕРЕВНЕ
 			 this->kolvo_krest_text->Text = L"Крестьяне: " + Convert::ToString(derevn.get_kolvo_krest())+ L" чел.";;
 			 this->skorost_zhiz_text->Text = L"Скорость жизни: " + Convert::ToString(derevn.get_speed_life());
-			 this->den_procv_text->Text = L"Дни процветания: " + Convert::ToString(derevn.get_days_procv());
+			 this->den_procv_text->Text = L"Дни Процветания: " + Convert::ToString(derevn.get_days_procv());
 			 this->budget_text->Text = L"Бюджет: " + Convert::ToString(derevn.get_budget_village()) + L" руб.";
 			 this->hleb_text->Text = L"Хлеб: " + Convert::ToString(derevn.get_kolvo_hleb()) + L" ед.";
 			 this->skot_text->Text = L"Домашний скот: " + Convert::ToString(derevn.get_kolvo_skot()) + L" ед.";
 			 if(derevn.get_flag_season()==0)
-				this->time_helper->Text = L"До конца лета осталось " + Convert::ToString(60 -(derevn.get_hours_procv() - derevn.get_hours_from_begin_of_season())) + L" Часов Процветания.";
+				this->time_helper->Text = L"До конца лета осталось " + Convert::ToString(40 -(derevn.get_hours_procv() - derevn.get_hours_from_begin_of_season())) + L" Часов Процветания.";
 			 if(derevn.get_flag_season()==1)
-				this->time_helper->Text = L"До конца зимы осталось " + Convert::ToString(24 -(derevn.get_hours_procv() - derevn.get_hours_from_begin_of_season())) + L" Часов Процветания.";
+				this->time_helper->Text = L"До конца зимы осталось " + Convert::ToString(20 -(derevn.get_hours_procv() - derevn.get_hours_from_begin_of_season())) + L" Часов Процветания.";
 		 }
 private: System::Void save_game_butt_Click(System::Object^  sender, System::EventArgs^  e) {
 			 derevn.Save_game(); //сохранить игру в файл
