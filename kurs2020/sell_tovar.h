@@ -192,7 +192,7 @@ namespace kurs2020 {
 			// timer_proverka
 			// 
 			this->timer_proverka->Enabled = true;
-			this->timer_proverka->Interval = 2000;
+			this->timer_proverka->Interval = 1003;
 			this->timer_proverka->Tick += gcnew System::EventHandler(this, &sell_tovar::timer_proverka_Tick);
 			// 
 			// sell_tovar

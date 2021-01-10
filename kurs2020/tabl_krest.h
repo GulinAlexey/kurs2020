@@ -264,7 +264,7 @@ namespace kurs2020 {
 			// timer_proverk_krest
 			// 
 			this->timer_proverk_krest->Enabled = true;
-			this->timer_proverk_krest->Interval = 2000;
+			this->timer_proverk_krest->Interval = 1003;
 			this->timer_proverk_krest->Tick += gcnew System::EventHandler(this, &tabl_krest::timer_proverk_krest_Tick);
 			// 
 			// tabl_krest

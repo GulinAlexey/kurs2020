@@ -90,7 +90,7 @@ namespace kurs2020 {
 			// timer_endgame
 			// 
 			this->timer_endgame->Enabled = true;
-			this->timer_endgame->Interval = 2000;
+			this->timer_endgame->Interval = 1003;
 			this->timer_endgame->Tick += gcnew System::EventHandler(this, &spravk::timer_endgame_Tick);
 			// 
 			// spravk
