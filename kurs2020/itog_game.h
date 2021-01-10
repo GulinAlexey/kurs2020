@@ -220,7 +220,11 @@ private: System::Void ok_record_Click(System::Object^  sender, System::EventArgs
 
 			 fof << char_str; //записать в файл
 			 fof << ';';
-			 fof << derevn.get_days_procv();
+
+			 ptr = Marshal::StringToHGlobalAnsi(this->your_scores->Text); //преобразовать информацию из Label в массив char (реализовано так, чтобы рекорд нельзя было изменить, начав новую игру, не закрыв окно с финальным счётом)
+			 char_str = (char*)ptr.ToPointer();
+
+			 fof << char_str; //записать в файл
 			 fof << '\n';
 
 			 fof.close();

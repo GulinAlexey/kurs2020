@@ -335,11 +335,15 @@ private: System::Void num_krest_pole1_TextChanged(System::Object^  sender, Syste
 				this->izgnat_butt->Enabled = false;
 			if(derevn.get_flag_season()==1) //если зима, кнопка Изгнать недоступна в любом случае
 			{
+				this->label1->Enabled = false;
+				this->num_krest_pole->Enabled = false;
 				this->izgnat_butt->Enabled = false;
 				this->trud_butt->Enabled = false;
 			}
 			if(derevn.get_flag_season()==0) //если лето, включить кнопку открытия Биржи труда
 			{
+				this->label1->Enabled = true;
+				this->num_krest_pole->Enabled = true;
 				this->trud_butt->Enabled = true;
 			}
 		 }
