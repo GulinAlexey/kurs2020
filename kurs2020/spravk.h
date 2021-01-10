@@ -72,7 +72,7 @@ namespace kurs2020 {
 			this->spravka_info->Size = System::Drawing::Size(311, 326);
 			this->spravka_info->TabIndex = 0;
 			this->spravka_info->TabStop = false;
-			this->spravka_info->Text = L"Информация об игре. Автор: Гулин Алексей, ПИ-92.";
+			this->spravka_info->Text = resources->GetString(L"spravka_info.Text");
 			this->spravka_info->TextChanged += gcnew System::EventHandler(this, &spravk::spravka_info_TextChanged);
 			// 
 			// cloz

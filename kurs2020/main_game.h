@@ -402,10 +402,10 @@ private: System::Void main_game_Load(System::Object^  sender, System::EventArgs^
 			 this->hleb_text->Text = L"Хлеб: " + Convert::ToString(derevn.get_kolvo_hleb()) + L" ед.";
 			 this->skot_text->Text = L"Домашний скот: " + Convert::ToString(derevn.get_kolvo_skot()) + L" ед.";
 			 if(derevn.get_flag_season()==0)
-				this->time_helper->Text = L"До конца лета осталось " + Convert::ToString(40 -(derevn.get_hours_procv() - derevn.get_hours_from_begin_of_season())) + L" Часов Процветания.";
+				this->time_helper->Text = L"До конца Лета осталось " + Convert::ToString(40 -(derevn.get_hours_procv() - derevn.get_hours_from_begin_of_season())) + L" Часов Процветания.";
 			 if(derevn.get_flag_season()==1)
 			 {
-				this->time_helper->Text = L"До конца зимы осталось " + Convert::ToString(20 -(derevn.get_hours_procv() - derevn.get_hours_from_begin_of_season())) + L" Часов Процветания.";
+				this->time_helper->Text = L"До конца Зимы осталось " + Convert::ToString(20 -(derevn.get_hours_procv() - derevn.get_hours_from_begin_of_season())) + L" Часов Процветания.";
 				this->BackgroundImage = Image::FromFile("zima.jpg"); //изменить фон на зимний
 			 }
 			 /* //вывод текущего времени в строку события (час:мин:сек). Понадобится в другой части кода
@@ -566,9 +566,9 @@ private: System::Void main_timer_Tick(System::Object^  sender, System::EventArgs
 			 this->hleb_text->Text = L"Хлеб: " + Convert::ToString(derevn.get_kolvo_hleb()) + L" ед.";
 			 this->skot_text->Text = L"Домашний скот: " + Convert::ToString(derevn.get_kolvo_skot()) + L" ед.";
 			 if(derevn.get_flag_season()==0)
-				this->time_helper->Text = L"До конца лета осталось " + Convert::ToString(40 -(derevn.get_hours_procv() - derevn.get_hours_from_begin_of_season())) + L" Часов Процветания.";
+				this->time_helper->Text = L"До конца Лета осталось " + Convert::ToString(40 -(derevn.get_hours_procv() - derevn.get_hours_from_begin_of_season())) + L" Часов Процветания.";
 			 if(derevn.get_flag_season()==1)
-				this->time_helper->Text = L"До конца зимы осталось " + Convert::ToString(20 -(derevn.get_hours_procv() - derevn.get_hours_from_begin_of_season())) + L" Часов Процветания.";
+				this->time_helper->Text = L"До конца Зимы осталось " + Convert::ToString(20 -(derevn.get_hours_procv() - derevn.get_hours_from_begin_of_season())) + L" Часов Процветания.";
 		 }
 private: System::Void timer_refresh_Tick(System::Object^  sender, System::EventArgs^  e) {
 			 //ВЫВОД ИНФОРМАЦИИ О ДЕРЕВНЕ
@@ -579,9 +579,9 @@ private: System::Void timer_refresh_Tick(System::Object^  sender, System::EventA
 			 this->hleb_text->Text = L"Хлеб: " + Convert::ToString(derevn.get_kolvo_hleb()) + L" ед.";
 			 this->skot_text->Text = L"Домашний скот: " + Convert::ToString(derevn.get_kolvo_skot()) + L" ед.";
 			 if(derevn.get_flag_season()==0)
-				this->time_helper->Text = L"До конца лета осталось " + Convert::ToString(40 -(derevn.get_hours_procv() - derevn.get_hours_from_begin_of_season())) + L" Часов Процветания.";
+				this->time_helper->Text = L"До конца Лета осталось " + Convert::ToString(40 -(derevn.get_hours_procv() - derevn.get_hours_from_begin_of_season())) + L" Часов Процветания.";
 			 if(derevn.get_flag_season()==1)
-				this->time_helper->Text = L"До конца зимы осталось " + Convert::ToString(20 -(derevn.get_hours_procv() - derevn.get_hours_from_begin_of_season())) + L" Часов Процветания.";
+				this->time_helper->Text = L"До конца Зимы осталось " + Convert::ToString(20 -(derevn.get_hours_procv() - derevn.get_hours_from_begin_of_season())) + L" Часов Процветания.";
 		 }
 private: System::Void save_game_butt_Click(System::Object^  sender, System::EventArgs^  e) {
 			 derevn.Save_game(); //сохранить игру в файл
