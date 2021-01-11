@@ -345,10 +345,12 @@ private: System::Void num_krest_pole1_TextChanged(System::Object^  sender, Syste
 					this->naim_butt->Enabled = false;
 				}
 				else
+				{
 					this->naim_butt->Enabled = true;
 
-				if((derevn.get_budget_village()-birzh_trud.krests[nummk-1].get_naim())<0)
-					this->naim_butt->Enabled = false;
+					if((derevn.get_budget_village()-birzh_trud.krests[nummk-1].get_naim())<0)
+						this->naim_butt->Enabled = false;
+				}
 			}
 			else
 				this->naim_butt->Enabled = false;

@@ -163,7 +163,7 @@ namespace kurs2020 {
 				static_cast<System::Byte>(204)));
 			this->den_procv_text->Location = System::Drawing::Point(12, 91);
 			this->den_procv_text->Name = L"den_procv_text";
-			this->den_procv_text->Size = System::Drawing::Size(227, 31);
+			this->den_procv_text->Size = System::Drawing::Size(232, 31);
 			this->den_procv_text->TabIndex = 2;
 			this->den_procv_text->Text = L"Дни Процветания: ";
 			// 
