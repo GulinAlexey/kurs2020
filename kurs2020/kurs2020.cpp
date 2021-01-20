@@ -1,4 +1,4 @@
-// kurs2020.cpp: главный файл проекта.
+// kurs2020.cpp: РіР»Р°РІРЅС‹Р№ С„Р°Р№Р» РїСЂРѕРµРєС‚Р°.
 
 #include "stdafx.h"
 #include "Form1.h"
@@ -8,11 +8,11 @@ using namespace kurs2020;
 [STAThreadAttribute]
 int main(array<System::String ^> ^args)
 {
-	// Включение визуальных эффектов Windows XP до создания каких-либо элементов управления
+	// Р’РєР»СЋС‡РµРЅРёРµ РІРёР·СѓР°Р»СЊРЅС‹С… СЌС„С„РµРєС‚РѕРІ Windows XP РґРѕ СЃРѕР·РґР°РЅРёСЏ РєР°РєРёС…-Р»РёР±Рѕ СЌР»РµРјРµРЅС‚РѕРІ СѓРїСЂР°РІР»РµРЅРёСЏ
 	Application::EnableVisualStyles();
 	Application::SetCompatibleTextRenderingDefault(false); 
 
-	// Создание главного окна и его запуск
+	// РЎРѕР·РґР°РЅРёРµ РіР»Р°РІРЅРѕРіРѕ РѕРєРЅР° Рё РµРіРѕ Р·Р°РїСѓСЃРє
 	Application::Run(gcnew Form1());
 	return 0;
 }

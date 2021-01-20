@@ -12,7 +12,7 @@ namespace kurs2020 {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Сводка для itog_game
+	/// РЎРІРѕРґРєР° РґР»СЏ itog_game
 	/// </summary>
 	public ref class itog_game : public System::Windows::Forms::Form
 	{
@@ -21,13 +21,13 @@ namespace kurs2020 {
 		{
 			InitializeComponent();
 			//
-			//TODO: добавьте код конструктора
+			//TODO: РґРѕР±Р°РІСЊС‚Рµ РєРѕРґ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР°
 			//
 		}
 
 	protected:
 		/// <summary>
-		/// Освободить все используемые ресурсы.
+		/// РћСЃРІРѕР±РѕРґРёС‚СЊ РІСЃРµ РёСЃРїРѕР»СЊР·СѓРµРјС‹Рµ СЂРµСЃСѓСЂСЃС‹.
 		/// </summary>
 		~itog_game()
 		{
@@ -50,14 +50,14 @@ namespace kurs2020 {
 
 	private:
 		/// <summary>
-		/// Требуется переменная конструктора.
+		/// РўСЂРµР±СѓРµС‚СЃСЏ РїРµСЂРµРјРµРЅРЅР°СЏ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР°.
 		/// </summary>
 		System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
-		/// Обязательный метод для поддержки конструктора - не изменяйте
-		/// содержимое данного метода при помощи редактора кода.
+		/// РћР±СЏР·Р°С‚РµР»СЊРЅС‹Р№ РјРµС‚РѕРґ РґР»СЏ РїРѕРґРґРµСЂР¶РєРё РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР° - РЅРµ РёР·РјРµРЅСЏР№С‚Рµ
+		/// СЃРѕРґРµСЂР¶РёРјРѕРµ РґР°РЅРЅРѕРіРѕ РјРµС‚РѕРґР° РїСЂРё РїРѕРјРѕС‰Рё СЂРµРґР°РєС‚РѕСЂР° РєРѕРґР°.
 		/// </summary>
 		void InitializeComponent(void)
 		{
@@ -79,7 +79,7 @@ namespace kurs2020 {
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(284, 62);
 			this->label1->TabIndex = 0;
-			this->label1->Text = L"Все крестьяне покинули деревню.\r\nПред вашим взором только \r\nзаброшенные просторы." 
+			this->label1->Text = L"Р’СЃРµ РєСЂРµСЃС‚СЊСЏРЅРµ РїРѕРєРёРЅСѓР»Рё РґРµСЂРµРІРЅСЋ.\r\nРџСЂРµРґ РІР°С€РёРј РІР·РѕСЂРѕРј С‚РѕР»СЊРєРѕ \r\nР·Р°Р±СЂРѕС€РµРЅРЅС‹Рµ РїСЂРѕСЃС‚РѕСЂС‹." 
 				L"";
 			this->label1->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
@@ -92,7 +92,7 @@ namespace kurs2020 {
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(284, 39);
 			this->label2->TabIndex = 1;
-			this->label2->Text = L"Игра окончена!";
+			this->label2->Text = L"РРіСЂР° РѕРєРѕРЅС‡РµРЅР°!";
 			this->label2->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// label3
@@ -105,7 +105,7 @@ namespace kurs2020 {
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(223, 39);
 			this->label3->TabIndex = 2;
-			this->label3->Text = L"Итоговый счёт (Дни П.):";
+			this->label3->Text = L"РС‚РѕРіРѕРІС‹Р№ СЃС‡С‘С‚ (Р”РЅРё Рџ.):";
 			this->label3->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// your_scores
@@ -138,7 +138,7 @@ namespace kurs2020 {
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(221, 13);
 			this->label5->TabIndex = 5;
-			this->label5->Text = L"Введите ваше имя: (для списка рекордов)";
+			this->label5->Text = L"Р’РІРµРґРёС‚Рµ РІР°С€Рµ РёРјСЏ: (РґР»СЏ СЃРїРёСЃРєР° СЂРµРєРѕСЂРґРѕРІ)";
 			// 
 			// ok_record
 			// 
@@ -148,7 +148,7 @@ namespace kurs2020 {
 			this->ok_record->Name = L"ok_record";
 			this->ok_record->Size = System::Drawing::Size(118, 44);
 			this->ok_record->TabIndex = 2;
-			this->ok_record->Text = L"записать и закрыть";
+			this->ok_record->Text = L"Р·Р°РїРёСЃР°С‚СЊ Рё Р·Р°РєСЂС‹С‚СЊ";
 			this->ok_record->UseVisualStyleBackColor = true;
 			this->ok_record->Click += gcnew System::EventHandler(this, &itog_game::ok_record_Click);
 			// 
@@ -161,7 +161,7 @@ namespace kurs2020 {
 			this->close->Name = L"close";
 			this->close->Size = System::Drawing::Size(118, 44);
 			this->close->TabIndex = 3;
-			this->close->Text = L"закрыть без сохранения рекорда";
+			this->close->Text = L"Р·Р°РєСЂС‹С‚СЊ Р±РµР· СЃРѕС…СЂР°РЅРµРЅРёСЏ СЂРµРєРѕСЂРґР°";
 			this->close->UseVisualStyleBackColor = true;
 			this->close->Click += gcnew System::EventHandler(this, &itog_game::close_Click);
 			// 
@@ -187,7 +187,7 @@ namespace kurs2020 {
 			this->MinimumSize = System::Drawing::Size(300, 300);
 			this->Name = L"itog_game";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-			this->Text = L"Конец игры";
+			this->Text = L"РљРѕРЅРµС† РёРіСЂС‹";
 			this->TopMost = true;
 			this->Load += gcnew System::EventHandler(this, &itog_game::itog_game_Load);
 			this->ResumeLayout(false);
@@ -203,28 +203,28 @@ private: System::Void itog_game_Load(System::Object^  sender, System::EventArgs^
 		 }
 private: System::Void ok_record_Click(System::Object^  sender, System::EventArgs^  e) {
 			 ifstream iff("records.txt");
-			 ofstream fof; //создать объект класса ofstream (для записи в файл информации о деревне) (крестьяне отдельно)
+			 ofstream fof; //СЃРѕР·РґР°С‚СЊ РѕР±СЉРµРєС‚ РєР»Р°СЃСЃР° ofstream (РґР»СЏ Р·Р°РїРёСЃРё РІ С„Р°Р№Р» РёРЅС„РѕСЂРјР°С†РёРё Рѕ РґРµСЂРµРІРЅРµ) (РєСЂРµСЃС‚СЊСЏРЅРµ РѕС‚РґРµР»СЊРЅРѕ)
 			 if(!iff.is_open())
 			 {
-				 fof.open("records.txt", ios::out); //открыть файл для новой записи
+				 fof.open("records.txt", ios::out); //РѕС‚РєСЂС‹С‚СЊ С„Р°Р№Р» РґР»СЏ РЅРѕРІРѕР№ Р·Р°РїРёСЃРё
 			 }
 			 else
 			 {
-				 fof.open("records.txt", ios::app); //открыть файл для добавления записи
+				 fof.open("records.txt", ios::app); //РѕС‚РєСЂС‹С‚СЊ С„Р°Р№Р» РґР»СЏ РґРѕР±Р°РІР»РµРЅРёСЏ Р·Р°РїРёСЃРё
 			 }
 			 iff.close();
 
 			 using namespace System::Runtime::InteropServices;
-			 IntPtr ptr = Marshal::StringToHGlobalAnsi(this->name_player->Text); //преобразовать информацию из TextBox в массив char
+			 IntPtr ptr = Marshal::StringToHGlobalAnsi(this->name_player->Text); //РїСЂРµРѕР±СЂР°Р·РѕРІР°С‚СЊ РёРЅС„РѕСЂРјР°С†РёСЋ РёР· TextBox РІ РјР°СЃСЃРёРІ char
 			 char* char_str = (char*)ptr.ToPointer();
 
-			 fof << char_str; //записать в файл
+			 fof << char_str; //Р·Р°РїРёСЃР°С‚СЊ РІ С„Р°Р№Р»
 			 fof << ';';
 
-			 ptr = Marshal::StringToHGlobalAnsi(this->your_scores->Text); //преобразовать информацию из Label в массив char (реализовано так, чтобы рекорд нельзя было изменить, начав новую игру, не закрыв окно с финальным счётом)
+			 ptr = Marshal::StringToHGlobalAnsi(this->your_scores->Text); //РїСЂРµРѕР±СЂР°Р·РѕРІР°С‚СЊ РёРЅС„РѕСЂРјР°С†РёСЋ РёР· Label РІ РјР°СЃСЃРёРІ char (СЂРµР°Р»РёР·РѕРІР°РЅРѕ С‚Р°Рє, С‡С‚РѕР±С‹ СЂРµРєРѕСЂРґ РЅРµР»СЊР·СЏ Р±С‹Р»Рѕ РёР·РјРµРЅРёС‚СЊ, РЅР°С‡Р°РІ РЅРѕРІСѓСЋ РёРіСЂСѓ, РЅРµ Р·Р°РєСЂС‹РІ РѕРєРЅРѕ СЃ С„РёРЅР°Р»СЊРЅС‹Рј СЃС‡С‘С‚РѕРј)
 			 char_str = (char*)ptr.ToPointer();
 
-			 fof << char_str; //записать в файл
+			 fof << char_str; //Р·Р°РїРёСЃР°С‚СЊ РІ С„Р°Р№Р»
 			 fof << '\n';
 
 			 fof.close();
@@ -232,16 +232,16 @@ private: System::Void ok_record_Click(System::Object^  sender, System::EventArgs
 
 		 }
 private: System::Void name_player_TextChanged(System::Object^  sender, System::EventArgs^  e) {
-			 if(this->name_player->Text==L"") //если поле с именем игрока пустое
+			 if(this->name_player->Text==L"") //РµСЃР»Рё РїРѕР»Рµ СЃ РёРјРµРЅРµРј РёРіСЂРѕРєР° РїСѓСЃС‚РѕРµ
 			 {
 				 this->ok_record->Enabled=false;
 			 }
 			 else
 			 {
 				 using namespace System::Runtime::InteropServices;
-				 IntPtr ptr = Marshal::StringToHGlobalAnsi(this->name_player->Text); //преобразовать информацию из TextBox в массив char
+				 IntPtr ptr = Marshal::StringToHGlobalAnsi(this->name_player->Text); //РїСЂРµРѕР±СЂР°Р·РѕРІР°С‚СЊ РёРЅС„РѕСЂРјР°С†РёСЋ РёР· TextBox РІ РјР°СЃСЃРёРІ char
 				 char* char_str = (char*)ptr.ToPointer();
-				 if(strchr( char_str, ';')!=NULL) //проверить, есть ли в поле с именем игрока запрещённый символ ';'
+				 if(strchr( char_str, ';')!=NULL) //РїСЂРѕРІРµСЂРёС‚СЊ, РµСЃС‚СЊ Р»Рё РІ РїРѕР»Рµ СЃ РёРјРµРЅРµРј РёРіСЂРѕРєР° Р·Р°РїСЂРµС‰С‘РЅРЅС‹Р№ СЃРёРјРІРѕР» ';'
 				 {
 					this->ok_record->Enabled=false;
 				 }

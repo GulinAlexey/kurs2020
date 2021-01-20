@@ -5,7 +5,7 @@
 #include "sell_tovar.h"
 #include "spravk.h"
 
-extern int f_endgame; //флаг о том, что игра окончена (игрок проиграл) (глобальн.)
+extern int f_endgame; //С„Р»Р°Рі Рѕ С‚РѕРј, С‡С‚Рѕ РёРіСЂР° РѕРєРѕРЅС‡РµРЅР° (РёРіСЂРѕРє РїСЂРѕРёРіСЂР°Р») (РіР»РѕР±Р°Р»СЊРЅ.)
 
 namespace kurs2020 {
 
@@ -17,7 +17,7 @@ namespace kurs2020 {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Сводка для main_game
+	/// РЎРІРѕРґРєР° РґР»СЏ main_game
 	/// </summary>
 	public ref class main_game : public System::Windows::Forms::Form
 	{
@@ -26,13 +26,13 @@ namespace kurs2020 {
 		{
 			InitializeComponent();
 			//
-			//TODO: добавьте код конструктора
+			//TODO: РґРѕР±Р°РІСЊС‚Рµ РєРѕРґ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР°
 			//
 		}
 
 	protected:
 		/// <summary>
-		/// Освободить все используемые ресурсы.
+		/// РћСЃРІРѕР±РѕРґРёС‚СЊ РІСЃРµ РёСЃРїРѕР»СЊР·СѓРµРјС‹Рµ СЂРµСЃСѓСЂСЃС‹.
 		/// </summary>
 		~main_game()
 		{
@@ -69,14 +69,14 @@ namespace kurs2020 {
 
 	private:
 		/// <summary>
-		/// Требуется переменная конструктора.
+		/// РўСЂРµР±СѓРµС‚СЃСЏ РїРµСЂРµРјРµРЅРЅР°СЏ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР°.
 		/// </summary>
 
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
-		/// Обязательный метод для поддержки конструктора - не изменяйте
-		/// содержимое данного метода при помощи редактора кода.
+		/// РћР±СЏР·Р°С‚РµР»СЊРЅС‹Р№ РјРµС‚РѕРґ РґР»СЏ РїРѕРґРґРµСЂР¶РєРё РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР° - РЅРµ РёР·РјРµРЅСЏР№С‚Рµ
+		/// СЃРѕРґРµСЂР¶РёРјРѕРµ РґР°РЅРЅРѕРіРѕ РјРµС‚РѕРґР° РїСЂРё РїРѕРјРѕС‰Рё СЂРµРґР°РєС‚РѕСЂР° РєРѕРґР°.
 		/// </summary>
 		void InitializeComponent(void)
 		{
@@ -124,7 +124,7 @@ namespace kurs2020 {
 			this->save_game_butt->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"save_game_butt.Image")));
 			this->save_game_butt->Name = L"save_game_butt";
 			this->save_game_butt->Size = System::Drawing::Size(122, 20);
-			this->save_game_butt->Text = L"Сохранить игру";
+			this->save_game_butt->Text = L"РЎРѕС…СЂР°РЅРёС‚СЊ РёРіСЂСѓ";
 			this->save_game_butt->Click += gcnew System::EventHandler(this, &main_game::save_game_butt_Click);
 			// 
 			// spravk_lent_butt
@@ -132,7 +132,7 @@ namespace kurs2020 {
 			this->spravk_lent_butt->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"spravk_lent_butt.Image")));
 			this->spravk_lent_butt->Name = L"spravk_lent_butt";
 			this->spravk_lent_butt->Size = System::Drawing::Size(81, 20);
-			this->spravk_lent_butt->Text = L"Справка";
+			this->spravk_lent_butt->Text = L"РЎРїСЂР°РІРєР°";
 			this->spravk_lent_butt->Click += gcnew System::EventHandler(this, &main_game::spravk_lent_butt_Click);
 			// 
 			// go_to_main_menu_butt
@@ -140,7 +140,7 @@ namespace kurs2020 {
 			this->go_to_main_menu_butt->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"go_to_main_menu_butt.Image")));
 			this->go_to_main_menu_butt->Name = L"go_to_main_menu_butt";
 			this->go_to_main_menu_butt->Size = System::Drawing::Size(161, 20);
-			this->go_to_main_menu_butt->Text = L"Выход в главное меню";
+			this->go_to_main_menu_butt->Text = L"Р’С‹С…РѕРґ РІ РіР»Р°РІРЅРѕРµ РјРµРЅСЋ";
 			this->go_to_main_menu_butt->Click += gcnew System::EventHandler(this, &main_game::go_to_main_menu_butt_Click);
 			// 
 			// skorost_zhiz_text
@@ -153,7 +153,7 @@ namespace kurs2020 {
 			this->skorost_zhiz_text->Name = L"skorost_zhiz_text";
 			this->skorost_zhiz_text->Size = System::Drawing::Size(212, 31);
 			this->skorost_zhiz_text->TabIndex = 1;
-			this->skorost_zhiz_text->Text = L"Скорость жизни: ";
+			this->skorost_zhiz_text->Text = L"РЎРєРѕСЂРѕСЃС‚СЊ Р¶РёР·РЅРё: ";
 			// 
 			// den_procv_text
 			// 
@@ -165,7 +165,7 @@ namespace kurs2020 {
 			this->den_procv_text->Name = L"den_procv_text";
 			this->den_procv_text->Size = System::Drawing::Size(232, 31);
 			this->den_procv_text->TabIndex = 2;
-			this->den_procv_text->Text = L"Дни Процветания: ";
+			this->den_procv_text->Text = L"Р”РЅРё РџСЂРѕС†РІРµС‚Р°РЅРёСЏ: ";
 			// 
 			// kolvo_krest_text
 			// 
@@ -177,7 +177,7 @@ namespace kurs2020 {
 			this->kolvo_krest_text->Name = L"kolvo_krest_text";
 			this->kolvo_krest_text->Size = System::Drawing::Size(146, 31);
 			this->kolvo_krest_text->TabIndex = 3;
-			this->kolvo_krest_text->Text = L"Крестьяне: ";
+			this->kolvo_krest_text->Text = L"РљСЂРµСЃС‚СЊСЏРЅРµ: ";
 			this->kolvo_krest_text->Click += gcnew System::EventHandler(this, &main_game::label1_Click);
 			// 
 			// budget_text
@@ -190,7 +190,7 @@ namespace kurs2020 {
 			this->budget_text->Name = L"budget_text";
 			this->budget_text->Size = System::Drawing::Size(164, 31);
 			this->budget_text->TabIndex = 4;
-			this->budget_text->Text = L"Бюджет: руб.";
+			this->budget_text->Text = L"Р‘СЋРґР¶РµС‚: СЂСѓР±.";
 			// 
 			// hleb_text
 			// 
@@ -202,7 +202,7 @@ namespace kurs2020 {
 			this->hleb_text->Name = L"hleb_text";
 			this->hleb_text->Size = System::Drawing::Size(85, 31);
 			this->hleb_text->TabIndex = 5;
-			this->hleb_text->Text = L"Хлеб: ";
+			this->hleb_text->Text = L"РҐР»РµР±: ";
 			// 
 			// skot_text
 			// 
@@ -214,7 +214,7 @@ namespace kurs2020 {
 			this->skot_text->Name = L"skot_text";
 			this->skot_text->Size = System::Drawing::Size(208, 31);
 			this->skot_text->TabIndex = 6;
-			this->skot_text->Text = L"Домашний скот: ";
+			this->skot_text->Text = L"Р”РѕРјР°С€РЅРёР№ СЃРєРѕС‚: ";
 			// 
 			// pomoshnik_box
 			// 
@@ -234,7 +234,7 @@ namespace kurs2020 {
 			this->pomoshnik_box->Size = System::Drawing::Size(820, 100);
 			this->pomoshnik_box->TabIndex = 7;
 			this->pomoshnik_box->TabStop = false;
-			this->pomoshnik_box->Text = L"Информация от Помощника";
+			this->pomoshnik_box->Text = L"РРЅС„РѕСЂРјР°С†РёСЏ РѕС‚ РџРѕРјРѕС‰РЅРёРєР°";
 			// 
 			// event_helper
 			// 
@@ -262,7 +262,7 @@ namespace kurs2020 {
 			this->time_helper->RightToLeft = System::Windows::Forms::RightToLeft::No;
 			this->time_helper->Size = System::Drawing::Size(540, 22);
 			this->time_helper->TabIndex = 0;
-			this->time_helper->Text = L"До конца этого времени года осталось 11 Часов Процветания.";
+			this->time_helper->Text = L"Р”Рѕ РєРѕРЅС†Р° СЌС‚РѕРіРѕ РІСЂРµРјРµРЅРё РіРѕРґР° РѕСЃС‚Р°Р»РѕСЃСЊ 11 Р§Р°СЃРѕРІ РџСЂРѕС†РІРµС‚Р°РЅРёСЏ.";
 			// 
 			// spisok_krest_butt
 			// 
@@ -274,7 +274,7 @@ namespace kurs2020 {
 			this->spisok_krest_butt->Size = System::Drawing::Size(220, 48);
 			this->spisok_krest_butt->TabIndex = 3;
 			this->spisok_krest_butt->TabStop = false;
-			this->spisok_krest_butt->Text = L"Список крестьян";
+			this->spisok_krest_butt->Text = L"РЎРїРёСЃРѕРє РєСЂРµСЃС‚СЊСЏРЅ";
 			this->spisok_krest_butt->UseVisualStyleBackColor = true;
 			this->spisok_krest_butt->Click += gcnew System::EventHandler(this, &main_game::spisok_krest_butt_Click);
 			// 
@@ -288,7 +288,7 @@ namespace kurs2020 {
 			this->birzha_butt->Size = System::Drawing::Size(220, 48);
 			this->birzha_butt->TabIndex = 8;
 			this->birzha_butt->TabStop = false;
-			this->birzha_butt->Text = L"Товарная биржа";
+			this->birzha_butt->Text = L"РўРѕРІР°СЂРЅР°СЏ Р±РёСЂР¶Р°";
 			this->birzha_butt->UseVisualStyleBackColor = true;
 			this->birzha_butt->Click += gcnew System::EventHandler(this, &main_game::birzha_butt_Click);
 			// 
@@ -300,7 +300,7 @@ namespace kurs2020 {
 			this->vihod_info->Name = L"vihod_info";
 			this->vihod_info->Size = System::Drawing::Size(223, 13);
 			this->vihod_info->TabIndex = 9;
-			this->vihod_info->Text = L"Не забудь сохранить игру перед выходом!";
+			this->vihod_info->Text = L"РќРµ Р·Р°Р±СѓРґСЊ СЃРѕС…СЂР°РЅРёС‚СЊ РёРіСЂСѓ РїРµСЂРµРґ РІС‹С…РѕРґРѕРј!";
 			// 
 			// main_timer
 			// 
@@ -317,7 +317,7 @@ namespace kurs2020 {
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(227, 26);
 			this->label1->TabIndex = 10;
-			this->label1->Text = L"1 Час Процветания = 3 реальные секунды\r\n1 День Процветания = 30 реальных секунд";
+			this->label1->Text = L"1 Р§Р°СЃ РџСЂРѕС†РІРµС‚Р°РЅРёСЏ = 3 СЂРµР°Р»СЊРЅС‹Рµ СЃРµРєСѓРЅРґС‹\r\n1 Р”РµРЅСЊ РџСЂРѕС†РІРµС‚Р°РЅРёСЏ = 30 СЂРµР°Р»СЊРЅС‹С… СЃРµРєСѓРЅРґ";
 			// 
 			// timer_refresh
 			// 
@@ -335,7 +335,7 @@ namespace kurs2020 {
 			this->save_complete->Name = L"save_complete";
 			this->save_complete->Size = System::Drawing::Size(137, 13);
 			this->save_complete->TabIndex = 11;
-			this->save_complete->Text = L"Игра успешно сохранена!";
+			this->save_complete->Text = L"РРіСЂР° СѓСЃРїРµС€РЅРѕ СЃРѕС…СЂР°РЅРµРЅР°!";
 			this->save_complete->Visible = false;
 			// 
 			// main_game
@@ -362,7 +362,7 @@ namespace kurs2020 {
 			this->MinimizeBox = false;
 			this->MinimumSize = System::Drawing::Size(860, 540);
 			this->Name = L"main_game";
-			this->Text = L"Игра \"Управление деревней\"";
+			this->Text = L"РРіСЂР° \"РЈРїСЂР°РІР»РµРЅРёРµ РґРµСЂРµРІРЅРµР№\"";
 			this->WindowState = System::Windows::Forms::FormWindowState::Maximized;
 			this->Load += gcnew System::EventHandler(this, &main_game::main_game_Load);
 			this->lent_menu->ResumeLayout(false);
@@ -380,63 +380,63 @@ namespace kurs2020 {
 	private: System::Void label1_Click(System::Object^  sender, System::EventArgs^  e) {
 			 }
 private: System::Void spisok_krest_butt_Click(System::Object^  sender, System::EventArgs^  e) {
-			tabl_krest^ tabl_krest_p = gcnew tabl_krest(); //указатель на форму
-			tabl_krest_p -> ShowDialog(); //открыть форму
+			tabl_krest^ tabl_krest_p = gcnew tabl_krest(); //СѓРєР°Р·Р°С‚РµР»СЊ РЅР° С„РѕСЂРјСѓ
+			tabl_krest_p -> ShowDialog(); //РѕС‚РєСЂС‹С‚СЊ С„РѕСЂРјСѓ
 			delete(tabl_krest_p);
 		 }
 private: System::Void birzha_butt_Click(System::Object^  sender, System::EventArgs^  e) {
-			sell_tovar^ sell_tovar_p = gcnew sell_tovar(); //указатель на форму
-			sell_tovar_p -> ShowDialog(); //открыть форму
+			sell_tovar^ sell_tovar_p = gcnew sell_tovar(); //СѓРєР°Р·Р°С‚РµР»СЊ РЅР° С„РѕСЂРјСѓ
+			sell_tovar_p -> ShowDialog(); //РѕС‚РєСЂС‹С‚СЊ С„РѕСЂРјСѓ
 			delete(sell_tovar_p);
 		 }
 private: System::Void spravk_lent_butt_Click(System::Object^  sender, System::EventArgs^  e) {
-			spravk^ spravk_p = gcnew spravk(); //указатель на форму
-			spravk_p -> ShowDialog(); //открыть форму
+			spravk^ spravk_p = gcnew spravk(); //СѓРєР°Р·Р°С‚РµР»СЊ РЅР° С„РѕСЂРјСѓ
+			spravk_p -> ShowDialog(); //РѕС‚РєСЂС‹С‚СЊ С„РѕСЂРјСѓ
 			delete(spravk_p);
 		 }
 private: System::Void main_game_Load(System::Object^  sender, System::EventArgs^  e) {
-			 this->kolvo_krest_text->Text = L"Крестьяне: " + Convert::ToString(derevn.get_kolvo_krest())+ L" чел.";;
-			 this->skorost_zhiz_text->Text = L"Скорость жизни: " + Convert::ToString(derevn.get_speed_life());
-			 this->den_procv_text->Text = L"Дни Процветания: " + Convert::ToString(derevn.get_days_procv());
-			 this->budget_text->Text = L"Бюджет: " + Convert::ToString(derevn.get_budget_village()) + L" руб.";
-			 this->hleb_text->Text = L"Хлеб: " + Convert::ToString(derevn.get_kolvo_hleb()) + L" ед.";
-			 this->skot_text->Text = L"Домашний скот: " + Convert::ToString(derevn.get_kolvo_skot()) + L" ед.";
+			 this->kolvo_krest_text->Text = L"РљСЂРµСЃС‚СЊСЏРЅРµ: " + Convert::ToString(derevn.get_kolvo_krest())+ L" С‡РµР».";;
+			 this->skorost_zhiz_text->Text = L"РЎРєРѕСЂРѕСЃС‚СЊ Р¶РёР·РЅРё: " + Convert::ToString(derevn.get_speed_life());
+			 this->den_procv_text->Text = L"Р”РЅРё РџСЂРѕС†РІРµС‚Р°РЅРёСЏ: " + Convert::ToString(derevn.get_days_procv());
+			 this->budget_text->Text = L"Р‘СЋРґР¶РµС‚: " + Convert::ToString(derevn.get_budget_village()) + L" СЂСѓР±.";
+			 this->hleb_text->Text = L"РҐР»РµР±: " + Convert::ToString(derevn.get_kolvo_hleb()) + L" РµРґ.";
+			 this->skot_text->Text = L"Р”РѕРјР°С€РЅРёР№ СЃРєРѕС‚: " + Convert::ToString(derevn.get_kolvo_skot()) + L" РµРґ.";
 			 if(derevn.get_flag_season()==0)
-				this->time_helper->Text = L"До конца Лета осталось " + Convert::ToString(40 -(derevn.get_hours_procv() - derevn.get_hours_from_begin_of_season())) + L" Часов Процветания.";
+				this->time_helper->Text = L"Р”Рѕ РєРѕРЅС†Р° Р›РµС‚Р° РѕСЃС‚Р°Р»РѕСЃСЊ " + Convert::ToString(40 -(derevn.get_hours_procv() - derevn.get_hours_from_begin_of_season())) + L" Р§Р°СЃРѕРІ РџСЂРѕС†РІРµС‚Р°РЅРёСЏ.";
 			 if(derevn.get_flag_season()==1)
 			 {
-				this->time_helper->Text = L"До конца Зимы осталось " + Convert::ToString(20 -(derevn.get_hours_procv() - derevn.get_hours_from_begin_of_season())) + L" Часов Процветания.";
-				this->BackgroundImage = Image::FromFile("zima.jpg"); //изменить фон на зимний
+				this->time_helper->Text = L"Р”Рѕ РєРѕРЅС†Р° Р—РёРјС‹ РѕСЃС‚Р°Р»РѕСЃСЊ " + Convert::ToString(20 -(derevn.get_hours_procv() - derevn.get_hours_from_begin_of_season())) + L" Р§Р°СЃРѕРІ РџСЂРѕС†РІРµС‚Р°РЅРёСЏ.";
+				this->BackgroundImage = Image::FromFile("zima.jpg"); //РёР·РјРµРЅРёС‚СЊ С„РѕРЅ РЅР° Р·РёРјРЅРёР№
 			 }
-			 /* //вывод текущего времени в строку события (час:мин:сек). Понадобится в другой части кода
+			 /* //РІС‹РІРѕРґ С‚РµРєСѓС‰РµРіРѕ РІСЂРµРјРµРЅРё РІ СЃС‚СЂРѕРєСѓ СЃРѕР±С‹С‚РёСЏ (С‡Р°СЃ:РјРёРЅ:СЃРµРє). РџРѕРЅР°РґРѕР±РёС‚СЃСЏ РІ РґСЂСѓРіРѕР№ С‡Р°СЃС‚Рё РєРѕРґР°
 			 time_t now = time(0);
 			 tm *ltm = localtime(&now);
-			 this->event_helper->Text = L"Последнее событие: " + Convert::ToString(ltm->tm_hour)+ L":" + Convert::ToString(ltm->tm_min)+ L":" + Convert::ToString(ltm->tm_sec) + L" ";
+			 this->event_helper->Text = L"РџРѕСЃР»РµРґРЅРµРµ СЃРѕР±С‹С‚РёРµ: " + Convert::ToString(ltm->tm_hour)+ L":" + Convert::ToString(ltm->tm_min)+ L":" + Convert::ToString(ltm->tm_sec) + L" ";
 			 */
 		 }
 private: System::Void main_timer_Tick(System::Object^  sender, System::EventArgs^  e) {
 			 this->save_complete->Visible = false;
-			 if(f_endgame==1) //игра закончилась, закрыть все формы
+			 if(f_endgame==1) //РёРіСЂР° Р·Р°РєРѕРЅС‡РёР»Р°СЃСЊ, Р·Р°РєСЂС‹С‚СЊ РІСЃРµ С„РѕСЂРјС‹
 				 Close();
-			 derevn.set_hours_procv(derevn.get_hours_procv()+1); //кол-во часов процветания увеличилось на 1
-			 if((derevn.get_hours_procv()%10)==0) //если прошло 10 часов процветания
+			 derevn.set_hours_procv(derevn.get_hours_procv()+1); //РєРѕР»-РІРѕ С‡Р°СЃРѕРІ РїСЂРѕС†РІРµС‚Р°РЅРёСЏ СѓРІРµР»РёС‡РёР»РѕСЃСЊ РЅР° 1
+			 if((derevn.get_hours_procv()%10)==0) //РµСЃР»Рё РїСЂРѕС€Р»Рѕ 10 С‡Р°СЃРѕРІ РїСЂРѕС†РІРµС‚Р°РЅРёСЏ
 			 {
 				 derevn.set_days_procv(derevn.get_days_procv()+1);
 			 }
-			 if(derevn.get_kolvo_krest()==0) //если нет крестьян
+			 if(derevn.get_kolvo_krest()==0) //РµСЃР»Рё РЅРµС‚ РєСЂРµСЃС‚СЊСЏРЅ
 			 {
 				 derevn.set_otschet_hours_net_krest(derevn.get_otschet_hours_net_krest()+1);
 			 }
-			 if(derevn.get_otschet_hours_net_krest()==2) //если закончилось время отсчёта без крестьян
+			 if(derevn.get_otschet_hours_net_krest()==2) //РµСЃР»Рё Р·Р°РєРѕРЅС‡РёР»РѕСЃСЊ РІСЂРµРјСЏ РѕС‚СЃС‡С‘С‚Р° Р±РµР· РєСЂРµСЃС‚СЊСЏРЅ
 			 {
 				 f_endgame=1;
 				 Close();
 			 }
-			 if(derevn.get_kolvo_krest()!=0) //если хотя бы один крестьянин нашёлся
+			 if(derevn.get_kolvo_krest()!=0) //РµСЃР»Рё С…РѕС‚СЏ Р±С‹ РѕРґРёРЅ РєСЂРµСЃС‚СЊСЏРЅРёРЅ РЅР°С€С‘Р»СЃСЏ
 			 {
 				 derevn.set_otschet_hours_net_krest(0);
 			 }
-			 if(derevn.get_flag_season()==0 && derevn.get_budget_village()!=0) //если лето и бюджет не нулевой
+			 if(derevn.get_flag_season()==0 && derevn.get_budget_village()!=0) //РµСЃР»Рё Р»РµС‚Рѕ Рё Р±СЋРґР¶РµС‚ РЅРµ РЅСѓР»РµРІРѕР№
 			 {
 				 int kolv_k=derevn.get_kolvo_krest();
 				 for(int ko=0; ko<kolv_k; ko++)
@@ -451,7 +451,7 @@ private: System::Void main_timer_Tick(System::Object^  sender, System::EventArgs
 						 break;
 				 }
 			 }
-			 if(derevn.get_flag_season()==1) //если зима
+			 if(derevn.get_flag_season()==1) //РµСЃР»Рё Р·РёРјР°
 			 {
 				 int kolv_k=derevn.get_kolvo_krest();
 				 for(int ko=0; ko<kolv_k; ko++)
@@ -473,13 +473,13 @@ private: System::Void main_timer_Tick(System::Object^  sender, System::EventArgs
 						derevn.krests[ko].set_otschet_hours_net_edi(derevn.krests[ko].get_otschet_hours_net_edi()+1);
 						if(derevn.krests[ko].get_otschet_hours_net_edi()>=5)
 						{
-							time_t now = time(0); //для вывода времени
+							time_t now = time(0); //РґР»СЏ РІС‹РІРѕРґР° РІСЂРµРјРµРЅРё
 							tm *ltm = localtime(&now);
-							string str_name= derevn.krests[ko].get_name() + " " + derevn.krests[ko].get_surname(); //для вывода имени и фамилии
-							this->event_helper->Text = L"Последнее событие: " + Convert::ToString(ltm->tm_hour)+ L":" + Convert::ToString(ltm->tm_min)+ L":" + Convert::ToString(ltm->tm_sec) + L" " + L"Крестьянин " + gcnew System::String(str_name.c_str()) + L" ушёл из деревни из-за недостатка пищи.";
+							string str_name= derevn.krests[ko].get_name() + " " + derevn.krests[ko].get_surname(); //РґР»СЏ РІС‹РІРѕРґР° РёРјРµРЅРё Рё С„Р°РјРёР»РёРё
+							this->event_helper->Text = L"РџРѕСЃР»РµРґРЅРµРµ СЃРѕР±С‹С‚РёРµ: " + Convert::ToString(ltm->tm_hour)+ L":" + Convert::ToString(ltm->tm_min)+ L":" + Convert::ToString(ltm->tm_sec) + L" " + L"РљСЂРµСЃС‚СЊСЏРЅРёРЅ " + gcnew System::String(str_name.c_str()) + L" СѓС€С‘Р» РёР· РґРµСЂРµРІРЅРё РёР·-Р·Р° РЅРµРґРѕСЃС‚Р°С‚РєР° РїРёС‰Рё.";
 							
-							derevn.Delete_krest(ko+1); //удалить крестьянина (методу передаётся нумерация от единицы, а цикл нумеруется от нуля)
-							kolv_k=kolv_k-1; //крестьян стало на 1 меньше
+							derevn.Delete_krest(ko+1); //СѓРґР°Р»РёС‚СЊ РєСЂРµСЃС‚СЊСЏРЅРёРЅР° (РјРµС‚РѕРґСѓ РїРµСЂРµРґР°С‘С‚СЃСЏ РЅСѓРјРµСЂР°С†РёСЏ РѕС‚ РµРґРёРЅРёС†С‹, Р° С†РёРєР» РЅСѓРјРµСЂСѓРµС‚СЃСЏ РѕС‚ РЅСѓР»СЏ)
+							kolv_k=kolv_k-1; //РєСЂРµСЃС‚СЊСЏРЅ СЃС‚Р°Р»Рѕ РЅР° 1 РјРµРЅСЊС€Рµ
 
 							if(kolv_k==ko)
 								break;
@@ -489,25 +489,25 @@ private: System::Void main_timer_Tick(System::Object^  sender, System::EventArgs
 				 }
 			 }
 
-			 if(derevn.get_flag_season()==0 && (derevn.get_hours_procv() - derevn.get_hours_from_begin_of_season())==40) //если сейчас лето и прошло 40 часов П. от начала лета (4 дня П. или 2 минуты)
+			 if(derevn.get_flag_season()==0 && (derevn.get_hours_procv() - derevn.get_hours_from_begin_of_season())==40) //РµСЃР»Рё СЃРµР№С‡Р°СЃ Р»РµС‚Рѕ Рё РїСЂРѕС€Р»Рѕ 40 С‡Р°СЃРѕРІ Рџ. РѕС‚ РЅР°С‡Р°Р»Р° Р»РµС‚Р° (4 РґРЅСЏ Рџ. РёР»Рё 2 РјРёРЅСѓС‚С‹)
 			 {
-				 derevn.set_flag_season(1); //теперь флаг соответствует зиме
-				 this->BackgroundImage = Image::FromFile("zima.jpg"); //изменить фон на зимний
+				 derevn.set_flag_season(1); //С‚РµРїРµСЂСЊ С„Р»Р°Рі СЃРѕРѕС‚РІРµС‚СЃС‚РІСѓРµС‚ Р·РёРјРµ
+				 this->BackgroundImage = Image::FromFile("zima.jpg"); //РёР·РјРµРЅРёС‚СЊ С„РѕРЅ РЅР° Р·РёРјРЅРёР№
 				 derevn.set_hours_from_begin_of_season(derevn.get_hours_procv());
 			 }
 
-			 if(derevn.get_flag_season()==1 && (derevn.get_hours_procv() - derevn.get_hours_from_begin_of_season())==20) //если сейчас зима и прошло 20 часов П. от начала зимы (2 дня П. или 1 минута)
+			 if(derevn.get_flag_season()==1 && (derevn.get_hours_procv() - derevn.get_hours_from_begin_of_season())==20) //РµСЃР»Рё СЃРµР№С‡Р°СЃ Р·РёРјР° Рё РїСЂРѕС€Р»Рѕ 20 С‡Р°СЃРѕРІ Рџ. РѕС‚ РЅР°С‡Р°Р»Р° Р·РёРјС‹ (2 РґРЅСЏ Рџ. РёР»Рё 1 РјРёРЅСѓС‚Р°)
 			 {
-				 derevn.set_flag_season(0); //теперь флаг соответствует лету
-				 this->BackgroundImage = Image::FromFile("leto.jpg"); //изменить фон на летний
+				 derevn.set_flag_season(0); //С‚РµРїРµСЂСЊ С„Р»Р°Рі СЃРѕРѕС‚РІРµС‚СЃС‚РІСѓРµС‚ Р»РµС‚Сѓ
+				 this->BackgroundImage = Image::FromFile("leto.jpg"); //РёР·РјРµРЅРёС‚СЊ С„РѕРЅ РЅР° Р»РµС‚РЅРёР№
 				 derevn.set_hours_from_begin_of_season(derevn.get_hours_procv());
-				 derevn.set_speed_life( derevn.get_speed_life()+1); //множитель Скорость жизни увеличился на 1
-				 int f_izmen_price; //флаг изменения цены на товар (0, если уменьшить; 1, если увеличить)
-				 double proc_izm; //процент от начального значения цены, на которое она изменится
-				 //ДЛЯ ЦЕНЫ НА ХЛЕБ
-				 f_izmen_price =(1 + rand() % 2) -1; //случайное число в интервале от 0 до 1 включительно
-				 proc_izm = 5 + rand() % 25; //случайное число в интервале от 5 до 30 включительно
-				 proc_izm = proc_izm / 100; //перевод процентного значения в десятичное
+				 derevn.set_speed_life( derevn.get_speed_life()+1); //РјРЅРѕР¶РёС‚РµР»СЊ РЎРєРѕСЂРѕСЃС‚СЊ Р¶РёР·РЅРё СѓРІРµР»РёС‡РёР»СЃСЏ РЅР° 1
+				 int f_izmen_price; //С„Р»Р°Рі РёР·РјРµРЅРµРЅРёСЏ С†РµРЅС‹ РЅР° С‚РѕРІР°СЂ (0, РµСЃР»Рё СѓРјРµРЅСЊС€РёС‚СЊ; 1, РµСЃР»Рё СѓРІРµР»РёС‡РёС‚СЊ)
+				 double proc_izm; //РїСЂРѕС†РµРЅС‚ РѕС‚ РЅР°С‡Р°Р»СЊРЅРѕРіРѕ Р·РЅР°С‡РµРЅРёСЏ С†РµРЅС‹, РЅР° РєРѕС‚РѕСЂРѕРµ РѕРЅР° РёР·РјРµРЅРёС‚СЃСЏ
+				 //Р”Р›РЇ Р¦Р•РќР« РќРђ РҐР›Р•Р‘
+				 f_izmen_price =(1 + rand() % 2) -1; //СЃР»СѓС‡Р°Р№РЅРѕРµ С‡РёСЃР»Рѕ РІ РёРЅС‚РµСЂРІР°Р»Рµ РѕС‚ 0 РґРѕ 1 РІРєР»СЋС‡РёС‚РµР»СЊРЅРѕ
+				 proc_izm = 5 + rand() % 25; //СЃР»СѓС‡Р°Р№РЅРѕРµ С‡РёСЃР»Рѕ РІ РёРЅС‚РµСЂРІР°Р»Рµ РѕС‚ 5 РґРѕ 30 РІРєР»СЋС‡РёС‚РµР»СЊРЅРѕ
+				 proc_izm = proc_izm / 100; //РїРµСЂРµРІРѕРґ РїСЂРѕС†РµРЅС‚РЅРѕРіРѕ Р·РЅР°С‡РµРЅРёСЏ РІ РґРµСЃСЏС‚РёС‡РЅРѕРµ
 				 if(f_izmen_price==0)
 				 {
 					 derevn.set_price_hleb(derevn.get_price_hleb() - derevn.get_price_hleb() * proc_izm);
@@ -516,10 +516,10 @@ private: System::Void main_timer_Tick(System::Object^  sender, System::EventArgs
 				 {
 					 derevn.set_price_hleb(derevn.get_price_hleb() + derevn.get_price_hleb() * proc_izm);
 				 }
-				 //ДЛЯ ЦЕНЫ НА СКОТ
-				 f_izmen_price =(1 + rand() % 2) -1; //случайное число в интервале от 0 до 1 включительно
-				 proc_izm = 5 + rand() % 25; //случайное число в интервале от 5 до 30 включительно
-				 proc_izm = proc_izm / 100; //перевод процентного значения в десятичное
+				 //Р”Р›РЇ Р¦Р•РќР« РќРђ РЎРљРћРў
+				 f_izmen_price =(1 + rand() % 2) -1; //СЃР»СѓС‡Р°Р№РЅРѕРµ С‡РёСЃР»Рѕ РІ РёРЅС‚РµСЂРІР°Р»Рµ РѕС‚ 0 РґРѕ 1 РІРєР»СЋС‡РёС‚РµР»СЊРЅРѕ
+				 proc_izm = 5 + rand() % 25; //СЃР»СѓС‡Р°Р№РЅРѕРµ С‡РёСЃР»Рѕ РІ РёРЅС‚РµСЂРІР°Р»Рµ РѕС‚ 5 РґРѕ 30 РІРєР»СЋС‡РёС‚РµР»СЊРЅРѕ
+				 proc_izm = proc_izm / 100; //РїРµСЂРµРІРѕРґ РїСЂРѕС†РµРЅС‚РЅРѕРіРѕ Р·РЅР°С‡РµРЅРёСЏ РІ РґРµСЃСЏС‚РёС‡РЅРѕРµ
 				 if(f_izmen_price==0)
 				 {
 					 derevn.set_price_skot(derevn.get_price_skot() - derevn.get_price_skot() * proc_izm);
@@ -530,62 +530,62 @@ private: System::Void main_timer_Tick(System::Object^  sender, System::EventArgs
 				 }
 			 }
 
-			 if(derevn.get_flag_season()==1 && (derevn.get_hours_procv() - derevn.get_hours_from_begin_of_season())==10) //если сейчас зима и прошло 10 часов П. от начала зимы (середина зимы) (1 день П. или 0,5 минуты)
+			 if(derevn.get_flag_season()==1 && (derevn.get_hours_procv() - derevn.get_hours_from_begin_of_season())==10) //РµСЃР»Рё СЃРµР№С‡Р°СЃ Р·РёРјР° Рё РїСЂРѕС€Р»Рѕ 10 С‡Р°СЃРѕРІ Рџ. РѕС‚ РЅР°С‡Р°Р»Р° Р·РёРјС‹ (СЃРµСЂРµРґРёРЅР° Р·РёРјС‹) (1 РґРµРЅСЊ Рџ. РёР»Рё 0,5 РјРёРЅСѓС‚С‹)
 			 {
-				 int f_event; //флаг случайного события (0 - приход нового крестьянина, 1 - нападение волков на скот)
-				 f_event =(1 + rand() % 2) -1; //случайное число в интервале от 0 до 1 включительно
+				 int f_event; //С„Р»Р°Рі СЃР»СѓС‡Р°Р№РЅРѕРіРѕ СЃРѕР±С‹С‚РёСЏ (0 - РїСЂРёС…РѕРґ РЅРѕРІРѕРіРѕ РєСЂРµСЃС‚СЊСЏРЅРёРЅР°, 1 - РЅР°РїР°РґРµРЅРёРµ РІРѕР»РєРѕРІ РЅР° СЃРєРѕС‚)
+				 f_event =(1 + rand() % 2) -1; //СЃР»СѓС‡Р°Р№РЅРѕРµ С‡РёСЃР»Рѕ РІ РёРЅС‚РµСЂРІР°Р»Рµ РѕС‚ 0 РґРѕ 1 РІРєР»СЋС‡РёС‚РµР»СЊРЅРѕ
 
-				 double proc_izm; //процент от начального значения кол-ва скота, на которое оно изменится
-				 proc_izm = 5 + rand() % 25; //случайное число в интервале от 5 до 30 включительно
-				 proc_izm = proc_izm / 100; //перевод процентного значения в десятичное
-				 int poteri = derevn.get_kolvo_skot() * proc_izm; //отдельная переменная для кол-ва потерянного скота
+				 double proc_izm; //РїСЂРѕС†РµРЅС‚ РѕС‚ РЅР°С‡Р°Р»СЊРЅРѕРіРѕ Р·РЅР°С‡РµРЅРёСЏ РєРѕР»-РІР° СЃРєРѕС‚Р°, РЅР° РєРѕС‚РѕСЂРѕРµ РѕРЅРѕ РёР·РјРµРЅРёС‚СЃСЏ
+				 proc_izm = 5 + rand() % 25; //СЃР»СѓС‡Р°Р№РЅРѕРµ С‡РёСЃР»Рѕ РІ РёРЅС‚РµСЂРІР°Р»Рµ РѕС‚ 5 РґРѕ 30 РІРєР»СЋС‡РёС‚РµР»СЊРЅРѕ
+				 proc_izm = proc_izm / 100; //РїРµСЂРµРІРѕРґ РїСЂРѕС†РµРЅС‚РЅРѕРіРѕ Р·РЅР°С‡РµРЅРёСЏ РІ РґРµСЃСЏС‚РёС‡РЅРѕРµ
+				 int poteri = derevn.get_kolvo_skot() * proc_izm; //РѕС‚РґРµР»СЊРЅР°СЏ РїРµСЂРµРјРµРЅРЅР°СЏ РґР»СЏ РєРѕР»-РІР° РїРѕС‚РµСЂСЏРЅРЅРѕРіРѕ СЃРєРѕС‚Р°
 
-				 if(f_event==1 && poteri>0) //нападение волков
+				 if(f_event==1 && poteri>0) //РЅР°РїР°РґРµРЅРёРµ РІРѕР»РєРѕРІ
 				 {
 					 derevn.set_kolvo_skot(derevn.get_kolvo_skot() - poteri);
-					 time_t now = time(0); //для вывода времени
+					 time_t now = time(0); //РґР»СЏ РІС‹РІРѕРґР° РІСЂРµРјРµРЅРё
 					 tm *ltm = localtime(&now);
-					 this->event_helper->Text = L"Последнее событие: " + Convert::ToString(ltm->tm_hour)+ L":" + Convert::ToString(ltm->tm_min)+ L":" + Convert::ToString(ltm->tm_sec) + L" " + L"Стая волков из леса напала на ваш скот. Потеряно " + Convert::ToString(poteri) + L" ед. скота.";
+					 this->event_helper->Text = L"РџРѕСЃР»РµРґРЅРµРµ СЃРѕР±С‹С‚РёРµ: " + Convert::ToString(ltm->tm_hour)+ L":" + Convert::ToString(ltm->tm_min)+ L":" + Convert::ToString(ltm->tm_sec) + L" " + L"РЎС‚Р°СЏ РІРѕР»РєРѕРІ РёР· Р»РµСЃР° РЅР°РїР°Р»Р° РЅР° РІР°С€ СЃРєРѕС‚. РџРѕС‚РµСЂСЏРЅРѕ " + Convert::ToString(poteri) + L" РµРґ. СЃРєРѕС‚Р°.";
 				 }
-				 else //приход крестьянина
+				 else //РїСЂРёС…РѕРґ РєСЂРµСЃС‚СЊСЏРЅРёРЅР°
 				 {
-					derevn.Add_rand_krest(); //добавление нового случайного крестьянина
-					time_t now = time(0); //для вывода времени
+					derevn.Add_rand_krest(); //РґРѕР±Р°РІР»РµРЅРёРµ РЅРѕРІРѕРіРѕ СЃР»СѓС‡Р°Р№РЅРѕРіРѕ РєСЂРµСЃС‚СЊСЏРЅРёРЅР°
+					time_t now = time(0); //РґР»СЏ РІС‹РІРѕРґР° РІСЂРµРјРµРЅРё
 					tm *ltm = localtime(&now);
-					int koo =  derevn.get_kolvo_krest() - 1; //получить номер последнего крестьянина
-					string str_name= derevn.krests[koo].get_name() + " " + derevn.krests[koo].get_surname(); //для вывода имени и фамилии
-					this->event_helper->Text = L"Последнее событие: " + Convert::ToString(ltm->tm_hour)+ L":" + Convert::ToString(ltm->tm_min)+ L":" + Convert::ToString(ltm->tm_sec) + L" " + L"Крестьянин " + gcnew System::String(str_name.c_str()) + L" вышел из лесу и присоединился к вам.";
+					int koo =  derevn.get_kolvo_krest() - 1; //РїРѕР»СѓС‡РёС‚СЊ РЅРѕРјРµСЂ РїРѕСЃР»РµРґРЅРµРіРѕ РєСЂРµСЃС‚СЊСЏРЅРёРЅР°
+					string str_name= derevn.krests[koo].get_name() + " " + derevn.krests[koo].get_surname(); //РґР»СЏ РІС‹РІРѕРґР° РёРјРµРЅРё Рё С„Р°РјРёР»РёРё
+					this->event_helper->Text = L"РџРѕСЃР»РµРґРЅРµРµ СЃРѕР±С‹С‚РёРµ: " + Convert::ToString(ltm->tm_hour)+ L":" + Convert::ToString(ltm->tm_min)+ L":" + Convert::ToString(ltm->tm_sec) + L" " + L"РљСЂРµСЃС‚СЊСЏРЅРёРЅ " + gcnew System::String(str_name.c_str()) + L" РІС‹С€РµР» РёР· Р»РµСЃСѓ Рё РїСЂРёСЃРѕРµРґРёРЅРёР»СЃСЏ Рє РІР°Рј.";
 				 }
 			 }
 
-			 //ВЫВОД ИНФОРМАЦИИ О ДЕРЕВНЕ
-			 this->kolvo_krest_text->Text = L"Крестьяне: " + Convert::ToString(derevn.get_kolvo_krest())+ L" чел.";;
-			 this->skorost_zhiz_text->Text = L"Скорость жизни: " + Convert::ToString(derevn.get_speed_life());
-			 this->den_procv_text->Text = L"Дни Процветания: " + Convert::ToString(derevn.get_days_procv());
-			 this->budget_text->Text = L"Бюджет: " + Convert::ToString(derevn.get_budget_village()) + L" руб.";
-			 this->hleb_text->Text = L"Хлеб: " + Convert::ToString(derevn.get_kolvo_hleb()) + L" ед.";
-			 this->skot_text->Text = L"Домашний скот: " + Convert::ToString(derevn.get_kolvo_skot()) + L" ед.";
+			 //Р’Р«Р’РћР” РРќР¤РћР РњРђР¦РР Рћ Р”Р•Р Р•Р’РќР•
+			 this->kolvo_krest_text->Text = L"РљСЂРµСЃС‚СЊСЏРЅРµ: " + Convert::ToString(derevn.get_kolvo_krest())+ L" С‡РµР».";;
+			 this->skorost_zhiz_text->Text = L"РЎРєРѕСЂРѕСЃС‚СЊ Р¶РёР·РЅРё: " + Convert::ToString(derevn.get_speed_life());
+			 this->den_procv_text->Text = L"Р”РЅРё РџСЂРѕС†РІРµС‚Р°РЅРёСЏ: " + Convert::ToString(derevn.get_days_procv());
+			 this->budget_text->Text = L"Р‘СЋРґР¶РµС‚: " + Convert::ToString(derevn.get_budget_village()) + L" СЂСѓР±.";
+			 this->hleb_text->Text = L"РҐР»РµР±: " + Convert::ToString(derevn.get_kolvo_hleb()) + L" РµРґ.";
+			 this->skot_text->Text = L"Р”РѕРјР°С€РЅРёР№ СЃРєРѕС‚: " + Convert::ToString(derevn.get_kolvo_skot()) + L" РµРґ.";
 			 if(derevn.get_flag_season()==0)
-				this->time_helper->Text = L"До конца Лета осталось " + Convert::ToString(40 -(derevn.get_hours_procv() - derevn.get_hours_from_begin_of_season())) + L" Часов Процветания.";
+				this->time_helper->Text = L"Р”Рѕ РєРѕРЅС†Р° Р›РµС‚Р° РѕСЃС‚Р°Р»РѕСЃСЊ " + Convert::ToString(40 -(derevn.get_hours_procv() - derevn.get_hours_from_begin_of_season())) + L" Р§Р°СЃРѕРІ РџСЂРѕС†РІРµС‚Р°РЅРёСЏ.";
 			 if(derevn.get_flag_season()==1)
-				this->time_helper->Text = L"До конца Зимы осталось " + Convert::ToString(20 -(derevn.get_hours_procv() - derevn.get_hours_from_begin_of_season())) + L" Часов Процветания.";
+				this->time_helper->Text = L"Р”Рѕ РєРѕРЅС†Р° Р—РёРјС‹ РѕСЃС‚Р°Р»РѕСЃСЊ " + Convert::ToString(20 -(derevn.get_hours_procv() - derevn.get_hours_from_begin_of_season())) + L" Р§Р°СЃРѕРІ РџСЂРѕС†РІРµС‚Р°РЅРёСЏ.";
 		 }
 private: System::Void timer_refresh_Tick(System::Object^  sender, System::EventArgs^  e) {
-			 //ВЫВОД ИНФОРМАЦИИ О ДЕРЕВНЕ
-			 this->kolvo_krest_text->Text = L"Крестьяне: " + Convert::ToString(derevn.get_kolvo_krest())+ L" чел.";;
-			 this->skorost_zhiz_text->Text = L"Скорость жизни: " + Convert::ToString(derevn.get_speed_life());
-			 this->den_procv_text->Text = L"Дни Процветания: " + Convert::ToString(derevn.get_days_procv());
-			 this->budget_text->Text = L"Бюджет: " + Convert::ToString(derevn.get_budget_village()) + L" руб.";
-			 this->hleb_text->Text = L"Хлеб: " + Convert::ToString(derevn.get_kolvo_hleb()) + L" ед.";
-			 this->skot_text->Text = L"Домашний скот: " + Convert::ToString(derevn.get_kolvo_skot()) + L" ед.";
+			 //Р’Р«Р’РћР” РРќР¤РћР РњРђР¦РР Рћ Р”Р•Р Р•Р’РќР•
+			 this->kolvo_krest_text->Text = L"РљСЂРµСЃС‚СЊСЏРЅРµ: " + Convert::ToString(derevn.get_kolvo_krest())+ L" С‡РµР».";;
+			 this->skorost_zhiz_text->Text = L"РЎРєРѕСЂРѕСЃС‚СЊ Р¶РёР·РЅРё: " + Convert::ToString(derevn.get_speed_life());
+			 this->den_procv_text->Text = L"Р”РЅРё РџСЂРѕС†РІРµС‚Р°РЅРёСЏ: " + Convert::ToString(derevn.get_days_procv());
+			 this->budget_text->Text = L"Р‘СЋРґР¶РµС‚: " + Convert::ToString(derevn.get_budget_village()) + L" СЂСѓР±.";
+			 this->hleb_text->Text = L"РҐР»РµР±: " + Convert::ToString(derevn.get_kolvo_hleb()) + L" РµРґ.";
+			 this->skot_text->Text = L"Р”РѕРјР°С€РЅРёР№ СЃРєРѕС‚: " + Convert::ToString(derevn.get_kolvo_skot()) + L" РµРґ.";
 			 if(derevn.get_flag_season()==0)
-				this->time_helper->Text = L"До конца Лета осталось " + Convert::ToString(40 -(derevn.get_hours_procv() - derevn.get_hours_from_begin_of_season())) + L" Часов Процветания.";
+				this->time_helper->Text = L"Р”Рѕ РєРѕРЅС†Р° Р›РµС‚Р° РѕСЃС‚Р°Р»РѕСЃСЊ " + Convert::ToString(40 -(derevn.get_hours_procv() - derevn.get_hours_from_begin_of_season())) + L" Р§Р°СЃРѕРІ РџСЂРѕС†РІРµС‚Р°РЅРёСЏ.";
 			 if(derevn.get_flag_season()==1)
-				this->time_helper->Text = L"До конца Зимы осталось " + Convert::ToString(20 -(derevn.get_hours_procv() - derevn.get_hours_from_begin_of_season())) + L" Часов Процветания.";
+				this->time_helper->Text = L"Р”Рѕ РєРѕРЅС†Р° Р—РёРјС‹ РѕСЃС‚Р°Р»РѕСЃСЊ " + Convert::ToString(20 -(derevn.get_hours_procv() - derevn.get_hours_from_begin_of_season())) + L" Р§Р°СЃРѕРІ РџСЂРѕС†РІРµС‚Р°РЅРёСЏ.";
 		 }
 private: System::Void save_game_butt_Click(System::Object^  sender, System::EventArgs^  e) {
-			 derevn.Save_game(); //сохранить игру в файл
-			 this->save_complete->Visible = true; //показать надпись об успешном сохранении
+			 derevn.Save_game(); //СЃРѕС…СЂР°РЅРёС‚СЊ РёРіСЂСѓ РІ С„Р°Р№Р»
+			 this->save_complete->Visible = true; //РїРѕРєР°Р·Р°С‚СЊ РЅР°РґРїРёСЃСЊ РѕР± СѓСЃРїРµС€РЅРѕРј СЃРѕС…СЂР°РЅРµРЅРёРё
 		 }
 };
 }

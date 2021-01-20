@@ -4,7 +4,7 @@
 #include <string>
 #include <fstream>
 
-extern int f_endgame; //флаг о том, что игра окончена (игрок проиграл) (глобальн.)
+extern int f_endgame; //С„Р»Р°Рі Рѕ С‚РѕРј, С‡С‚Рѕ РёРіСЂР° РѕРєРѕРЅС‡РµРЅР° (РёРіСЂРѕРє РїСЂРѕРёРіСЂР°Р») (РіР»РѕР±Р°Р»СЊРЅ.)
 
 namespace kurs2020 {
 
@@ -16,7 +16,7 @@ namespace kurs2020 {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Сводка для record_tabl
+	/// РЎРІРѕРґРєР° РґР»СЏ record_tabl
 	/// </summary>
 	public ref class record_tabl : public System::Windows::Forms::Form
 	{
@@ -25,13 +25,13 @@ namespace kurs2020 {
 		{
 			InitializeComponent();
 			//
-			//TODO: добавьте код конструктора
+			//TODO: РґРѕР±Р°РІСЊС‚Рµ РєРѕРґ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР°
 			//
 		}
 
 	protected:
 		/// <summary>
-		/// Освободить все используемые ресурсы.
+		/// РћСЃРІРѕР±РѕРґРёС‚СЊ РІСЃРµ РёСЃРїРѕР»СЊР·СѓРµРјС‹Рµ СЂРµСЃСѓСЂСЃС‹.
 		/// </summary>
 		~record_tabl()
 		{
@@ -90,14 +90,14 @@ namespace kurs2020 {
 
 	private:
 		/// <summary>
-		/// Требуется переменная конструктора.
+		/// РўСЂРµР±СѓРµС‚СЃСЏ РїРµСЂРµРјРµРЅРЅР°СЏ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР°.
 		/// </summary>
 
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
-		/// Обязательный метод для поддержки конструктора - не изменяйте
-		/// содержимое данного метода при помощи редактора кода.
+		/// РћР±СЏР·Р°С‚РµР»СЊРЅС‹Р№ РјРµС‚РѕРґ РґР»СЏ РїРѕРґРґРµСЂР¶РєРё РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР° - РЅРµ РёР·РјРµРЅСЏР№С‚Рµ
+		/// СЃРѕРґРµСЂР¶РёРјРѕРµ РґР°РЅРЅРѕРіРѕ РјРµС‚РѕРґР° РїСЂРё РїРѕРјРѕС‰Рё СЂРµРґР°РєС‚РѕСЂР° РєРѕРґР°.
 		/// </summary>
 		void InitializeComponent(void)
 		{
@@ -137,7 +137,7 @@ namespace kurs2020 {
 			// 
 			this->name_tabl->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::None;
 			this->name_tabl->Frozen = true;
-			this->name_tabl->HeaderText = L"Имя игрока";
+			this->name_tabl->HeaderText = L"РРјСЏ РёРіСЂРѕРєР°";
 			this->name_tabl->MaxInputLength = 200;
 			this->name_tabl->Name = L"name_tabl";
 			this->name_tabl->ReadOnly = true;
@@ -148,7 +148,7 @@ namespace kurs2020 {
 			// 
 			this->rec_tabl->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::None;
 			this->rec_tabl->Frozen = true;
-			this->rec_tabl->HeaderText = L"Значение рекорда (кол-во набранных Дней Процветания)";
+			this->rec_tabl->HeaderText = L"Р—РЅР°С‡РµРЅРёРµ СЂРµРєРѕСЂРґР° (РєРѕР»-РІРѕ РЅР°Р±СЂР°РЅРЅС‹С… Р”РЅРµР№ РџСЂРѕС†РІРµС‚Р°РЅРёСЏ)";
 			this->rec_tabl->MaxInputLength = 200;
 			this->rec_tabl->Name = L"rec_tabl";
 			this->rec_tabl->ReadOnly = true;
@@ -168,7 +168,7 @@ namespace kurs2020 {
 			this->Name = L"record_tabl";
 			this->ShowIcon = false;
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-			this->Text = L"Список рекордов";
+			this->Text = L"РЎРїРёСЃРѕРє СЂРµРєРѕСЂРґРѕРІ";
 			this->Load += gcnew System::EventHandler(this, &record_tabl::record_tabl_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->spisok))->EndInit();
 			this->ResumeLayout(false);
@@ -179,32 +179,32 @@ namespace kurs2020 {
 
 		}
 private: System::Void record_tabl_Load(System::Object^  sender, System::EventArgs^  e) {
-			 ifstream fin; //создать объект класса ifstream
-			 fin.open("records.txt", ios::in); //открыть файл
-			 if(fin.is_open()) //если файл возможно открыть
+			 ifstream fin; //СЃРѕР·РґР°С‚СЊ РѕР±СЉРµРєС‚ РєР»Р°СЃСЃР° ifstream
+			 fin.open("records.txt", ios::in); //РѕС‚РєСЂС‹С‚СЊ С„Р°Р№Р»
+			 if(fin.is_open()) //РµСЃР»Рё С„Р°Р№Р» РІРѕР·РјРѕР¶РЅРѕ РѕС‚РєСЂС‹С‚СЊ
 			 {
-				int kolvo_rec=0; //начальное значение кол-ва рекордов в файле
-				string strread; //строка для чтения из файла
-				while(!fin.eof()) //пока не прочитает весь файл
+				int kolvo_rec=0; //РЅР°С‡Р°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ РєРѕР»-РІР° СЂРµРєРѕСЂРґРѕРІ РІ С„Р°Р№Р»Рµ
+				string strread; //СЃС‚СЂРѕРєР° РґР»СЏ С‡С‚РµРЅРёСЏ РёР· С„Р°Р№Р»Р°
+				while(!fin.eof()) //РїРѕРєР° РЅРµ РїСЂРѕС‡РёС‚Р°РµС‚ РІРµСЃСЊ С„Р°Р№Р»
 				{
-					getline(fin, strread, '\n'); //получить рекорд из файла
-					kolvo_rec+=1; //увеличить кол-во рекордов на 1
+					getline(fin, strread, '\n'); //РїРѕР»СѓС‡РёС‚СЊ СЂРµРєРѕСЂРґ РёР· С„Р°Р№Р»Р°
+					kolvo_rec+=1; //СѓРІРµР»РёС‡РёС‚СЊ РєРѕР»-РІРѕ СЂРµРєРѕСЂРґРѕРІ РЅР° 1
 				}
-				kolvo_rec=kolvo_rec-1; //перенос строки после последнего рекорда засчитывается, поэтому нужно вычесть
-				fin.close(); //закрыть файл
+				kolvo_rec=kolvo_rec-1; //РїРµСЂРµРЅРѕСЃ СЃС‚СЂРѕРєРё РїРѕСЃР»Рµ РїРѕСЃР»РµРґРЅРµРіРѕ СЂРµРєРѕСЂРґР° Р·Р°СЃС‡РёС‚С‹РІР°РµС‚СЃСЏ, РїРѕСЌС‚РѕРјСѓ РЅСѓР¶РЅРѕ РІС‹С‡РµСЃС‚СЊ
+				fin.close(); //Р·Р°РєСЂС‹С‚СЊ С„Р°Р№Р»
 
 
-				fin.open("records.txt", ios::in); //открыть файл
+				fin.open("records.txt", ios::in); //РѕС‚РєСЂС‹С‚СЊ С„Р°Р№Р»
 				for(int g=0; g<kolvo_rec; g++)
 				{
-					spisok->Rows->Add(); //добавить новую строку в таблицу
-					getline(fin, strread, ';'); //получить имя игрока из файла
-					spisok->Rows[g]->Cells[0]->Value = gcnew System::String(strread.c_str()); //внести в ячейку таблицы
-					getline(fin, strread, '\n'); //получить значение рекорда игрока из файла
-					spisok->Rows[g]->Cells[1]->Value = gcnew System::String(strread.c_str()); //внести в ячейку таблицы
+					spisok->Rows->Add(); //РґРѕР±Р°РІРёС‚СЊ РЅРѕРІСѓСЋ СЃС‚СЂРѕРєСѓ РІ С‚Р°Р±Р»РёС†Сѓ
+					getline(fin, strread, ';'); //РїРѕР»СѓС‡РёС‚СЊ РёРјСЏ РёРіСЂРѕРєР° РёР· С„Р°Р№Р»Р°
+					spisok->Rows[g]->Cells[0]->Value = gcnew System::String(strread.c_str()); //РІРЅРµСЃС‚Рё РІ СЏС‡РµР№РєСѓ С‚Р°Р±Р»РёС†С‹
+					getline(fin, strread, '\n'); //РїРѕР»СѓС‡РёС‚СЊ Р·РЅР°С‡РµРЅРёРµ СЂРµРєРѕСЂРґР° РёРіСЂРѕРєР° РёР· С„Р°Р№Р»Р°
+					spisok->Rows[g]->Cells[1]->Value = gcnew System::String(strread.c_str()); //РІРЅРµСЃС‚Рё РІ СЏС‡РµР№РєСѓ С‚Р°Р±Р»РёС†С‹
 				}
-				fin.close(); //закрыть файл
-				//сортировка игроков по убыванию рекордов (метод пузырька)
+				fin.close(); //Р·Р°РєСЂС‹С‚СЊ С„Р°Р№Р»
+				//СЃРѕСЂС‚РёСЂРѕРІРєР° РёРіСЂРѕРєРѕРІ РїРѕ СѓР±С‹РІР°РЅРёСЋ СЂРµРєРѕСЂРґРѕРІ (РјРµС‚РѕРґ РїСѓР·С‹СЂСЊРєР°)
 				for(int v=1; v<kolvo_rec; v++)
 				{
 					for(int b=0; b<kolvo_rec-v; b++)
@@ -222,7 +222,7 @@ private: System::Void record_tabl_Load(System::Object^  sender, System::EventArg
 				}
 			 }
 			 else
-				 fin.close(); //закрыть файл
+				 fin.close(); //Р·Р°РєСЂС‹С‚СЊ С„Р°Р№Р»
 		 }
 private: System::Void cloz_Click(System::Object^  sender, System::EventArgs^  e) {
 			 Close();

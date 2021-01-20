@@ -1,6 +1,6 @@
 #pragma once
 
-extern int f_endgame; //флаг о том, что игра окончена (игрок проиграл) (глобальн.)
+extern int f_endgame; //С„Р»Р°Рі Рѕ С‚РѕРј, С‡С‚Рѕ РёРіСЂР° РѕРєРѕРЅС‡РµРЅР° (РёРіСЂРѕРє РїСЂРѕРёРіСЂР°Р») (РіР»РѕР±Р°Р»СЊРЅ.)
 
 namespace kurs2020 {
 
@@ -12,7 +12,7 @@ namespace kurs2020 {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Сводка для spravk
+	/// РЎРІРѕРґРєР° РґР»СЏ spravk
 	/// </summary>
 	public ref class spravk : public System::Windows::Forms::Form
 	{
@@ -21,13 +21,13 @@ namespace kurs2020 {
 		{
 			InitializeComponent();
 			//
-			//TODO: добавьте код конструктора
+			//TODO: РґРѕР±Р°РІСЊС‚Рµ РєРѕРґ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР°
 			//
 		}
 
 	protected:
 		/// <summary>
-		/// Освободить все используемые ресурсы.
+		/// РћСЃРІРѕР±РѕРґРёС‚СЊ РІСЃРµ РёСЃРїРѕР»СЊР·СѓРµРјС‹Рµ СЂРµСЃСѓСЂСЃС‹.
 		/// </summary>
 		~spravk()
 		{
@@ -44,14 +44,14 @@ namespace kurs2020 {
 
 	private:
 		/// <summary>
-		/// Требуется переменная конструктора.
+		/// РўСЂРµР±СѓРµС‚СЃСЏ РїРµСЂРµРјРµРЅРЅР°СЏ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР°.
 		/// </summary>
 
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
-		/// Обязательный метод для поддержки конструктора - не изменяйте
-		/// содержимое данного метода при помощи редактора кода.
+		/// РћР±СЏР·Р°С‚РµР»СЊРЅС‹Р№ РјРµС‚РѕРґ РґР»СЏ РїРѕРґРґРµСЂР¶РєРё РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР° - РЅРµ РёР·РјРµРЅСЏР№С‚Рµ
+		/// СЃРѕРґРµСЂР¶РёРјРѕРµ РґР°РЅРЅРѕРіРѕ РјРµС‚РѕРґР° РїСЂРё РїРѕРјРѕС‰Рё СЂРµРґР°РєС‚РѕСЂР° РєРѕРґР°.
 		/// </summary>
 		void InitializeComponent(void)
 		{
@@ -83,7 +83,7 @@ namespace kurs2020 {
 			this->cloz->Name = L"cloz";
 			this->cloz->Size = System::Drawing::Size(311, 23);
 			this->cloz->TabIndex = 1;
-			this->cloz->Text = L"Закрыть";
+			this->cloz->Text = L"Р—Р°РєСЂС‹С‚СЊ";
 			this->cloz->UseVisualStyleBackColor = true;
 			this->cloz->Click += gcnew System::EventHandler(this, &spravk::cloz_Click);
 			// 
@@ -110,7 +110,7 @@ namespace kurs2020 {
 			this->Name = L"spravk";
 			this->ShowInTaskbar = false;
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-			this->Text = L"Справка";
+			this->Text = L"РЎРїСЂР°РІРєР°";
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -122,7 +122,7 @@ namespace kurs2020 {
 	private: System::Void spravka_info_TextChanged(System::Object^  sender, System::EventArgs^  e) {
 			 }
 	private: System::Void timer_endgame_Tick(System::Object^  sender, System::EventArgs^  e) {
-			 if(f_endgame==1) //игра закончилась, закрыть все формы
+			 if(f_endgame==1) //РёРіСЂР° Р·Р°РєРѕРЅС‡РёР»Р°СЃСЊ, Р·Р°РєСЂС‹С‚СЊ РІСЃРµ С„РѕСЂРјС‹
 				 Close();
 			 }
 };

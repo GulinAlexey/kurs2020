@@ -8,7 +8,7 @@
 #include "itog_game.h"
 #include "record_tabl.h"
 
-int f_endgame=0; //флаг о том, что игра окончена (игрок проиграл) (глобальн.)
+int f_endgame=0; //С„Р»Р°Рі Рѕ С‚РѕРј, С‡С‚Рѕ РёРіСЂР° РѕРєРѕРЅС‡РµРЅР° (РёРіСЂРѕРє РїСЂРѕРёРіСЂР°Р») (РіР»РѕР±Р°Р»СЊРЅ.)
 
 namespace kurs2020 {
 
@@ -20,7 +20,7 @@ namespace kurs2020 {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Сводка для Form1
+	/// РЎРІРѕРґРєР° РґР»СЏ Form1
 	/// </summary>
 	public ref class Form1 : public System::Windows::Forms::Form
 	{
@@ -29,13 +29,13 @@ namespace kurs2020 {
 		{
 			InitializeComponent();
 			//
-			//TODO: добавьте код конструктора
+			//TODO: РґРѕР±Р°РІСЊС‚Рµ РєРѕРґ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР°
 			//
 		}
 
 	protected:
 		/// <summary>
-		/// Освободить все используемые ресурсы.
+		/// РћСЃРІРѕР±РѕРґРёС‚СЊ РІСЃРµ РёСЃРїРѕР»СЊР·СѓРµРјС‹Рµ СЂРµСЃСѓСЂСЃС‹.
 		/// </summary>
 		~Form1()
 		{
@@ -66,14 +66,14 @@ namespace kurs2020 {
 
 	private:
 		/// <summary>
-		/// Требуется переменная конструктора.
+		/// РўСЂРµР±СѓРµС‚СЃСЏ РїРµСЂРµРјРµРЅРЅР°СЏ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР°.
 		/// </summary>
 		System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
-		/// Обязательный метод для поддержки конструктора - не изменяйте
-		/// содержимое данного метода при помощи редактора кода.
+		/// РћР±СЏР·Р°С‚РµР»СЊРЅС‹Р№ РјРµС‚РѕРґ РґР»СЏ РїРѕРґРґРµСЂР¶РєРё РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР° - РЅРµ РёР·РјРµРЅСЏР№С‚Рµ
+		/// СЃРѕРґРµСЂР¶РёРјРѕРµ РґР°РЅРЅРѕРіРѕ РјРµС‚РѕРґР° РїСЂРё РїРѕРјРѕС‰Рё СЂРµРґР°РєС‚РѕСЂР° РєРѕРґР°.
 		/// </summary>
 		void InitializeComponent(void)
 		{
@@ -98,7 +98,7 @@ namespace kurs2020 {
 			this->igra_menu_text->Name = L"igra_menu_text";
 			this->igra_menu_text->Size = System::Drawing::Size(343, 29);
 			this->igra_menu_text->TabIndex = 0;
-			this->igra_menu_text->Text = L"Игра \"Управление деревней\"";
+			this->igra_menu_text->Text = L"РРіСЂР° \"РЈРїСЂР°РІР»РµРЅРёРµ РґРµСЂРµРІРЅРµР№\"";
 			this->igra_menu_text->TextAlign = System::Drawing::ContentAlignment::TopCenter;
 			this->igra_menu_text->Click += gcnew System::EventHandler(this, &Form1::label1_Click);
 			// 
@@ -113,7 +113,7 @@ namespace kurs2020 {
 			this->glavn_menu_text->Name = L"glavn_menu_text";
 			this->glavn_menu_text->Size = System::Drawing::Size(344, 44);
 			this->glavn_menu_text->TabIndex = 1;
-			this->glavn_menu_text->Text = L"Главное меню";
+			this->glavn_menu_text->Text = L"Р“Р»Р°РІРЅРѕРµ РјРµРЅСЋ";
 			this->glavn_menu_text->TextAlign = System::Drawing::ContentAlignment::TopCenter;
 			this->glavn_menu_text->Click += gcnew System::EventHandler(this, &Form1::label1_Click_1);
 			// 
@@ -125,7 +125,7 @@ namespace kurs2020 {
 			this->new_game_butt->Name = L"new_game_butt";
 			this->new_game_butt->Size = System::Drawing::Size(220, 48);
 			this->new_game_butt->TabIndex = 2;
-			this->new_game_butt->Text = L"Новая игра";
+			this->new_game_butt->Text = L"РќРѕРІР°СЏ РёРіСЂР°";
 			this->new_game_butt->UseVisualStyleBackColor = true;
 			this->new_game_butt->Click += gcnew System::EventHandler(this, &Form1::button1_Click);
 			// 
@@ -137,7 +137,7 @@ namespace kurs2020 {
 			this->load_game_butt->Name = L"load_game_butt";
 			this->load_game_butt->Size = System::Drawing::Size(220, 48);
 			this->load_game_butt->TabIndex = 3;
-			this->load_game_butt->Text = L"Загрузка\r\nнезаконченной игры";
+			this->load_game_butt->Text = L"Р—Р°РіСЂСѓР·РєР°\r\nРЅРµР·Р°РєРѕРЅС‡РµРЅРЅРѕР№ РёРіСЂС‹";
 			this->load_game_butt->UseVisualStyleBackColor = true;
 			this->load_game_butt->Click += gcnew System::EventHandler(this, &Form1::load_Click);
 			// 
@@ -149,7 +149,7 @@ namespace kurs2020 {
 			this->records_butt->Name = L"records_butt";
 			this->records_butt->Size = System::Drawing::Size(220, 48);
 			this->records_butt->TabIndex = 4;
-			this->records_butt->Text = L"Список рекордов";
+			this->records_butt->Text = L"РЎРїРёСЃРѕРє СЂРµРєРѕСЂРґРѕРІ";
 			this->records_butt->UseVisualStyleBackColor = true;
 			this->records_butt->Click += gcnew System::EventHandler(this, &Form1::record_Click);
 			// 
@@ -162,7 +162,7 @@ namespace kurs2020 {
 			this->quit_butt->Name = L"quit_butt";
 			this->quit_butt->Size = System::Drawing::Size(220, 48);
 			this->quit_butt->TabIndex = 5;
-			this->quit_butt->Text = L"Выход из игры";
+			this->quit_butt->Text = L"Р’С‹С…РѕРґ РёР· РёРіСЂС‹";
 			this->quit_butt->UseVisualStyleBackColor = true;
 			this->quit_butt->Click += gcnew System::EventHandler(this, &Form1::quit_butt_Click);
 			// 
@@ -189,7 +189,7 @@ namespace kurs2020 {
 			this->info_avtor->Name = L"info_avtor";
 			this->info_avtor->Size = System::Drawing::Size(224, 15);
 			this->info_avtor->TabIndex = 7;
-			this->info_avtor->Text = L"© Гулин Алексей, ПИ-92. АлтГТУ 2020";
+			this->info_avtor->Text = L"В© Р“СѓР»РёРЅ РђР»РµРєСЃРµР№, РџР-92. РђР»С‚Р“РўРЈ 2020";
 			// 
 			// Form1
 			// 
@@ -219,7 +219,7 @@ namespace kurs2020 {
 			this->RightToLeftLayout = true;
 			this->ShowIcon = false;
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-			this->Text = L"Главное меню";
+			this->Text = L"Р“Р»Р°РІРЅРѕРµ РјРµРЅСЋ";
 			this->Activated += gcnew System::EventHandler(this, &Form1::Form1_Activated);
 			this->Load += gcnew System::EventHandler(this, &Form1::Form1_Load);
 			this->ResumeLayout(false);
@@ -228,49 +228,49 @@ namespace kurs2020 {
 		}
 #pragma endregion
 	private: System::Void Form1_Load(System::Object^  sender, System::EventArgs^  e) {
-			srand(time(NULL)); //автоматическая рандомизация генератора случайных чисел в зависимости от времени (чтобы всегда давал разный результат)
+			srand(time(NULL)); //Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєР°СЏ СЂР°РЅРґРѕРјРёР·Р°С†РёСЏ РіРµРЅРµСЂР°С‚РѕСЂР° СЃР»СѓС‡Р°Р№РЅС‹С… С‡РёСЃРµР» РІ Р·Р°РІРёСЃРёРјРѕСЃС‚Рё РѕС‚ РІСЂРµРјРµРЅРё (С‡С‚РѕР±С‹ РІСЃРµРіРґР° РґР°РІР°Р» СЂР°Р·РЅС‹Р№ СЂРµР·СѓР»СЊС‚Р°С‚)
 			 }
 	private: System::Void label1_Click(System::Object^  sender, System::EventArgs^  e) {
 			 }
 	private: System::Void label1_Click_1(System::Object^  sender, System::EventArgs^  e) {
 			 }
 private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
-			f_endgame=0; //флаг конца игры (будет равен 1, когда игрок проиграет)
-			derevn.Init_new_game(); //инициализация деревни перед началом новой игры
-			main_game^ main_game_p = gcnew main_game(); //указатель на форму
-			main_game_p -> ShowDialog(); //открыть форму
+			f_endgame=0; //С„Р»Р°Рі РєРѕРЅС†Р° РёРіСЂС‹ (Р±СѓРґРµС‚ СЂР°РІРµРЅ 1, РєРѕРіРґР° РёРіСЂРѕРє РїСЂРѕРёРіСЂР°РµС‚)
+			derevn.Init_new_game(); //РёРЅРёС†РёР°Р»РёР·Р°С†РёСЏ РґРµСЂРµРІРЅРё РїРµСЂРµРґ РЅР°С‡Р°Р»РѕРј РЅРѕРІРѕР№ РёРіСЂС‹
+			main_game^ main_game_p = gcnew main_game(); //СѓРєР°Р·Р°С‚РµР»СЊ РЅР° С„РѕСЂРјСѓ
+			main_game_p -> ShowDialog(); //РѕС‚РєСЂС‹С‚СЊ С„РѕСЂРјСѓ
 			delete(main_game_p);
 		 }
 private: System::Void load_Click(System::Object^  sender, System::EventArgs^  e) {
-			f_endgame=0; //флаг конца игры (будет равен 1, когда игрок проиграет)
-			derevn.Init_load_game(); //инициализация деревни из файла перед продолжением сохранённой игры
-			main_game^ main_game_p = gcnew main_game(); //указатель на форму
-			main_game_p -> ShowDialog(); //открыть форму
+			f_endgame=0; //С„Р»Р°Рі РєРѕРЅС†Р° РёРіСЂС‹ (Р±СѓРґРµС‚ СЂР°РІРµРЅ 1, РєРѕРіРґР° РёРіСЂРѕРє РїСЂРѕРёРіСЂР°РµС‚)
+			derevn.Init_load_game(); //РёРЅРёС†РёР°Р»РёР·Р°С†РёСЏ РґРµСЂРµРІРЅРё РёР· С„Р°Р№Р»Р° РїРµСЂРµРґ РїСЂРѕРґРѕР»Р¶РµРЅРёРµРј СЃРѕС…СЂР°РЅС‘РЅРЅРѕР№ РёРіСЂС‹
+			main_game^ main_game_p = gcnew main_game(); //СѓРєР°Р·Р°С‚РµР»СЊ РЅР° С„РѕСЂРјСѓ
+			main_game_p -> ShowDialog(); //РѕС‚РєСЂС‹С‚СЊ С„РѕСЂРјСѓ
 			delete(main_game_p);
 		 }
 private: System::Void record_Click(System::Object^  sender, System::EventArgs^  e) {
-			record_tabl^ record_tabl_p = gcnew record_tabl(); //указатель на форму
-			record_tabl_p -> ShowDialog(); //открыть форму
+			record_tabl^ record_tabl_p = gcnew record_tabl(); //СѓРєР°Р·Р°С‚РµР»СЊ РЅР° С„РѕСЂРјСѓ
+			record_tabl_p -> ShowDialog(); //РѕС‚РєСЂС‹С‚СЊ С„РѕСЂРјСѓ
 			delete(record_tabl_p);
 		 }
 private: System::Void quit_butt_Click(System::Object^  sender, System::EventArgs^  e) {
-			 exit(0); //выход из программы
+			 exit(0); //РІС‹С…РѕРґ РёР· РїСЂРѕРіСЂР°РјРјС‹
 		 }
 private: System::Void spravk_butt_Click(System::Object^  sender, System::EventArgs^  e) {
-			spravk^ spravk_p = gcnew spravk(); //указатель на форму
-			spravk_p -> ShowDialog(); //открыть форму
+			spravk^ spravk_p = gcnew spravk(); //СѓРєР°Р·Р°С‚РµР»СЊ РЅР° С„РѕСЂРјСѓ
+			spravk_p -> ShowDialog(); //РѕС‚РєСЂС‹С‚СЊ С„РѕСЂРјСѓ
 			delete(spravk_p);
 		 }
 private: System::Void Form1_Activated(System::Object^  sender, System::EventArgs^  e) {
 			 if(f_endgame==1)
 			 {
 				f_endgame=0;
-				itog_game^ itog_game_p = gcnew itog_game(); //указатель на форму
-				itog_game_p -> Show(); //открыть форму
+				itog_game^ itog_game_p = gcnew itog_game(); //СѓРєР°Р·Р°С‚РµР»СЊ РЅР° С„РѕСЂРјСѓ
+				itog_game_p -> Show(); //РѕС‚РєСЂС‹С‚СЊ С„РѕСЂРјСѓ
 			 }
 			 ifstream iff("village.txt");
 			 ifstream iff2("krests.txt");
-			 if(!iff.is_open() || !iff2.is_open()) //проверка, есть ли файлы сохранения. Если хотя бы одного нет, то кнопка загрузки игры отключается
+			 if(!iff.is_open() || !iff2.is_open()) //РїСЂРѕРІРµСЂРєР°, РµСЃС‚СЊ Р»Рё С„Р°Р№Р»С‹ СЃРѕС…СЂР°РЅРµРЅРёСЏ. Р•СЃР»Рё С…РѕС‚СЏ Р±С‹ РѕРґРЅРѕРіРѕ РЅРµС‚, С‚Рѕ РєРЅРѕРїРєР° Р·Р°РіСЂСѓР·РєРё РёРіСЂС‹ РѕС‚РєР»СЋС‡Р°РµС‚СЃСЏ
 			 {
 				 this->load_game_butt->Enabled=false;
 			 }

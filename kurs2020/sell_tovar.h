@@ -1,7 +1,7 @@
 #pragma once
 #include "krest_and_village.h"
 
-extern int f_endgame; //флаг о том, что игра окончена (игрок проиграл) (глобальн.)
+extern int f_endgame; //С„Р»Р°Рі Рѕ С‚РѕРј, С‡С‚Рѕ РёРіСЂР° РѕРєРѕРЅС‡РµРЅР° (РёРіСЂРѕРє РїСЂРѕРёРіСЂР°Р») (РіР»РѕР±Р°Р»СЊРЅ.)
 
 namespace kurs2020 {
 
@@ -13,7 +13,7 @@ namespace kurs2020 {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Сводка для sell_tovar
+	/// РЎРІРѕРґРєР° РґР»СЏ sell_tovar
 	/// </summary>
 	public ref class sell_tovar : public System::Windows::Forms::Form
 	{
@@ -22,13 +22,13 @@ namespace kurs2020 {
 		{
 			InitializeComponent();
 			//
-			//TODO: добавьте код конструктора
+			//TODO: РґРѕР±Р°РІСЊС‚Рµ РєРѕРґ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР°
 			//
 		}
 
 	protected:
 		/// <summary>
-		/// Освободить все используемые ресурсы.
+		/// РћСЃРІРѕР±РѕРґРёС‚СЊ РІСЃРµ РёСЃРїРѕР»СЊР·СѓРµРјС‹Рµ СЂРµСЃСѓСЂСЃС‹.
 		/// </summary>
 		~sell_tovar()
 		{
@@ -57,14 +57,14 @@ namespace kurs2020 {
 
 	private:
 		/// <summary>
-		/// Требуется переменная конструктора.
+		/// РўСЂРµР±СѓРµС‚СЃСЏ РїРµСЂРµРјРµРЅРЅР°СЏ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР°.
 		/// </summary>
 
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
-		/// Обязательный метод для поддержки конструктора - не изменяйте
-		/// содержимое данного метода при помощи редактора кода.
+		/// РћР±СЏР·Р°С‚РµР»СЊРЅС‹Р№ РјРµС‚РѕРґ РґР»СЏ РїРѕРґРґРµСЂР¶РєРё РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР° - РЅРµ РёР·РјРµРЅСЏР№С‚Рµ
+		/// СЃРѕРґРµСЂР¶РёРјРѕРµ РґР°РЅРЅРѕРіРѕ РјРµС‚РѕРґР° РїСЂРё РїРѕРјРѕС‰Рё СЂРµРґР°РєС‚РѕСЂР° РєРѕРґР°.
 		/// </summary>
 		void InitializeComponent(void)
 		{
@@ -93,7 +93,7 @@ namespace kurs2020 {
 			this->price_hleb_text->Name = L"price_hleb_text";
 			this->price_hleb_text->Size = System::Drawing::Size(355, 33);
 			this->price_hleb_text->TabIndex = 2;
-			this->price_hleb_text->Text = L"Текущая цена за ед. хлеба:";
+			this->price_hleb_text->Text = L"РўРµРєСѓС‰Р°СЏ С†РµРЅР° Р·Р° РµРґ. С…Р»РµР±Р°:";
 			// 
 			// price_skot_text
 			// 
@@ -106,7 +106,7 @@ namespace kurs2020 {
 			this->price_skot_text->Name = L"price_skot_text";
 			this->price_skot_text->Size = System::Drawing::Size(402, 33);
 			this->price_skot_text->TabIndex = 3;
-			this->price_skot_text->Text = L"Текущая цена за голову скота:";
+			this->price_skot_text->Text = L"РўРµРєСѓС‰Р°СЏ С†РµРЅР° Р·Р° РіРѕР»РѕРІСѓ СЃРєРѕС‚Р°:";
 			// 
 			// label2
 			// 
@@ -120,7 +120,7 @@ namespace kurs2020 {
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(283, 34);
 			this->label2->TabIndex = 16;
-			this->label2->Text = L"Продажа ресурсов, шт.";
+			this->label2->Text = L"РџСЂРѕРґР°Р¶Р° СЂРµСЃСѓСЂСЃРѕРІ, С€С‚.";
 			this->label2->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// num_sell
@@ -145,7 +145,7 @@ namespace kurs2020 {
 			this->sell_butt->Size = System::Drawing::Size(119, 28);
 			this->sell_butt->TabIndex = 20;
 			this->sell_butt->TabStop = false;
-			this->sell_butt->Text = L"Продать";
+			this->sell_butt->Text = L"РџСЂРѕРґР°С‚СЊ";
 			this->sell_butt->UseVisualStyleBackColor = true;
 			this->sell_butt->Click += gcnew System::EventHandler(this, &sell_tovar::sell_butt_Click);
 			// 
@@ -170,7 +170,7 @@ namespace kurs2020 {
 			this->skot_radio->Name = L"skot_radio";
 			this->skot_radio->Size = System::Drawing::Size(137, 22);
 			this->skot_radio->TabIndex = 1;
-			this->skot_radio->Text = L"Домашний скот";
+			this->skot_radio->Text = L"Р”РѕРјР°С€РЅРёР№ СЃРєРѕС‚";
 			this->skot_radio->UseVisualStyleBackColor = false;
 			this->skot_radio->CheckedChanged += gcnew System::EventHandler(this, &sell_tovar::skot_radio_CheckedChanged);
 			// 
@@ -186,7 +186,7 @@ namespace kurs2020 {
 			this->hleb_radio->Size = System::Drawing::Size(62, 22);
 			this->hleb_radio->TabIndex = 0;
 			this->hleb_radio->TabStop = true;
-			this->hleb_radio->Text = L"Хлеб";
+			this->hleb_radio->Text = L"РҐР»РµР±";
 			this->hleb_radio->UseVisualStyleBackColor = false;
 			// 
 			// timer_proverka
@@ -215,7 +215,7 @@ namespace kurs2020 {
 			this->Name = L"sell_tovar";
 			this->ShowIcon = false;
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-			this->Text = L"Товарная биржа";
+			this->Text = L"РўРѕРІР°СЂРЅР°СЏ Р±РёСЂР¶Р°";
 			this->Activated += gcnew System::EventHandler(this, &sell_tovar::sell_tovar_Activated);
 			this->hleb_or_skot->ResumeLayout(false);
 			this->hleb_or_skot->PerformLayout();
@@ -227,11 +227,11 @@ namespace kurs2020 {
 
 
 private: System::Void num_sell_TextChanged(System::Object^  sender, System::EventArgs^  e) {
-			 int zapas_hleb=derevn.get_kolvo_hleb(); //получить кол-во хлеба в деревне
-			 int zapas_skot=derevn.get_kolvo_skot(); //получить кол-во скота в деревне
-			 if (this->num_sell->Text!=L"") //если поле с номером строки не пустое
+			 int zapas_hleb=derevn.get_kolvo_hleb(); //РїРѕР»СѓС‡РёС‚СЊ РєРѕР»-РІРѕ С…Р»РµР±Р° РІ РґРµСЂРµРІРЅРµ
+			 int zapas_skot=derevn.get_kolvo_skot(); //РїРѕР»СѓС‡РёС‚СЊ РєРѕР»-РІРѕ СЃРєРѕС‚Р° РІ РґРµСЂРµРІРЅРµ
+			 if (this->num_sell->Text!=L"") //РµСЃР»Рё РїРѕР»Рµ СЃ РЅРѕРјРµСЂРѕРј СЃС‚СЂРѕРєРё РЅРµ РїСѓСЃС‚РѕРµ
 			 {
-				 if(this->hleb_radio->Checked == true) //если выбран хлеб для продажи
+				 if(this->hleb_radio->Checked == true) //РµСЃР»Рё РІС‹Р±СЂР°РЅ С…Р»РµР± РґР»СЏ РїСЂРѕРґР°Р¶Рё
 				 {
 					 if((Convert::ToDouble(this->num_sell->Text) > derevn.get_kolvo_hleb()) || (Convert::ToDouble(this->num_sell->Text) <= 0))
 					 {
@@ -242,7 +242,7 @@ private: System::Void num_sell_TextChanged(System::Object^  sender, System::Even
 						 this->sell_butt->Enabled = true;
 					 }
 				 }
-				 if(this->skot_radio->Checked == true) //если выбран скот для продажи
+				 if(this->skot_radio->Checked == true) //РµСЃР»Рё РІС‹Р±СЂР°РЅ СЃРєРѕС‚ РґР»СЏ РїСЂРѕРґР°Р¶Рё
 				 {
 					 if((Convert::ToDouble(this->num_sell->Text) > derevn.get_kolvo_skot()) || (Convert::ToDouble(this->num_sell->Text) <= 0))
 					 {
@@ -258,34 +258,34 @@ private: System::Void num_sell_TextChanged(System::Object^  sender, System::Even
 				 this->sell_butt->Enabled = false;
 		 }
 private: System::Void sell_tovar_Activated(System::Object^  sender, System::EventArgs^  e) {
-			 this->price_hleb_text->Text = L"Текущая цена за ед. хлеба: " + Convert::ToString(derevn.get_price_hleb()) + L" руб.";
-			 this->price_skot_text->Text = L"Текущая цена за голову скота: " + Convert::ToString(derevn.get_price_skot()) + L" руб.";
+			 this->price_hleb_text->Text = L"РўРµРєСѓС‰Р°СЏ С†РµРЅР° Р·Р° РµРґ. С…Р»РµР±Р°: " + Convert::ToString(derevn.get_price_hleb()) + L" СЂСѓР±.";
+			 this->price_skot_text->Text = L"РўРµРєСѓС‰Р°СЏ С†РµРЅР° Р·Р° РіРѕР»РѕРІСѓ СЃРєРѕС‚Р°: " + Convert::ToString(derevn.get_price_skot()) + L" СЂСѓР±.";
 
 		 }
 private: System::Void skot_radio_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
 			 num_sell_TextChanged(sender, e);
 		 }
 private: System::Void sell_butt_Click(System::Object^  sender, System::EventArgs^  e) {
-			 if(this->hleb_radio->Checked == true) //если выбран хлеб для продажи
+			 if(this->hleb_radio->Checked == true) //РµСЃР»Рё РІС‹Р±СЂР°РЅ С…Р»РµР± РґР»СЏ РїСЂРѕРґР°Р¶Рё
 			 {
-				 derevn.set_kolvo_hleb(derevn.get_kolvo_hleb()-Convert::ToDouble(this->num_sell->Text)); //вычесть выбранное кол-ва хлеба из ресурсов деревни
-				 derevn.set_budget_village(derevn.get_budget_village()+Convert::ToDouble(this->num_sell->Text)*derevn.get_price_hleb()); //начислить деньги за продажу
+				 derevn.set_kolvo_hleb(derevn.get_kolvo_hleb()-Convert::ToDouble(this->num_sell->Text)); //РІС‹С‡РµСЃС‚СЊ РІС‹Р±СЂР°РЅРЅРѕРµ РєРѕР»-РІР° С…Р»РµР±Р° РёР· СЂРµСЃСѓСЂСЃРѕРІ РґРµСЂРµРІРЅРё
+				 derevn.set_budget_village(derevn.get_budget_village()+Convert::ToDouble(this->num_sell->Text)*derevn.get_price_hleb()); //РЅР°С‡РёСЃР»РёС‚СЊ РґРµРЅСЊРіРё Р·Р° РїСЂРѕРґР°Р¶Сѓ
 
 			 }
-			 if(this->skot_radio->Checked == true) //если выбран скот для продажи
+			 if(this->skot_radio->Checked == true) //РµСЃР»Рё РІС‹Р±СЂР°РЅ СЃРєРѕС‚ РґР»СЏ РїСЂРѕРґР°Р¶Рё
 			 {
-				 derevn.set_kolvo_skot(derevn.get_kolvo_skot()-Convert::ToDouble(this->num_sell->Text)); //вычесть выбранное кол-ва скота из ресурсов деревни
-				 derevn.set_budget_village(derevn.get_budget_village()+Convert::ToDouble(this->num_sell->Text)*derevn.get_price_skot()); //начислить деньги за продажу
+				 derevn.set_kolvo_skot(derevn.get_kolvo_skot()-Convert::ToDouble(this->num_sell->Text)); //РІС‹С‡РµСЃС‚СЊ РІС‹Р±СЂР°РЅРЅРѕРµ РєРѕР»-РІР° СЃРєРѕС‚Р° РёР· СЂРµСЃСѓСЂСЃРѕРІ РґРµСЂРµРІРЅРё
+				 derevn.set_budget_village(derevn.get_budget_village()+Convert::ToDouble(this->num_sell->Text)*derevn.get_price_skot()); //РЅР°С‡РёСЃР»РёС‚СЊ РґРµРЅСЊРіРё Р·Р° РїСЂРѕРґР°Р¶Сѓ
 			 }
 			 num_sell_TextChanged(sender, e);
 		 }
 private: System::Void timer_proverka_Tick(System::Object^  sender, System::EventArgs^  e) {
-			 if(f_endgame==1) //игра закончилась, закрыть все формы
+			 if(f_endgame==1) //РёРіСЂР° Р·Р°РєРѕРЅС‡РёР»Р°СЃСЊ, Р·Р°РєСЂС‹С‚СЊ РІСЃРµ С„РѕСЂРјС‹
 				 Close();
 			 else
 			 {
-				num_sell_TextChanged(sender, e); //повторная проверка
-				sell_tovar_Activated(sender,e); //обновить таблицу
+				num_sell_TextChanged(sender, e); //РїРѕРІС‚РѕСЂРЅР°СЏ РїСЂРѕРІРµСЂРєР°
+				sell_tovar_Activated(sender,e); //РѕР±РЅРѕРІРёС‚СЊ С‚Р°Р±Р»РёС†Сѓ
 			 }
 		 }
 };

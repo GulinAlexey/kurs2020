@@ -3,7 +3,7 @@
 #include "tabl_naim.h"
 #include <string>
 
-extern int f_endgame; //флаг о том, что игра окончена (игрок проиграл) (глобальн.)
+extern int f_endgame; //С„Р»Р°Рі Рѕ С‚РѕРј, С‡С‚Рѕ РёРіСЂР° РѕРєРѕРЅС‡РµРЅР° (РёРіСЂРѕРє РїСЂРѕРёРіСЂР°Р») (РіР»РѕР±Р°Р»СЊРЅ.)
 
 namespace kurs2020 {
 
@@ -15,7 +15,7 @@ namespace kurs2020 {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Сводка для tabl_krest
+	/// РЎРІРѕРґРєР° РґР»СЏ tabl_krest
 	/// </summary>
 	public ref class tabl_krest : public System::Windows::Forms::Form
 	{
@@ -24,13 +24,13 @@ namespace kurs2020 {
 		{
 			InitializeComponent();
 			//
-			//TODO: добавьте код конструктора
+			//TODO: РґРѕР±Р°РІСЊС‚Рµ РєРѕРґ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР°
 			//
 		}
 
 	protected:
 		/// <summary>
-		/// Освободить все используемые ресурсы.
+		/// РћСЃРІРѕР±РѕРґРёС‚СЊ РІСЃРµ РёСЃРїРѕР»СЊР·СѓРµРјС‹Рµ СЂРµСЃСѓСЂСЃС‹.
 		/// </summary>
 		~tabl_krest()
 		{
@@ -72,14 +72,14 @@ namespace kurs2020 {
 
 	private:
 		/// <summary>
-		/// Требуется переменная конструктора.
+		/// РўСЂРµР±СѓРµС‚СЃСЏ РїРµСЂРµРјРµРЅРЅР°СЏ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР°.
 		/// </summary>
 
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
-		/// Обязательный метод для поддержки конструктора - не изменяйте
-		/// содержимое данного метода при помощи редактора кода.
+		/// РћР±СЏР·Р°С‚РµР»СЊРЅС‹Р№ РјРµС‚РѕРґ РґР»СЏ РїРѕРґРґРµСЂР¶РєРё РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР° - РЅРµ РёР·РјРµРЅСЏР№С‚Рµ
+		/// СЃРѕРґРµСЂР¶РёРјРѕРµ РґР°РЅРЅРѕРіРѕ РјРµС‚РѕРґР° РїСЂРё РїРѕРјРѕС‰Рё СЂРµРґР°РєС‚РѕСЂР° РєРѕРґР°.
 		/// </summary>
 		void InitializeComponent(void)
 		{
@@ -113,7 +113,7 @@ namespace kurs2020 {
 			this->trud_butt->Size = System::Drawing::Size(254, 35);
 			this->trud_butt->TabIndex = 9;
 			this->trud_butt->TabStop = false;
-			this->trud_butt->Text = L"открыть биржу труда";
+			this->trud_butt->Text = L"РѕС‚РєСЂС‹С‚СЊ Р±РёСЂР¶Сѓ С‚СЂСѓРґР°";
 			this->trud_butt->UseVisualStyleBackColor = true;
 			this->trud_butt->Click += gcnew System::EventHandler(this, &tabl_krest::trud_butt_Click);
 			// 
@@ -128,7 +128,7 @@ namespace kurs2020 {
 			this->izgnat_butt->Size = System::Drawing::Size(103, 28);
 			this->izgnat_butt->TabIndex = 10;
 			this->izgnat_butt->TabStop = false;
-			this->izgnat_butt->Text = L"Изгнать";
+			this->izgnat_butt->Text = L"РР·РіРЅР°С‚СЊ";
 			this->izgnat_butt->UseVisualStyleBackColor = true;
 			this->izgnat_butt->Click += gcnew System::EventHandler(this, &tabl_krest::izgnat_butt_Click);
 			// 
@@ -139,7 +139,7 @@ namespace kurs2020 {
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(286, 13);
 			this->label1->TabIndex = 12;
-			this->label1->Text = L"Введите номер крестьянина, которого хотите изгнать:";
+			this->label1->Text = L"Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ РєСЂРµСЃС‚СЊСЏРЅРёРЅР°, РєРѕС‚РѕСЂРѕРіРѕ С…РѕС‚РёС‚Рµ РёР·РіРЅР°С‚СЊ:";
 			// 
 			// izgnat_box
 			// 
@@ -194,7 +194,7 @@ namespace kurs2020 {
 			// 
 			this->number_tabl->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::None;
 			this->number_tabl->Frozen = true;
-			this->number_tabl->HeaderText = L"№";
+			this->number_tabl->HeaderText = L"в„–";
 			this->number_tabl->Name = L"number_tabl";
 			this->number_tabl->ReadOnly = true;
 			this->number_tabl->SortMode = System::Windows::Forms::DataGridViewColumnSortMode::Programmatic;
@@ -204,7 +204,7 @@ namespace kurs2020 {
 			// 
 			this->name_tabl->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::None;
 			this->name_tabl->Frozen = true;
-			this->name_tabl->HeaderText = L"Имя и фамилия";
+			this->name_tabl->HeaderText = L"РРјСЏ Рё С„Р°РјРёР»РёСЏ";
 			this->name_tabl->Name = L"name_tabl";
 			this->name_tabl->ReadOnly = true;
 			this->name_tabl->SortMode = System::Windows::Forms::DataGridViewColumnSortMode::Programmatic;
@@ -214,7 +214,7 @@ namespace kurs2020 {
 			// 
 			this->proizv_tabl->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::None;
 			this->proizv_tabl->Frozen = true;
-			this->proizv_tabl->HeaderText = L"Производительность за один Час Процветания (хлеб/скот)";
+			this->proizv_tabl->HeaderText = L"РџСЂРѕРёР·РІРѕРґРёС‚РµР»СЊРЅРѕСЃС‚СЊ Р·Р° РѕРґРёРЅ Р§Р°СЃ РџСЂРѕС†РІРµС‚Р°РЅРёСЏ (С…Р»РµР±/СЃРєРѕС‚)";
 			this->proizv_tabl->Name = L"proizv_tabl";
 			this->proizv_tabl->ReadOnly = true;
 			this->proizv_tabl->SortMode = System::Windows::Forms::DataGridViewColumnSortMode::Programmatic;
@@ -224,7 +224,7 @@ namespace kurs2020 {
 			// 
 			this->prozhorl_tabl->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::None;
 			this->prozhorl_tabl->Frozen = true;
-			this->prozhorl_tabl->HeaderText = L"Прожорливость за один Час Процветания (хлеб/скот)";
+			this->prozhorl_tabl->HeaderText = L"РџСЂРѕР¶РѕСЂР»РёРІРѕСЃС‚СЊ Р·Р° РѕРґРёРЅ Р§Р°СЃ РџСЂРѕС†РІРµС‚Р°РЅРёСЏ (С…Р»РµР±/СЃРєРѕС‚)";
 			this->prozhorl_tabl->Name = L"prozhorl_tabl";
 			this->prozhorl_tabl->ReadOnly = true;
 			this->prozhorl_tabl->SortMode = System::Windows::Forms::DataGridViewColumnSortMode::Programmatic;
@@ -234,7 +234,7 @@ namespace kurs2020 {
 			// 
 			this->rashod_tabl->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::None;
 			this->rashod_tabl->Frozen = true;
-			this->rashod_tabl->HeaderText = L"Денежные расходы за один Час Процветания (руб.)";
+			this->rashod_tabl->HeaderText = L"Р”РµРЅРµР¶РЅС‹Рµ СЂР°СЃС…РѕРґС‹ Р·Р° РѕРґРёРЅ Р§Р°СЃ РџСЂРѕС†РІРµС‚Р°РЅРёСЏ (СЂСѓР±.)";
 			this->rashod_tabl->Name = L"rashod_tabl";
 			this->rashod_tabl->ReadOnly = true;
 			this->rashod_tabl->SortMode = System::Windows::Forms::DataGridViewColumnSortMode::Programmatic;
@@ -250,7 +250,7 @@ namespace kurs2020 {
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(205, 21);
 			this->label2->TabIndex = 15;
-			this->label2->Text = L"Ваши крестьяне:";
+			this->label2->Text = L"Р’Р°С€Рё РєСЂРµСЃС‚СЊСЏРЅРµ:";
 			// 
 			// label3
 			// 
@@ -259,7 +259,7 @@ namespace kurs2020 {
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(377, 13);
 			this->label3->TabIndex = 17;
-			this->label3->Text = L"Примечание: информация выводится с учётом текущей Скорости жизни";
+			this->label3->Text = L"РџСЂРёРјРµС‡Р°РЅРёРµ: РёРЅС„РѕСЂРјР°С†РёСЏ РІС‹РІРѕРґРёС‚СЃСЏ СЃ СѓС‡С‘С‚РѕРј С‚РµРєСѓС‰РµР№ РЎРєРѕСЂРѕСЃС‚Рё Р¶РёР·РЅРё";
 			// 
 			// timer_proverk_krest
 			// 
@@ -285,7 +285,7 @@ namespace kurs2020 {
 			this->Name = L"tabl_krest";
 			this->ShowIcon = false;
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-			this->Text = L"Список крестьян";
+			this->Text = L"РЎРїРёСЃРѕРє РєСЂРµСЃС‚СЊСЏРЅ";
 			this->Activated += gcnew System::EventHandler(this, &tabl_krest::tabl_krest_Activated);
 			this->Load += gcnew System::EventHandler(this, &tabl_krest::tabl_krest_Load);
 			this->izgnat_box->ResumeLayout(false);
@@ -297,21 +297,21 @@ namespace kurs2020 {
 		}
 #pragma endregion
 	private: System::Void tabl_krest_Activated(System::Object^  sender, System::EventArgs^  e) {
-		if(f_endgame==1) //игра закончилась, закрыть все формы
+		if(f_endgame==1) //РёРіСЂР° Р·Р°РєРѕРЅС‡РёР»Р°СЃСЊ, Р·Р°РєСЂС‹С‚СЊ РІСЃРµ С„РѕСЂРјС‹
 				 Close();
 		else
 		{
-			//очистить все строки перед выводом
+			//РѕС‡РёСЃС‚РёС‚СЊ РІСЃРµ СЃС‚СЂРѕРєРё РїРµСЂРµРґ РІС‹РІРѕРґРѕРј
 			while (0 != spisok->RowCount)
 				spisok->Rows->RemoveAt(0);
 
-			int kolvo_str=derevn.get_kolvo_krest(); //получить кол-во крестьян в списке
+			int kolvo_str=derevn.get_kolvo_krest(); //РїРѕР»СѓС‡РёС‚СЊ РєРѕР»-РІРѕ РєСЂРµСЃС‚СЊСЏРЅ РІ СЃРїРёСЃРєРµ
 			for(int num=0; num<kolvo_str; num++)
 			{
-				spisok->Rows->Add(); //добавить новую строку в таблицу
-				spisok->Rows[num]->Cells[0]->Value = Convert::ToString(num+1); //записать порядковый номер крестьянина
+				spisok->Rows->Add(); //РґРѕР±Р°РІРёС‚СЊ РЅРѕРІСѓСЋ СЃС‚СЂРѕРєСѓ РІ С‚Р°Р±Р»РёС†Сѓ
+				spisok->Rows[num]->Cells[0]->Value = Convert::ToString(num+1); //Р·Р°РїРёСЃР°С‚СЊ РїРѕСЂСЏРґРєРѕРІС‹Р№ РЅРѕРјРµСЂ РєСЂРµСЃС‚СЊСЏРЅРёРЅР°
 				string str_name= derevn.krests[num].get_name() + " " + derevn.krests[num].get_surname();
-				spisok->Rows[num]->Cells[1]->Value = gcnew System::String(str_name.c_str()); //внести в ячейку таблицы
+				spisok->Rows[num]->Cells[1]->Value = gcnew System::String(str_name.c_str()); //РІРЅРµСЃС‚Рё РІ СЏС‡РµР№РєСѓ С‚Р°Р±Р»РёС†С‹
 				spisok->Rows[num]->Cells[2]->Value = Convert::ToString(derevn.krests[num].get_proizv_hleb()) + L"/" + Convert::ToString(derevn.krests[num].get_proizv_skot());
 				spisok->Rows[num]->Cells[3]->Value = Convert::ToString(derevn.krests[num].get_eda_hleb()*derevn.get_speed_life()) + L"/" + Convert::ToString(derevn.krests[num].get_eda_skot()*derevn.get_speed_life());
 				spisok->Rows[num]->Cells[4]->Value = Convert::ToString(derevn.krests[num].get_money_trat()*derevn.get_speed_life());
@@ -321,10 +321,10 @@ namespace kurs2020 {
 		}
 
 private: System::Void num_krest_pole1_TextChanged(System::Object^  sender, System::EventArgs^  e) {
-			int kolvo_strr=derevn.get_kolvo_krest(); //получить кол-во крестьян в списке
-			if (this->num_krest_pole->Text!=L"") //если поле с номером строки не пустое
+			int kolvo_strr=derevn.get_kolvo_krest(); //РїРѕР»СѓС‡РёС‚СЊ РєРѕР»-РІРѕ РєСЂРµСЃС‚СЊСЏРЅ РІ СЃРїРёСЃРєРµ
+			if (this->num_krest_pole->Text!=L"") //РµСЃР»Рё РїРѕР»Рµ СЃ РЅРѕРјРµСЂРѕРј СЃС‚СЂРѕРєРё РЅРµ РїСѓСЃС‚РѕРµ
 			{
-				if((Convert::ToDouble(this->num_krest_pole->Text) > kolvo_strr) || (Convert::ToDouble(this->num_krest_pole->Text)<1)) //если выбр. строка больше общего кол-ва строк, то отключить кнопку
+				if((Convert::ToDouble(this->num_krest_pole->Text) > kolvo_strr) || (Convert::ToDouble(this->num_krest_pole->Text)<1)) //РµСЃР»Рё РІС‹Р±СЂ. СЃС‚СЂРѕРєР° Р±РѕР»СЊС€Рµ РѕР±С‰РµРіРѕ РєРѕР»-РІР° СЃС‚СЂРѕРє, С‚Рѕ РѕС‚РєР»СЋС‡РёС‚СЊ РєРЅРѕРїРєСѓ
 				{
 					this->izgnat_butt->Enabled = false;
 				}
@@ -333,14 +333,14 @@ private: System::Void num_krest_pole1_TextChanged(System::Object^  sender, Syste
 			}
 			else
 				this->izgnat_butt->Enabled = false;
-			if(derevn.get_flag_season()==1) //если зима, кнопка Изгнать недоступна в любом случае
+			if(derevn.get_flag_season()==1) //РµСЃР»Рё Р·РёРјР°, РєРЅРѕРїРєР° РР·РіРЅР°С‚СЊ РЅРµРґРѕСЃС‚СѓРїРЅР° РІ Р»СЋР±РѕРј СЃР»СѓС‡Р°Рµ
 			{
 				this->label1->Enabled = false;
 				this->num_krest_pole->Enabled = false;
 				this->izgnat_butt->Enabled = false;
 				this->trud_butt->Enabled = false;
 			}
-			if(derevn.get_flag_season()==0) //если лето, включить кнопку открытия Биржи труда
+			if(derevn.get_flag_season()==0) //РµСЃР»Рё Р»РµС‚Рѕ, РІРєР»СЋС‡РёС‚СЊ РєРЅРѕРїРєСѓ РѕС‚РєСЂС‹С‚РёСЏ Р‘РёСЂР¶Рё С‚СЂСѓРґР°
 			{
 				this->label1->Enabled = true;
 				this->num_krest_pole->Enabled = true;
@@ -348,25 +348,25 @@ private: System::Void num_krest_pole1_TextChanged(System::Object^  sender, Syste
 			}
 		 }
 private: System::Void izgnat_butt_Click(System::Object^  sender, System::EventArgs^  e) {
-			 derevn.Delete_krest(Convert::ToDouble(this->num_krest_pole->Text)); //удалить крестьянина
-			 num_krest_pole1_TextChanged(sender,e); //повторная проверка
-			 tabl_krest_Activated(sender,e); //обновить таблицу
+			 derevn.Delete_krest(Convert::ToDouble(this->num_krest_pole->Text)); //СѓРґР°Р»РёС‚СЊ РєСЂРµСЃС‚СЊСЏРЅРёРЅР°
+			 num_krest_pole1_TextChanged(sender,e); //РїРѕРІС‚РѕСЂРЅР°СЏ РїСЂРѕРІРµСЂРєР°
+			 tabl_krest_Activated(sender,e); //РѕР±РЅРѕРІРёС‚СЊ С‚Р°Р±Р»РёС†Сѓ
 		 }
 private: System::Void tabl_krest_Load(System::Object^  sender, System::EventArgs^  e) {
-			 num_krest_pole1_TextChanged(sender,e); //проверка
+			 num_krest_pole1_TextChanged(sender,e); //РїСЂРѕРІРµСЂРєР°
 		 }
 private: System::Void trud_butt_Click(System::Object^  sender, System::EventArgs^  e) {
-			tabl_naim^ tabl_naim_p = gcnew tabl_naim(); //указатель на форму
-			tabl_naim_p -> ShowDialog(); //открыть форму
+			tabl_naim^ tabl_naim_p = gcnew tabl_naim(); //СѓРєР°Р·Р°С‚РµР»СЊ РЅР° С„РѕСЂРјСѓ
+			tabl_naim_p -> ShowDialog(); //РѕС‚РєСЂС‹С‚СЊ С„РѕСЂРјСѓ
 			delete(tabl_naim_p);
 		 }
 private: System::Void timer_proverk_krest_Tick(System::Object^  sender, System::EventArgs^  e) {
-			 if(f_endgame==1) //игра закончилась, закрыть все формы
+			 if(f_endgame==1) //РёРіСЂР° Р·Р°РєРѕРЅС‡РёР»Р°СЃСЊ, Р·Р°РєСЂС‹С‚СЊ РІСЃРµ С„РѕСЂРјС‹
 				 Close();
 			 else
 			 {
-				num_krest_pole1_TextChanged(sender,e); //повторная проверка
-				tabl_krest_Activated(sender,e); //обновить таблицу
+				num_krest_pole1_TextChanged(sender,e); //РїРѕРІС‚РѕСЂРЅР°СЏ РїСЂРѕРІРµСЂРєР°
+				tabl_krest_Activated(sender,e); //РѕР±РЅРѕРІРёС‚СЊ С‚Р°Р±Р»РёС†Сѓ
 			 }
 		 }
 };
